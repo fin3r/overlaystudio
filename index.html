@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121418">
+<meta name="description" content="Create Philadelphia sports text overlays, add a blurred background to widescreen video, and export 9:16 MP4 videos or transparent PNGs. Add NBC Sports Philadelphia and sponsor logos with optional white backing. Private, standalone, offline editor.">
+<title>Sideline | Philly Video + Overlay Studio - NBC + Sponsor Bugs</title>
+<style>
+:root{color-scheme:dark;--bg:#111317;--surface:#191c21;--raised:#22262d;--input:#101216;--line:#30343c;--text:#f4f4f0;--muted:#969ca8;--quiet:#69717f;--lime:#d0f58a;--lime-dark:#27331d;--team:#006bb6;--radius:12px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}body{font-size:13px}button,input,select,textarea{font:inherit}button{cursor:pointer}button,select,input,textarea{outline:none}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offset:3px}button:disabled{cursor:not-allowed;opacity:.35}button{color:inherit}svg{width:18px;height:18px;flex:none;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}button svg{pointer-events:none}.hidden,[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.topbar{height:78px;padding:0 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(17,19,23,.97);position:sticky;top:0;z-index:30}.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}.brand-symbol{width:38px;height:38px;display:grid;place-items:center;background:var(--lime);color:#14200d;border-radius:10px;font-size:23px;font-weight:950;letter-spacing:-3px;padding-right:3px;transform:rotate(-4deg)}.brand-name{font-size:18px;font-weight:850;letter-spacing:-.65px}.brand-sub{font-size:9px;letter-spacing:2px;color:var(--muted);font-weight:650;margin-top:4px}.topbar-actions{display:flex;gap:8px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:9px 13px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:12px;font-weight:650;transition:background .15s,border-color .15s,transform .15s}.btn:hover:not(:disabled){background:#2a2e35;border-color:#555c68}.btn:active:not(:disabled){transform:translateY(1px)}.btn.primary{background:var(--lime);color:#172010;border-color:var(--lime);font-weight:800}.btn.primary:hover{background:#e1ffae;border-color:#e1ffae}.btn.ghost{background:transparent;border-color:transparent}.btn.ghost:hover{background:var(--raised);border-color:transparent}.icon-btn{padding:8px;min-width:34px;min-height:34px}.header-separator{height:24px;width:1px;background:var(--line);margin:0 6px}.version{font-size:10px;color:var(--muted);border:1px solid var(--line);padding:5px 7px;border-radius:5px;margin-left:8px;font-family:ui-monospace,monospace}
+.workspace{height:calc(100dvh - 78px);min-height:630px;display:grid;grid-template-columns:326px minmax(290px,1fr) 274px}.panel{background:var(--surface);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#424751 transparent}.left-panel{border-right:1px solid var(--line)}.right-panel{border-left:1px solid var(--line)}.section{padding:23px 22px;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0}.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;gap:8px}.section-title h2{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin:0;font-weight:750;color:#cbd0d8}.step-number{font:10px ui-monospace,monospace;color:var(--quiet);margin-right:7px}.section-tag{color:var(--muted);font-size:10px}.field-label{display:block;font-size:11px;font-weight:600;color:#bfc4ce;margin-bottom:8px}.help{font-size:10.5px;color:var(--muted);line-height:1.6;margin:8px 0 0}.row{display:flex;align-items:center;gap:10px}.row.between{justify-content:space-between}.row.wrap{flex-wrap:wrap}.field{margin-top:18px}.field:first-child{margin-top:0}.select-wrap{position:relative}.select-wrap::after{content:"";width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);position:absolute;right:14px;top:16px;pointer-events:none}select,input[type=text],input[type=number],textarea{width:100%;border:1px solid var(--line);background:var(--input);border-radius:8px;color:var(--text);transition:border-color .15s}select{appearance:none;height:40px;padding:0 32px 0 12px;font-weight:600;font-size:12px}select:hover,input[type=text]:hover,textarea:hover{border-color:#505764}input[type=text]{padding:10px 12px;height:39px}textarea{resize:vertical;min-height:108px;padding:12px;line-height:1.55;font-size:13px;font-weight:650;letter-spacing:.1px}.team-select{height:47px;padding-left:42px;font-size:14px}.team-dot{position:absolute;top:17px;left:16px;width:13px;height:13px;border-radius:50%;background:var(--team);box-shadow:0 0 0 3px rgba(255,255,255,.07);pointer-events:none}.palette{display:flex;align-items:center;gap:5px;margin-top:11px}.palette-swatch{width:23px;height:23px;border-radius:6px;border:1px solid #ffffff25;padding:0}.palette-swatch:hover{outline:2px solid #ffffff77;outline-offset:2px}.palette-caption{font-size:10px;color:var(--muted);margin-left:4px}.palette-hint{font-size:10px;color:var(--quiet);margin:7px 0 0}.style-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.style-btn{border:1px solid var(--line);border-radius:9px;background:var(--input);padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:9px;min-width:0}.style-btn:hover{border-color:#687180}.style-btn.active{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime);color:var(--text)}.style-sample{display:inline-block;border-radius:3px;padding:3px 6px;font-weight:900;font-size:16px;letter-spacing:-1px;line-height:1.15}.style-sample.team{background:var(--team);color:white}.style-sample.black{background:#000;color:#fff}.style-sample.white{background:white;color:#111}.style-sample.outline{color:#fff;-webkit-text-stroke:.8px #111;text-shadow:0 0 2px #fff}.text-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px}.check-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#c3c8d0;line-height:1.4;cursor:pointer}.check-label input{accent-color:var(--lime);width:14px;height:14px;margin:0;flex:none}.char-count{font-size:10px;color:var(--quiet);font-variant-numeric:tabular-nums}.emoji-row{display:flex;gap:6px;align-items:center}.emoji-input{width:55px!important;text-align:center;font-size:22px!important;padding:5px!important}.emoji-picker{display:flex;gap:3px;flex:1;justify-content:space-between}.emoji-button{border:1px solid transparent;background:var(--raised);font-size:19px;width:32px;height:35px;padding:0;border-radius:7px}.emoji-button:hover{background:#343a44;border-color:#616978}.range-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}.range-heading .field-label{margin:0}.range-value{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;color:var(--lime);font-variant-numeric:tabular-nums}.range-value.muted{color:var(--muted)}input[type=range]{width:100%;height:20px;accent-color:var(--lime);cursor:pointer;margin:0;display:block;background:transparent}input[type=range]::-webkit-slider-runnable-track{height:4px;background:#383f48;border-radius:5px}input[type=range]::-webkit-slider-thumb{margin-top:-6px}input[type=range]::-moz-range-track{height:4px;background:#383f48;border-radius:5px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.color-row{display:flex;gap:10px}.color-control{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;background:var(--input);padding:5px 7px;flex:1;min-width:0}.color-control input[type=color]{appearance:none;width:24px;height:25px;border:0;background:transparent;padding:0;cursor:pointer;flex:none}.color-control input[type=color]::-webkit-color-swatch-wrapper{padding:0}.color-control input[type=color]::-webkit-color-swatch{border:1px solid #ffffff30;border-radius:4px}.hex-input{border:0!important;background:transparent!important;padding:0!important;height:24px!important;font:10px ui-monospace,monospace!important;min-width:0}.color-label{font-size:10px;color:var(--muted);margin-bottom:6px}.small-select{height:33px;font-size:11px}.small-select-wrap::after{top:13px}.segmented{display:flex;gap:3px;padding:3px;background:var(--input);border:1px solid var(--line);border-radius:8px}.segmented button{flex:1;background:none;border:0;padding:7px 6px;border-radius:5px;color:var(--muted);font-size:11px;display:flex;align-items:center;justify-content:center;gap:5px}.segmented button.active{background:#343a43;color:white}.segmented button:hover{color:white}.wide-btn{width:100%}.subtle-btn{border:1px dashed #454d59;background:transparent;color:#c0c7d2;font-weight:600}.detail-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;font-size:11px;color:#c0c6d0;font-weight:600;padding:3px 0}.detail-toggle::-webkit-details-marker{display:none}.detail-toggle::after{content:"+";color:var(--muted);font-size:17px;font-weight:400}details[open]>.detail-toggle::after{content:"-"}details .field{margin-top:16px}.accent-controls{display:flex;gap:9px;align-items:center;margin-top:10px}.accent-controls .color-control{flex:0 0 112px}.accent-controls .select-wrap{flex:1}.position-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.position-buttons .btn{font-size:10px;padding:8px 4px;min-height:32px}.position-buttons .btn svg{width:14px;height:14px}
+.stage-panel{display:flex;flex-direction:column;align-items:stretch;min-width:0;padding:23px 28px 17px;background:radial-gradient(ellipse at 50% 28%,#22262d 0%,#15171c 60%,#111317 100%);overflow:hidden}.stage-toolbar{display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px}.stage-label{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#aaaebb;white-space:nowrap}.live-dot{display:inline-block;background:var(--lime);height:5px;width:5px;border-radius:50%;vertical-align:middle;margin-right:7px;box-shadow:0 0 8px #d0f53544}.stage-tools{display:flex;gap:3px;align-items:center}.tool-toggle{font-size:10px;min-height:29px;padding:6px 8px}.tool-toggle svg{height:14px;width:14px}.tool-toggle.active{color:var(--lime);background:#d0f58a0b;border-color:#d0f58a35}.stage-body{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:22px 0 13px}.artboard-wrap{display:flex;flex-direction:column;align-items:center;gap:11px;min-width:0;width:100%}.artboard{width:min(100%,calc((100dvh - 244px)*.5625));max-width:396px;min-width:200px;aspect-ratio:9/16;position:relative;box-shadow:0 16px 65px #0007,0 0 0 1px #ffffff1a;border-radius:5px;isolation:isolate;background-color:#292d34;background-image:linear-gradient(45deg,#22262d 25%,transparent 25%),linear-gradient(-45deg,#22262d 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#22262d 75%),linear-gradient(-45deg,transparent 75%,#22262d 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}.artboard.drop-active{outline:3px solid var(--lime);outline-offset:5px}#preview{width:100%;height:100%;display:block;touch-action:none;cursor:grab;border-radius:5px}#preview:active{cursor:grabbing}.safe-guide{position:absolute;inset:12% 12% 20% 6%;border:1px dashed #ffffff65;pointer-events:none;border-radius:3px}.safe-guide span{position:absolute;top:6px;left:6px;color:#fff9;font-size:8px;letter-spacing:1px;font-weight:500}.center-guide{position:absolute;left:50%;top:0;height:100%;border-left:1px solid #d0f58a99;pointer-events:none}.selection-box{position:absolute;border:1px solid var(--lime);pointer-events:none;box-shadow:0 0 0 1px #0005}.selection-box::before,.selection-box::after{content:"";position:absolute;width:5px;height:5px;background:var(--lime);top:-3px}.selection-box::before{left:-3px}.selection-box::after{right:-3px}.selection-tag{position:absolute;bottom:calc(100% + 6px);left:0;font-size:8px;font-weight:700;letter-spacing:.75px;color:#18200f;background:var(--lime);padding:4px 6px;white-space:nowrap;border-radius:3px;max-width:180px;text-overflow:ellipsis;overflow:hidden}.resize-handle{position:absolute;width:12px;height:12px;bottom:-6px;right:-6px;background:var(--lime);border:2px solid #27351a;border-radius:2px;pointer-events:auto;cursor:nwse-resize;padding:0;touch-action:none}.canvas-caption{display:flex;justify-content:space-between;gap:20px;font:9px ui-monospace,monospace;color:var(--quiet);width:min(100%,350px);letter-spacing:.4px}.canvas-caption b{color:#aab1bf;font-weight:500}.stage-bottom{display:flex;flex-direction:column;align-items:center;gap:10px}.drag-hint{font-size:10px;color:#89919e;text-align:center;line-height:1.6}.drag-hint kbd{font-family:inherit;background:#24282e;padding:1px 4px;border:1px solid #373d46;border-radius:3px;font-size:9px}.preview-badge{font-size:9px;color:#b8c8dc;background:#35435833;border:1px solid #6c829333;border-radius:20px;padding:5px 9px}.preview-badge i{display:inline-block;width:4px;height:4px;background:#95b4df;border-radius:50%;margin-right:4px}.canvas-empty{position:absolute;top:32%;left:10%;right:10%;text-align:center;pointer-events:none;color:#69717e;font-size:13px;line-height:1.7}.canvas-empty svg{height:30px;width:30px;margin-bottom:8px}
+.export-dimensions{border:1px solid var(--line);background:var(--input);border-radius:9px;padding:13px;display:flex;gap:12px;align-items:center}.ratio-symbol{width:23px;height:39px;border:1.5px solid #6f7786;border-radius:3px;display:grid;place-items:center;color:var(--lime);font-size:7px;flex:none}.dimension-title{font-size:14px;font-weight:750;letter-spacing:-.4px}.dimension-sub{font-size:10px;color:var(--muted);margin-top:4px}.export-note{font-size:10px;color:var(--muted);line-height:1.6;margin:10px 0 15px}.export-btn{width:100%;min-height:44px;font-size:12px}.privacy-note{font-size:9px;line-height:1.6;color:var(--quiet);text-align:center;margin:10px 0 0}.layer-list{display:flex;flex-direction:column;gap:6px}.layer-item{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--input);gap:7px;padding:7px;min-height:48px}.layer-item.active{background:#262d20;border-color:#a2c16b88}.layer-choose{display:flex;align-items:center;gap:8px;min-width:0;flex:1;padding:0;border:0;background:none;text-align:left}.layer-thumb{width:27px;height:29px;border-radius:5px;color:white;background:var(--team);font-size:14px;font-weight:900;display:grid;place-items:center;flex:none;text-shadow:0 1px 2px #0007}.layer-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:650}.layer-type{font-size:9px;color:var(--muted);margin-top:3px;font-weight:400}.layer-visibility{width:25px;height:29px;min-height:0;min-width:0;padding:5px;color:#a7adba}.layer-visibility svg{width:14px;height:14px}.layer-actions{display:flex;justify-content:space-between;margin-top:9px;gap:4px}.layer-actions .btn{font-size:9px;min-height:29px;padding:6px}.layer-actions svg{width:13px;height:13px}.reference-drop{border:1px dashed #454b56;border-radius:10px;text-align:center;padding:19px 12px;background:#ffffff02;cursor:pointer;transition:background .15s;width:100%;display:block}.reference-drop:hover{background:#ffffff05;border-color:#748090}.reference-drop svg{height:23px;width:23px;color:#8c95a5;display:block;margin:0 auto 10px}.reference-drop strong{font-size:11px;font-weight:650;display:block}.reference-drop span{font-size:9px;color:var(--muted);display:block;margin-top:5px}.reference-info{display:flex;gap:8px;align-items:center;padding:9px;background:var(--input);border-radius:8px;border:1px solid var(--line)}.reference-info img{width:36px;height:43px;object-fit:cover;border-radius:4px}.reference-info-text{flex:1;min-width:0}.reference-name{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reference-status{font-size:9px;color:var(--muted);margin-top:5px}.reference-controls{margin-top:11px}.local-note{display:flex;gap:8px;align-items:flex-start;color:var(--quiet);font-size:10px;line-height:1.7}.local-note svg{width:14px;height:14px;margin-top:2px}.local-note strong{color:#a2aab7;font-weight:600}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(12px);padding:12px 18px;border:1px solid #516038;border-radius:10px;background:#26321e;color:#e0f2c7;font-size:12px;box-shadow:0 8px 30px #0007;z-index:100;opacity:0;pointer-events:none;transition:.2s;max-width:calc(100% - 32px);text-align:center}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.toast.error{background:#382423;border-color:#87514d;color:#ffd6d2}.autosave-dot{display:inline-block;height:5px;width:5px;border-radius:50%;background:#8eaa6e;margin-right:5px}.mobile-section-label{display:none}.loading-overlay{position:absolute;inset:0;background:#111a;display:grid;place-items:center;z-index:9;color:var(--lime);font-size:12px}.warning-note{padding:8px 10px;border-radius:7px;background:#80612820;color:#d1b979;font-size:10px;line-height:1.6;margin-top:10px}.background-color-control{margin-top:10px}.footer-brand{font-size:9px;letter-spacing:2px;color:#606a77;margin-top:16px}
+dialog{border:1px solid #424a56;border-radius:16px;background:var(--surface);color:var(--text);padding:27px;max-width:480px;width:calc(100% - 36px);box-shadow:0 30px 100px #000a}dialog::backdrop{background:#0009;backdrop-filter:blur(4px)}dialog h2{font-size:20px;letter-spacing:-.5px;margin:0 0 16px}dialog p,dialog li{font-size:12px;color:#bbc2ce;line-height:1.8}dialog ol{padding-left:18px}dialog .dialog-foot{margin-top:20px;display:flex;justify-content:flex-end}dialog code{font:11px ui-monospace,monospace;color:var(--lime)}
+@media(min-width:1600px){.workspace{grid-template-columns:354px minmax(350px,1fr) 306px}.section{padding-left:27px;padding-right:27px}.artboard{max-width:440px}.stage-panel{padding-left:44px;padding-right:44px}}
+@media(max-width:1140px) and (min-width:761px){.workspace{grid-template-columns:288px minmax(270px,1fr) 245px}.section{padding:20px 17px}.stage-panel{padding-left:16px;padding-right:16px}.stage-label{font-size:9px;letter-spacing:.7px}.tool-toggle{padding:5px 6px}.stage-tools .tool-text{display:none}.emoji-button{width:29px}.emoji-picker{gap:2px}.accent-controls{gap:5px}.accent-controls .color-control{flex-basis:102px}}
+@media(max-width:920px) and (min-width:761px){.workspace{grid-template-columns:290px minmax(300px,1fr);height:auto;min-height:0;align-items:start;position:relative}.left-panel{grid-column:1;grid-row:1;overflow:visible}.right-panel{grid-column:1;grid-row:2;border-left:0;border-right:1px solid var(--line);border-top:1px solid var(--line);overflow:visible}.stage-panel{grid-column:2;grid-row:1 / span 2;position:sticky;top:78px;height:calc(100dvh - 78px);min-height:630px}.topbar{padding:0 20px}.version{display:none}.artboard{max-width:350px}}
+@media(max-width:760px){.topbar{height:66px;padding:0 14px;gap:10px}.brand{gap:9px}.brand-symbol{height:33px;width:33px;font-size:21px}.brand-name{font-size:16px}.brand-sub{font-size:7px;letter-spacing:1.5px;margin-top:3px}.version,.header-separator,.desktop-only,.topbar .btn-label{display:none}.topbar-actions{gap:3px}.topbar-actions .btn{padding:7px 8px;min-height:34px}.topbar-actions .primary{padding:9px 10px;font-size:10px}.topbar-actions .primary svg{height:14px;width:14px}.workspace{display:flex;flex-direction:column;height:auto;min-height:0}.stage-panel{order:0;min-height:0;width:100%;padding:18px 20px 20px}.stage-body{padding:18px 0 12px}.artboard{width:min(65vw,270px);min-width:190px;max-width:270px}.canvas-caption{width:min(65vw,270px);font-size:8px;gap:8px}.stage-toolbar{max-width:500px;margin:auto}.stage-bottom{gap:7px}.drag-hint{font-size:9px}.left-panel{order:1;width:100%;overflow:visible;border-right:0;border-top:1px solid var(--line)}.right-panel{order:2;width:100%;overflow:visible;border-left:0;border-top:1px solid var(--line)}.section{padding:23px max(22px,calc((100vw - 470px)/2))}.style-grid{gap:10px}.style-btn{padding:12px 8px 10px}.emoji-picker{justify-content:flex-start;gap:7px}.emoji-button{width:38px;height:38px}.emoji-input{height:39px!important}.export-btn{min-height:48px}.right-panel .section:last-child{padding-bottom:35px}.toast{bottom:18px}.selection-tag{font-size:7px}.stage-label{font-size:9px}.reference-drop{padding:22px}.position-buttons .btn{min-height:39px}.field-label{font-size:12px}.help{font-size:11px}.check-label{font-size:12px}select,input[type=text],textarea{font-size:16px}.team-select{font-size:16px}.small-select,.hex-input{font-size:12px!important}.hex-input{font-size:11px!important}#fileName{font-size:13px}.stage-panel .btn{font-size:10px}}
+@media(max-width:360px){.topbar{padding:0 10px;gap:6px}.brand{gap:6px}.brand-sub{display:none}.brand-name{font-size:14px}.brand-symbol{height:28px;width:28px;font-size:19px}.topbar-actions .btn{padding:7px 6px}.topbar-actions .primary{padding:9px 8px}.emoji-picker{gap:4px}.emoji-button{width:33px}.section{padding-left:18px;padding-right:18px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Video extension: the existing overlay editor stays unchanged. */
+.video-section{background:linear-gradient(150deg,#232a22 0%,var(--surface) 70%)}
+.video-drop{padding:20px 12px}.video-drop svg{width:25px;height:25px;color:var(--lime)}
+.video-file-card{display:flex;align-items:center;gap:10px}.video-file-card>div{min-width:0}.video-file-card strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px;font-size:11px}.video-file-card span:not(.file-icon){font:9px ui-monospace,monospace;color:var(--muted);display:block;margin-top:6px;line-height:1.5}.file-icon{background:var(--lime-dark);border:1px solid #d0f58a22;border-radius:8px;padding:10px;color:var(--lime)}
+.video-transport{width:100%;max-width:430px;background:#171a20;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:2px auto 8px}.transport-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}.transport-top .timecode{margin-left:auto;font:10px ui-monospace,monospace;color:#cbd0d8;font-variant-numeric:tabular-nums}.transport-top button{min-height:29px;padding:5px 8px}.transport-top svg{width:14px;height:14px}.transport-label{font-size:9px;letter-spacing:1px;color:var(--muted)}.tiny-btn{font-size:9px;padding:5px 7px;min-height:28px}
+.video-export-settings{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.video-export-settings .two-col{gap:8px}.video-export-settings select{font-size:10px}.codec-status{font-size:10px;line-height:1.6;margin:10px 0;color:#adc48d}.codec-status.warning{color:#e1b77f}.codec-status.error{color:#f09b96}.mp4-export{width:100%;margin-top:9px;min-height:44px}.video-mode .artboard{width:min(100%,calc((100dvh - 340px)*.5625));max-width:365px}.media-source{position:fixed;left:-10000px;top:0;width:2px;height:2px;opacity:.01;pointer-events:none}
+.layer-time{border:1px solid var(--line);padding:12px;border-radius:9px;background:var(--input);margin-top:18px}.layer-time .field-label{font-size:10px}.layer-time input[type=text]{height:33px;font-size:11px}.layer-time .help{font-size:9px}.layer-time-label{font-size:9px;letter-spacing:1px;color:var(--lime);margin-bottom:9px}
+#videoExportDialog{max-width:550px;width:calc(100% - 30px);padding:26px;max-height:92dvh;overflow:auto}#videoExportDialog h2{margin:8px 0 10px}.export-kicker{font-size:10px;letter-spacing:2px;color:var(--lime);font-weight:750}.export-summary{line-height:1.7;color:var(--muted);font-size:12px}.export-visual{display:flex;justify-content:center;margin:18px 0;background:#0d1014;border:1px solid var(--line);border-radius:10px;padding:12px}.export-visual canvas,.export-visual video{display:block;width:auto;height:min(35dvh,280px);max-width:100%;aspect-ratio:9/16;background:#000;object-fit:contain;border-radius:3px}.export-progress{width:100%;height:6px;accent-color:var(--lime);border:0;border-radius:8px;display:block;margin:14px 0}.export-progress::-webkit-progress-bar{background:#343a43;border-radius:8px}.export-progress::-webkit-progress-value{background:var(--lime);border-radius:8px}.export-progress::-moz-progress-bar{background:var(--lime);border-radius:8px}.export-status-row{display:flex;justify-content:space-between;gap:16px;font:10px ui-monospace,monospace;color:var(--muted);line-height:1.5}.export-warning{padding:10px 12px;border:1px solid #89704466;background:#382b1c55;border-radius:8px;color:#e4c69b;font-size:11px;line-height:1.6}.export-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.export-actions a{text-decoration:none}.video-source-status{font:9px ui-monospace,monospace;color:var(--muted)}
+@media(min-width:761px) and (max-height:780px){.video-mode .artboard{min-width:165px}.video-mode .stage-body{padding:10px 0 8px}.video-mode .stage-bottom .drag-hint{display:none}}
+@media(max-width:760px){.video-mode .artboard{width:min(61vw,250px);max-width:250px;min-width:180px}.video-transport{max-width:400px}.topbar .brand-sub{display:none}.topbar .brand-name{font-size:14px}.topbar .brand-symbol{display:none}.topbar-actions{gap:2px}.topbar-actions .btn{padding:7px;gap:3px}#exportTop{display:none}.topbar-actions #exportVideoTop{font-size:10px}.video-file-card strong{max-width:70vw}.layer-time input[type=text]{font-size:16px}.video-export-settings select{font-size:14px}#trimStart,#trimEnd{font-size:16px}.workspace .section{padding-top:20px;padding-bottom:20px}.export-summary{font-size:11px}}
+
+/* Station and sponsor bugs are part of the same canvas as the finished export. */
+.branding-section{scroll-margin-top:88px;background:linear-gradient(145deg,#222930,var(--surface) 65%)}
+.bug-tag{color:var(--lime);font-size:8px;letter-spacing:1.2px;border:1px solid #d0f58a35;padding:4px 6px;border-radius:4px}
+.bug-intro{margin:-5px 0 15px}.bug-card{padding:12px;background:#14171c;border:1px solid var(--line);border-radius:10px;min-width:0}
+.bug-card .check-label{font-size:10px}.bug-card strong{font-weight:650}.bug-image-well{height:68px;margin:12px 0 6px;border:1px solid #ffffff12;border-radius:7px;padding:12px 17px;display:flex;align-items:center;justify-content:center;background:#333e49;width:100%}
+.bug-image-well img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}.sponsor-well{cursor:pointer;background-color:#333e49}.sponsor-well.white-card{background:#fff}.sponsor-well:hover{border-color:var(--lime)}
+.bug-file{font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;max-width:138px}.bug-card .section-tag{font-size:7px;white-space:nowrap}.bug-card .field{margin-top:13px}.bug-card .field-label{font-size:10px}.bug-card .range-value{font-size:9px}
+.bug-connector{display:flex;align-items:center;justify-content:center;gap:9px;color:var(--quiet);font-size:7px;letter-spacing:1.5px;padding:10px 2px}.bug-connector span{height:1px;flex:1;background:var(--line)}
+.bug-upload{margin:12px 0;padding:16px 8px}.bug-upload strong{font-size:10px}.bug-upload span{font-size:9px}.bug-upload.drag-active{border-color:var(--lime);background:#d0f58a0c}
+.bug-white-label{margin-top:14px;align-items:flex-start!important}.bug-card .help{font-size:9px}.bug-card .detail-toggle{font-size:10px}.bug-position-row{margin:12px 0 8px;gap:7px}.bug-position-row .btn{flex:1;font-size:10px}.bug-footnote{font-size:9px}.bug-section-active{box-shadow:inset 3px 0 var(--lime)}
+#selectBugStack.active{border-color:var(--lime);color:var(--lime)}#bugLoadingStatus{color:var(--lime)}#brandingShortcut{min-width:30px}
+@media(max-width:760px){.bug-image-well{height:78px}.bug-file{max-width:58vw}.bug-card .check-label{font-size:12px}.bug-card .field-label{font-size:11px}.bug-upload strong{font-size:12px}.bug-upload span{font-size:10px}.bug-card .help,.bug-footnote{font-size:10px}.bug-card .section-tag{font-size:8px}}
+
+</style>
+<!-- Implementation references (no requests are made to these sites):
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
+https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaElementSource
+https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamDestination
+https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/MediaRecorder
+https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported_static
+https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter
+https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+-->
+</head>
+<body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V3h2Z"/><path d="M7 3v6h10V3M7 21v-8h10v8"/></symbol>
+<symbol id="i-open" viewBox="0 0 24 24"><path d="M3 19V5h7l2 3h9v3M3 19l3-8h16l-3 8H3Z"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="m8 4-5 5 5 5M3 9h11a7 7 0 0 1 0 14" transform="translate(0 -2)"/></symbol>
+<symbol id="i-redo" viewBox="0 0 24 24"><path d="m16 4 5 5-5 5m5-5H10a7 7 0 0 0 0 14" transform="translate(0 -2)"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/></symbol>
+<symbol id="i-select" viewBox="0 0 24 24"><path d="M3 8V3h5m8 0h5v5m0 8v5h-5M8 21H3v-5M7 7l4 11 2-5 5-2-11-4Z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M9 5.5A11 11 0 0 1 12 5c6 0 10 7 10 7a21 21 0 0 1-3 3.8M6 6.5A22 22 0 0 0 2 12s4 7 10 7c2 0 3.7-.7 5.2-1.6"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="M4 5h16M4 10h10M4 15h16M4 20h10"/></symbol>
+<symbol id="i-center" viewBox="0 0 24 24"><path d="M4 5h16M7 10h10M4 15h16M7 20h10"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 5h16M10 10h10M4 15h16M10 20h10"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="m6 10 6 6 6-6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1.5.8-1.5 1.3-1.5 2M12 17h.01"/></symbol>
+<symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="14" height="16" rx="2"/><path d="m17 9 5-3v12l-5-3M7 8h6M7 12h6M7 16h6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8V4Z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16" stroke-width="4"/></symbol>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3V9Zm13-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+<symbol id="i-muted" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3V9Zm13 0 5 6m0-6-5 6"/></symbol>
+</defs></svg>
+<header class="topbar">
+ <div class="brand"><div class="brand-symbol" aria-hidden="true">S/</div><div><div class="brand-name">sideline<span style="color:var(--lime)">.</span></div><div class="brand-sub">PHILLY VIDEO + OVERLAY STUDIO</div></div><span class="version">9:16</span></div>
+ <div class="topbar-actions">
+  <button class="btn ghost icon-btn desktop-only" id="undoButton" title="Undo (Ctrl/Cmd + Z)" aria-label="Undo"><svg><use href="#i-undo"/></svg></button>
+  <button class="btn ghost icon-btn desktop-only" id="redoButton" title="Redo (Ctrl/Cmd + Shift + Z)" aria-label="Redo"><svg><use href="#i-redo"/></svg></button>
+  <div class="header-separator"></div>
+  <button class="btn ghost" id="openDesign" title="Open a saved design" aria-label="Open a saved design"><svg><use href="#i-open"/></svg><span class="btn-label">Open</span></button>
+  <button class="btn ghost" id="saveDesign" title="Save an editable design" aria-label="Save an editable design"><svg><use href="#i-save"/></svg><span class="btn-label">Save design</span></button>
+  <button class="btn" id="uploadVideoTop" title="Add a video"><svg><use href="#i-film"/></svg><span class="btn-label">Add video</span></button>
+  <button class="btn ghost" id="exportTop"><svg><use href="#i-download"/></svg>PNG</button>
+  <button class="btn primary" id="exportVideoTop" disabled><svg><use href="#i-download"/></svg>Export MP4</button>
+ </div>
+</header>
+<main class="workspace">
+ <aside class="panel left-panel" aria-label="Text and style controls">
+  <section class="section">
+   <div class="section-title"><h2><span class="step-number">01</span>Choose your team</h2><span class="section-tag">COLOR PRESET</span></div>
+   <div class="select-wrap"><span class="team-dot"></span><select id="teamSelect" class="team-select" aria-label="Team colors"><option value="sixers">Philadelphia Sixers</option><option value="flyers">Philadelphia Flyers</option><option value="eagles">Philadelphia Eagles</option><option value="phillies">Philadelphia Phillies</option></select></div>
+   <div class="palette" id="teamPalette" aria-label="Team palette"></div>
+   <p class="palette-hint">Switch teams to recolor the selected text layer.</p>
+  </section>
+  <section class="section">
+   <div class="section-title"><h2><span class="step-number">02</span>Make it yours</h2><span class="section-tag" id="activeLayerLabel">TEXT 01</span></div>
+   <label class="field-label" for="headline">Your headline</label>
+   <textarea id="headline" rows="3" maxlength="420" spellcheck="true" placeholder="WRITE YOUR HEADLINE&#10;RIGHT HERE"></textarea>
+   <div class="text-meta"><label class="check-label"><input type="checkbox" id="uppercase">ALL CAPS</label><span class="char-count"><span id="charCount">0</span> / 420</span></div>
+   <p class="help">Enter creates a new line. Long lines wrap automatically.</p>
+   <div class="layer-time" id="layerTimingSection" hidden><div class="layer-time-label">WHEN THIS TEXT APPEARS</div><label class="check-label"><input type="checkbox" id="layerFullClip" checked>Show for the entire clip</label><div id="layerTimeFields" hidden><div class="two-col field"><div><label class="field-label" for="layerStart">Start (m:ss.s)</label><input type="text" id="layerStart" value="0:00.0" spellcheck="false" inputmode="decimal"></div><div><label class="field-label" for="layerEnd">End (m:ss.s)</label><input type="text" id="layerEnd" placeholder="To end" spellcheck="false" inputmode="decimal"></div></div><p class="help">Times refer to the original video. Scrub the preview to see when this layer appears. PNG exports ignore timing.</p></div></div>
+   <div class="field"><label class="field-label" for="emoji">Emoji above headline <span style="color:var(--quiet);font-weight:400">/ optional</span></label><div class="emoji-row"><input type="text" id="emoji" class="emoji-input" maxlength="24" aria-label="Emoji or short accent above headline"><div class="emoji-picker" aria-label="Emoji shortcuts"><button class="emoji-button" data-emoji="&#x1f440;" title="Eyes">&#x1f440;</button><button class="emoji-button" data-emoji="&#x1f525;" title="Fire">&#x1f525;</button><button class="emoji-button" data-emoji="&#x1f92f;" title="Mind blown">&#x1f92f;</button><button class="emoji-button" data-emoji="&#x1f3c0;" title="Basketball">&#x1f3c0;</button><button class="emoji-button" data-emoji="" title="No emoji" aria-label="Remove emoji"><svg style="height:14px;width:14px"><use href="#i-close"/></svg></button></div></div></div>
+   <div class="field"><span class="field-label">Banner style</span><div class="style-grid" role="group" aria-label="Banner styles"><button class="style-btn active" data-style="team"><span class="style-sample team">Aa</span>Team</button><button class="style-btn" data-style="black"><span class="style-sample black">Aa</span>Black</button><button class="style-btn" data-style="white"><span class="style-sample white">Aa</span>White</button><button class="style-btn" data-style="outline"><span class="style-sample outline">Aa</span>No box</button></div></div>
+   <div class="field"><label class="check-label"><input type="checkbox" id="accentLast">Highlight the last line</label><div class="accent-controls" id="accentControls" hidden><div class="color-control"><input type="color" id="accentColor" aria-label="Accent color"><input type="text" id="accentHex" class="hex-input" maxlength="7" aria-label="Accent hex color" spellcheck="false"></div><div class="select-wrap small-select-wrap"><select id="accentMode" class="small-select" aria-label="Accent applies to"><option value="text">Text color</option><option value="background">Box color</option></select></div></div></div>
+  </section>
+  <section class="section">
+   <div class="section-title"><h2><span class="step-number">03</span>Type &amp; layout</h2></div>
+   <div class="two-col"><div><label class="field-label" for="fontFamily">Typeface</label><div class="select-wrap"><select id="fontFamily"><option value="heavy">Heavy sans</option><option value="condensed">Condensed</option><option value="rounded">Rounded</option><option value="classic">Classic serif</option></select></div></div><div><span class="field-label">Alignment</span><div class="segmented" id="alignment" role="group" aria-label="Text alignment"><button data-align="left" aria-label="Left align" title="Left"><svg><use href="#i-left"/></svg></button><button data-align="center" class="active" aria-label="Center align" title="Center"><svg><use href="#i-center"/></svg></button><button data-align="right" aria-label="Right align" title="Right"><svg><use href="#i-right"/></svg></button></div></div></div>
+   <div class="field"><div class="range-heading"><label class="field-label" for="fontSize">Text size</label><output class="range-value" id="fontSizeValue" for="fontSize">64 px</output></div><input type="range" min="28" max="180" step="1" id="fontSize"></div>
+   <div class="field"><div class="range-heading"><label class="field-label" for="maxWidth">Banner width</label><output class="range-value" id="maxWidthValue" for="maxWidth">86%</output></div><input type="range" min="30" max="96" step="1" id="maxWidth"></div>
+   <div class="field"><div class="two-col"><div><div class="color-label">Text</div><div class="color-control"><input type="color" id="textColor" aria-label="Text color"><input type="text" id="textHex" class="hex-input" maxlength="7" aria-label="Text hex color" spellcheck="false"></div></div><div><div class="color-label">Box</div><div class="color-control"><input type="color" id="boxColor" aria-label="Box color"><input type="text" id="boxHex" class="hex-input" maxlength="7" aria-label="Box hex color" spellcheck="false"></div></div></div></div>
+   <div class="field"><label class="field-label" for="boxShape">Background shape</label><div class="select-wrap"><select id="boxShape"><option value="lines">Fit each line / Instagram style</option><option value="block">One solid rectangle</option><option value="none">Text only / no background</option></select></div></div>
+   <details class="field" id="fineTune"><summary class="detail-toggle">Fine-tune the look</summary>
+    <div class="field"><div class="range-heading"><label class="field-label" for="padding">Box padding</label><output class="range-value" id="paddingValue">16 px</output></div><input type="range" id="padding" min="0" max="46" step="1"></div>
+    <div class="field"><div class="range-heading"><label class="field-label" for="radius">Roundness</label><output class="range-value" id="radiusValue">12 px</output></div><input type="range" id="radius" min="0" max="60" step="1"></div>
+    <div class="field"><div class="range-heading"><label class="field-label" for="lineGap">Space between lines</label><output class="range-value" id="lineGapValue">-2 px</output></div><input type="range" id="lineGap" min="-12" max="35" step="1"></div>
+    <div class="field"><div class="range-heading"><label class="field-label" for="boxOpacity">Box opacity</label><output class="range-value" id="boxOpacityValue">100%</output></div><input type="range" id="boxOpacity" min="0" max="100" step="1"></div>
+    <div class="field"><div class="range-heading"><label class="field-label" for="emojiSize">Emoji size</label><output class="range-value" id="emojiSizeValue">104 px</output></div><input type="range" id="emojiSize" min="42" max="240" step="1"></div>
+    <div class="field row wrap"><label class="check-label"><input type="checkbox" id="shadow">Soft shadow</label><label class="check-label"><input type="checkbox" id="stroke">Text outline</label></div>
+   </details>
+  </section>
+  <section class="section">
+   <div class="section-title"><h2><span class="step-number">04</span>Find your spot</h2><span class="section-tag">OR DRAG IT</span></div>
+   <div class="position-buttons"><button class="btn" data-position="top">Upper third</button><button class="btn" data-position="middle">Center</button><button class="btn" data-position="lower">Lower third</button></div>
+   <div class="field"><div class="range-heading"><label class="field-label" for="posX">Horizontal position</label><output class="range-value muted" id="posXValue">50%</output></div><input type="range" id="posX" min="0" max="100" step=".1"></div>
+   <div class="field"><div class="range-heading"><label class="field-label" for="posY">Vertical position</label><output class="range-value muted" id="posYValue">55%</output></div><input type="range" id="posY" min="0" max="100" step=".1"></div>
+  </section>
+ </aside>
+ <section class="stage-panel" aria-label="Live overlay preview">
+  <div class="stage-toolbar"><div class="stage-label"><span class="live-dot"></span>LIVE PREVIEW</div><div class="stage-tools"><button class="btn ghost tool-toggle" id="brandingShortcut" title="NBC and sponsor logo controls" aria-label="Open branding and sponsor logo controls"><svg><use href="#i-image"/></svg><span class="tool-text">Logos</span></button><button class="btn ghost tool-toggle" id="toggleGuides" aria-pressed="false" title="Composition guide (not exported)"><svg><use href="#i-grid"/></svg><span class="tool-text">Guides</span></button><button class="btn ghost tool-toggle active" id="toggleHandles" aria-pressed="true" title="Show selection handles (not exported)"><svg><use href="#i-select"/></svg><span class="tool-text">Handles</span></button></div></div>
+  <div class="stage-body"><div class="artboard-wrap"><div class="artboard" id="artboard">
+   <canvas id="preview" width="1080" height="1920" tabindex="0" aria-label="1080 by 1920 overlay preview. Drag text to move it, use arrow keys to nudge it, or use position sliders."></canvas>
+   <div class="safe-guide" id="safeGuide" hidden><span>COMPOSITION GUIDE</span></div><div class="center-guide" id="centerGuide" hidden></div>
+   <div class="selection-box" id="selectionBox"><span class="selection-tag" id="selectionTag">TEXT 01</span><button class="resize-handle" id="resizeHandle" aria-label="Drag to resize text" tabindex="-1"></button></div>
+   <div class="canvas-empty" id="canvasEmpty" hidden><svg><use href="#i-plus"/></svg><div>Your next headline starts here.<br>Type in the editor to begin.</div></div>
+   <div class="loading-overlay" id="loadingOverlay" hidden>Loading reference...</div>
+  </div><div class="canvas-caption"><span><b>1080 &times; 1920</b> &nbsp; / &nbsp; 9:16</span><span id="zoomLabel">PREVIEW</span></div></div></div>
+  <div class="video-transport" id="videoTransport" hidden><div class="transport-top"><button class="btn ghost icon-btn" id="playPause" aria-label="Play video"><svg><use href="#i-play"/></svg></button><button class="btn ghost icon-btn" id="previewMute" aria-label="Mute preview"><svg><use href="#i-sound"/></svg></button><span class="transport-label">PREVIEW</span><span class="timecode" id="videoTime">0:00.0 / 0:00.0</span></div><input type="range" id="videoSeek" min="0" max="1" step="0.01" value="0" aria-label="Video playhead"></div>
+  <div class="stage-bottom"><div class="preview-badge" id="previewBadge"><i></i>Checkerboard = transparent. Not exported.</div><div class="drag-hint">Drag to position &nbsp;&middot;&nbsp; Corner handle to resize<br class="desktop-only"><span class="desktop-only"> <kbd>&larr;</kbd> <kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&rarr;</kbd> to nudge &nbsp;&middot;&nbsp; <kbd>Shift</kbd> for 10 px</span></div></div>
+ </section>
+ <aside class="panel right-panel" aria-label="Video, export, layers, and reference image">
+    <section class="section branding-section" id="brandingSection">
+   <div class="section-title"><h2>Branding &amp; sponsor</h2><span class="section-tag bug-tag">ON AIR</span></div>
+   <p class="help bug-intro">Your station bug, plus a separate sponsor directly below it. Included in MP4 and PNG exports.</p>
+   <div class="bug-card">
+    <div class="row between"><label class="check-label"><input type="checkbox" id="bugNBCEnabled" checked><strong>NBC Sports Philadelphia</strong></label></div>
+    <div class="bug-image-well"><img id="bugNBCThumb" alt="NBC Sports Philadelphia logo"></div>
+    <div class="row between"><span class="bug-file" id="bugNBCName">Included logo</span><button class="btn ghost tiny-btn" id="replaceNBCBug" type="button">Replace</button></div>
+    <button class="btn ghost tiny-btn" id="restoreNBCBug" type="button" hidden>Restore supplied NBC logo</button>
+    <div class="field"><div class="range-heading"><label class="field-label" for="bugNBCWidth">NBC logo width</label><output class="range-value" id="bugNBCWidthValue">230 px</output></div><input type="range" id="bugNBCWidth" min="80" max="480" step="1" value="230"></div>
+   </div>
+   <div class="bug-connector" aria-hidden="true"><span></span>SPONSOR BELOW<span></span></div>
+   <div class="bug-card" id="sponsorCard">
+    <div class="row between"><label class="check-label"><input type="checkbox" id="bugSponsorEnabled" disabled><strong>Sponsor logo</strong></label><button class="btn ghost tiny-btn" id="removeSponsorBug" type="button" hidden>Remove</button></div>
+    <button class="reference-drop bug-upload" id="uploadSponsorBug" type="button"><svg><use href="#i-image"/></svg><strong>Add sponsor logo</strong><span>Drop or choose a PNG, JPG or WebP</span></button>
+    <div id="sponsorPreviewWrap" hidden><button class="bug-image-well sponsor-well" id="replaceSponsorBug" type="button" title="Replace sponsor logo"><img id="bugSponsorThumb" alt="Uploaded sponsor logo"></button><div class="row between"><span class="bug-file" id="bugSponsorName"></span><span class="section-tag">CLICK TO REPLACE</span></div></div>
+    <label class="check-label bug-white-label"><input type="checkbox" id="bugSponsorWhite">White background behind sponsor</label>
+    <p class="help">A white card under the sponsor only. No card is added behind the NBC logo.</p>
+    <details class="field" id="sponsorSizing"><summary class="detail-toggle">Sponsor size &amp; white card</summary>
+     <div class="field"><div class="range-heading"><label class="field-label" for="bugSponsorWidth">Sponsor width</label><output class="range-value" id="bugSponsorWidthValue">252 px</output></div><input type="range" id="bugSponsorWidth" min="80" max="600" step="1" value="252"></div>
+     <div id="sponsorWhiteControls" hidden>
+      <div class="field"><div class="range-heading"><label class="field-label" for="bugSponsorPadding">White card padding</label><output class="range-value" id="bugSponsorPaddingValue">12 px</output></div><input type="range" id="bugSponsorPadding" min="0" max="48" step="1" value="12"></div>
+      <div class="field"><div class="range-heading"><label class="field-label" for="bugSponsorRadius">Corner roundness</label><output class="range-value" id="bugSponsorRadiusValue">12 px</output></div><input type="range" id="bugSponsorRadius" min="0" max="48" step="1" value="12"></div>
+     </div>
+    </details>
+   </div>
+   <div class="field"><div class="range-heading"><label class="field-label" for="bugGap">Space between logos</label><output class="range-value" id="bugGapValue">16 px</output></div><input type="range" id="bugGap" min="0" max="100" step="1" value="16"></div>
+   <div class="row bug-position-row"><button class="btn" id="bugTopLeft" type="button">Upper left</button><button class="btn" id="bugTopRight" type="button">Upper right</button></div>
+   <button class="btn subtle-btn wide-btn" id="selectBugStack" type="button"><svg><use href="#i-select"/></svg>Select &amp; move logo stack</button>
+   <details class="field" id="bugPositionDetails"><summary class="detail-toggle">Fine-tune position</summary>
+    <div class="field"><div class="range-heading"><label class="field-label" for="bugPosX">Horizontal center</label><output class="range-value" id="bugPosXValue">82.4%</output></div><input type="range" id="bugPosX" min="0" max="100" step=".1" value="82.4"></div>
+    <div class="field"><div class="range-heading"><label class="field-label" for="bugPosY">Distance from top</label><output class="range-value" id="bugPosYValue">12.8%</output></div><input type="range" id="bugPosY" min="0" max="100" step=".1" value="12.8"></div>
+   </details>
+   <p class="help" id="bugLoadingStatus" role="status" aria-live="polite" hidden>Loading logo...</p>
+   <p class="help bug-footnote">Drag either logo to move the stack. The corner handle scales both. Logos stay on for the whole clip; toggles hide them independently. Save design keeps your uploaded logos.</p>
+  </section>
+
+  <section class="section video-section">
+   <div class="section-title"><h2>Video source</h2><span class="section-tag">LOCAL FILE</span></div>
+   <button class="reference-drop video-drop" id="uploadVideo"><svg><use href="#i-film"/></svg><strong>Add your video</strong><span>MP4, MOV or WebM &middot; stays on your device</span></button>
+   <div id="videoInfo" hidden>
+    <div class="video-file-card"><span class="file-icon"><svg><use href="#i-film"/></svg></span><div><strong id="videoName"></strong><span id="videoMeta"></span></div></div>
+    <div class="row" style="margin-top:10px"><button class="btn ghost" id="replaceVideo">Replace video</button><button class="btn ghost" id="removeVideo">Remove</button></div>
+   </div>
+   <p class="help" id="relinkNote" hidden></p>
+   <div id="videoControls" hidden>
+    <div class="field"><label class="field-label" for="videoFit">Video framing</label><div class="select-wrap"><select id="videoFit"><option value="blur">Blur background / full video</option><option value="cover">Fill 9:16 / crop edges</option><option value="contain">Fit full video / black bars</option></select></div></div>
+    <div id="videoBlurControls" hidden>
+     <p class="help">Your full video stays sharp. A moving, blurred copy fills the vertical background. Automatically selected for new widescreen videos and included in MP4 exports.</p>
+     <div class="field"><div class="range-heading"><label class="field-label" for="videoBlurAmount">Blur strength</label><output class="range-value" id="videoBlurAmountValue">42</output></div><input type="range" id="videoBlurAmount" min="0" max="80" step="1" value="42" aria-describedby="blurHelp"></div>
+     <div class="field"><div class="range-heading"><label class="field-label" for="videoBlurDim">Background darkness</label><output class="range-value" id="videoBlurDimValue">20%</output></div><input type="range" id="videoBlurDim" min="0" max="70" step="1" value="20"></div>
+     <div class="field"><div class="range-heading"><label class="field-label" for="videoForegroundY">Video vertical position</label><output class="range-value" id="videoForegroundYValue">Center</output></div><input type="range" id="videoForegroundY" min="0" max="100" step="1" value="50"></div>
+     <p class="help" id="blurHelp">Move the sharp video up or down to leave space for your headline. Only the background is blurred; your video and text stay sharp.</p>
+     <button class="btn ghost tiny-btn" id="resetVideoBlur" type="button">Reset blur settings</button>
+    </div>
+    <div id="videoCropControls">
+     <div class="field"><div class="range-heading"><label class="field-label" for="videoCropX">Horizontal framing</label><output class="range-value" id="videoCropXValue">50%</output></div><input type="range" id="videoCropX" min="0" max="100" step="1"></div>
+     <div class="field"><div class="range-heading"><label class="field-label" for="videoCropY">Vertical framing</label><output class="range-value" id="videoCropYValue">50%</output></div><input type="range" id="videoCropY" min="0" max="100" step="1"></div>
+    </div>
+    <details class="field" id="trimDetails"><summary class="detail-toggle">Trim your clip <span id="clipDurationLabel"></span></summary>
+     <div class="two-col field"><div><label class="field-label" for="trimStart">In (m:ss.s)</label><input type="text" id="trimStart" value="0:00.0" inputmode="decimal" spellcheck="false"></div><div><label class="field-label" for="trimEnd">Out (m:ss.s)</label><input type="text" id="trimEnd" value="0:00.0" inputmode="decimal" spellcheck="false"></div></div>
+     <div class="row" style="margin-top:8px"><button class="btn ghost tiny-btn" id="markIn">Set in here</button><button class="btn ghost tiny-btn" id="markOut">Set out here</button><button class="btn ghost tiny-btn" id="resetTrim">Full clip</button></div>
+     <p class="help">Use the playhead below the preview. Times refer to the original video. This is a real-time export, not a frame-accurate editing timeline.</p>
+    </details>
+    <div class="field"><label class="check-label"><input type="checkbox" id="videoAudio" checked>Include original video audio</label><p class="help">Preview mute does not mute the export.</p></div>
+   </div>
+  </section>
+
+  <section class="section">
+   <div class="section-title"><h2>Ready for the feed</h2><svg style="color:var(--lime);width:16px"><use href="#i-download"/></svg></div>
+   <div class="export-dimensions"><div class="ratio-symbol">9:16</div><div><div class="dimension-title">1080 &times; 1920</div><div class="dimension-sub">MP4 video + transparent PNG</div></div></div>
+   <div class="field"><label class="field-label" for="exportBackground">PNG background</label><div class="select-wrap"><select id="exportBackground"><option value="transparent">Transparent / overlay only</option><option value="solid">Solid color</option><option value="photo" id="photoOption" disabled>Include reference photo</option></select></div><div class="background-color-control" id="backgroundColorControl" hidden><div class="color-control"><input type="color" id="backgroundColor" aria-label="Canvas background color"><input type="text" id="backgroundHex" class="hex-input" maxlength="7" aria-label="Canvas background hex color" spellcheck="false"></div></div></div>
+   <div class="field"><label class="field-label" for="fileName">File name</label><input type="text" id="fileName" maxlength="80" spellcheck="false" value="sixers-overlay" aria-describedby="exportDescription"></div>
+   <p class="export-note" id="exportDescription">Just your text and boxes. Drop the PNG above your video in Premiere or any editor.</p>
+   <button class="btn export-btn" id="exportButton"><svg><use href="#i-download"/></svg>Export PNG</button>
+   <div class="video-export-settings"><div class="two-col"><div><label class="field-label" for="videoResolution">MP4 resolution</label><div class="select-wrap"><select id="videoResolution"><option value="1080">1080 x 1920</option><option value="720">720 x 1280</option></select></div></div><div><label class="field-label" for="videoFPS">Target frame rate</label><div class="select-wrap"><select id="videoFPS"><option value="30">30 fps</option><option value="60">60 fps</option></select></div></div></div>
+   <button class="btn primary mp4-export" id="exportVideoButton" disabled><svg><use href="#i-film"/></svg>Export video as MP4</button>
+   <p class="codec-status" id="codecStatus">Checking MP4 recording support...</p><p class="help">MP4 combines video, text, logos and audio. PNG remains a separate overlay. Export plays through in real time; keep this tab visible.</p></div>
+   <p class="privacy-note">No watermark. No account. No upload.</p>
+  </section>
+  <section class="section">
+   <div class="section-title"><h2>Text layers</h2><span class="section-tag" id="layerCount">01 / 10</span></div>
+   <div class="layer-list" id="layerList" aria-label="Layers, topmost first"></div>
+   <div class="layer-actions"><button class="btn ghost" id="duplicateLayer" title="Duplicate selected layer"><svg><use href="#i-copy"/></svg>Duplicate</button><div class="row" style="gap:1px"><button class="btn ghost icon-btn" id="moveLayerUp" aria-label="Bring layer forward" title="Bring forward"><svg><use href="#i-up"/></svg></button><button class="btn ghost icon-btn" id="moveLayerDown" aria-label="Send layer backward" title="Send backward"><svg><use href="#i-down"/></svg></button><button class="btn ghost icon-btn" id="deleteLayer" aria-label="Delete selected layer" title="Delete layer"><svg><use href="#i-trash"/></svg></button></div></div>
+   <button class="btn subtle-btn wide-btn" style="margin-top:11px" id="addLayer"><svg><use href="#i-plus"/></svg>Add text layer</button>
+  </section>
+  <section class="section">
+   <div class="section-title"><h2>Reference photo</h2><span class="section-tag">OPTIONAL</span></div>
+   <button class="reference-drop" id="uploadReference"><svg><use href="#i-image"/></svg><strong>Add a frame from your video</strong><span>Choose a photo, paste, or drop it here</span></button>
+   <div class="reference-info" id="referenceInfo" hidden><img id="referenceThumb" alt="Reference thumbnail"><div class="reference-info-text"><div class="reference-name" id="referenceName"></div><div class="reference-status" id="referenceStatus">Preview only</div></div><button class="btn ghost icon-btn" id="removeReference" aria-label="Remove reference photo" title="Remove reference"><svg style="width:14px"><use href="#i-close"/></svg></button></div>
+   <div class="reference-controls" id="referenceControls" hidden><label class="check-label"><input type="checkbox" id="showReference" checked>Show photo in preview</label><div class="field"><div class="range-heading"><label class="field-label" for="referenceDim">Photo dimming</label><output class="range-value muted" id="referenceDimValue">0%</output></div><input type="range" id="referenceDim" min="0" max="75" step="1"></div><p class="help">Photos center-crop to fill 9:16. Export stays transparent unless you choose to include the photo.</p></div>
+  </section>
+  <section class="section">
+   <div class="local-note"><svg><use href="#i-lock"/></svg><div><strong id="autosaveStatus"><span class="autosave-dot"></span>Saved on this browser</strong><br>Your media stays on your device.<br>Save design keeps text, logos, settings and photos. Reopen your video separately.</div></div>
+   <div class="row between" style="margin-top:14px"><button class="btn ghost" id="helpButton" style="padding-left:0;font-size:10px"><svg style="width:14px"><use href="#i-help"/></svg>How it works</button><button class="btn ghost" id="resetButton" style="font-size:10px;color:var(--muted)">Reset</button></div>
+   <div class="footer-brand">MADE FOR THE MOMENT.</div>
+  </section>
+ </aside>
+</main>
+<video id="sourceVideo" class="media-source" playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<input type="file" id="videoFile" accept="video/*,.mp4,.mov,.m4v,.webm" hidden>
+<input type="file" id="referenceFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+<input type="file" id="nbcBugFile" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden>
+<input type="file" id="sponsorBugFile" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden>
+<input type="file" id="designFile" accept=".json,application/json" hidden>
+<dialog id="videoExportDialog" aria-labelledby="videoExportTitle"><div class="export-kicker">SIDELINE / MP4 EXPORT</div><h2 id="videoExportTitle">Creating your MP4</h2><p class="export-summary" id="videoExportDetail"></p><div class="export-visual"><canvas id="videoExportCanvas" width="1080" height="1920" aria-label="Rendered video export preview"></canvas><video id="exportResultVideo" playsinline controls preload="metadata" hidden></video></div><progress class="export-progress" id="videoProgress" value="0" max="1" aria-label="Video export progress"></progress><div class="export-status-row" role="status" aria-live="polite"><span id="videoElapsed"></span><span id="videoPercent">0%</span></div><p class="export-warning" id="videoExportWarning"></p><div class="export-actions"><button class="btn" id="cancelVideoExport">Cancel export</button><button class="btn" id="closeVideoExport" hidden>Back to editor</button><a class="btn primary" id="saveVideoAgain" download hidden><svg><use href="#i-download"/></svg>Save MP4</a></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="helpDialog"><h2>Your video. Your headline. Your team.</h2><p><strong>For video:</strong> click <strong>Add video</strong>, position your text and press <strong>Export MP4</strong>. New widescreen videos automatically use <strong>Blur background / full video</strong>: the full picture stays sharp over a moving, blurred copy. Adjust blur strength, background darkness and video vertical position in the Video source panel. The blur is included in the exported MP4, not just the preview. Use Fill to crop to 9:16, or Fit to show the full picture with black bars. The default output is 1080 x 1920. Original file audio is included unless you turn it off. Preview mute never changes export audio.</p><p>Exports run in real time using native browser recording. Keep this tab visible and your device awake. Long clips, high-resolution sources and 60 fps can strain slower devices; use 720p / 30 fps as needed. Start and end points are approximate, not frame-accurate. The export panel shows your browser's MP4/audio support. AAC is preferred; a clearly labeled Opus fallback is available when necessary. No WebM is renamed as MP4.</p><p><strong>Branding &amp; sponsor:</strong> your supplied NBC Sports Philadelphia logo is built in. Switch it on or off in the Branding &amp; sponsor panel. Add a separate sponsor PNG, JPG or WebP; it is centered directly beneath the NBC logo. Enable <strong>White background behind sponsor</strong> to add a white card, then adjust its padding and corner roundness. This does not remove an existing background from a logo file. Use a transparent PNG for the cleanest edges. Drag either logo to move the stack; use the corner handle to scale both, or use separate width sliders. Logo proportions are preserved. Branding stays on for the entire clip unless switched off. Both MP4 and PNG exports contain visible logos.</p><p><strong>Text timing:</strong> select a layer and uncheck Show for the entire clip. Times use the original video's clock. PNG exports ignore timing. Video files are not embedded in saved designs; reopen the same file after loading a design to restore its trim.</p><ol><li>Choose Sixers, Flyers, Eagles, or Phillies. The selected layer takes that team's palette.</li><li>Type your headline. Use Enter for line breaks, choose a banner style, and add an optional emoji. Fonts use the typefaces available on your device.</li><li>Drag your banner in the preview. Resize with the corner handle or text-size slider. Add more text layers for separate callouts.</li><li>Keep <strong>Transparent / overlay only</strong> selected and export a full-size <strong>1080 &times; 1920 PNG</strong>. Checkerboards, guides, and selection handles never appear in the file.</li></ol><p>Add a reference photo to line things up. It is only a preview unless you select <strong>Include reference photo</strong>. Local autosave stores the text, logos and settings; <strong>Save design</strong> also keeps your logos and reference image in an editable JSON file.</p><p><code>Ctrl/Cmd + Z</code> undo &nbsp; <code>Ctrl/Cmd + Shift + Z</code> redo<br><code>Arrow keys</code> move 1 px &nbsp; <code>Shift + arrows</code> move 10 px<br><code>Delete</code> remove selected layer &nbsp; <code>Ctrl/Cmd + D</code> duplicate</p><p>Color presets are editable, team-inspired palettes. This editor is not affiliated with Instagram or the teams.</p><div class="dialog-foot"><button class="btn primary" id="closeHelp">Start creating</button></div></dialog>
+<dialog id="resetDialog"><h2>Start a fresh design?</h2><p>This clears your layers, uploaded logos, reference photo and video selection. The included NBC logo is restored. Save your design first to keep an editable copy.</p><div class="dialog-foot" style="gap:8px"><button class="btn" id="cancelReset">Keep editing</button><button class="btn primary" id="confirmReset">Reset design</button></div></dialog>
+<script>
+'use strict';
+(async () => {
+  // Everything is rendered locally. No network requests, third-party scripts, or fonts.
+  // Video export uses native MediaRecorder and Web Audio; PNG and MP4 stay independent.
+  const WIDTH = 1080, HEIGHT = 1920, MAX_LAYERS = 10;
+  const BUILTIN_NBC = 'nbc-sports-philadelphia';
+  const NBC_LOGO_DATA = 'data:image/png;base64,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';
+  const bugAssets=new Map();
+  let bugAssetVersion=0,brandSelected=false,bugLoading=0,restoredBugAssets=[];
+  const bugLoadTokens={nbc:0,sponsor:0};
+  const STORE_KEY = 'sideline-philly-overlay-v1';
+  const $ = id => document.getElementById(id);
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const teams = {
+    sixers: {name:'Sixers', primary:'#006BB6', secondary:'#ED174C', dark:'#002B5C'},
+    flyers: {name:'Flyers', primary:'#F74902', secondary:'#000000', dark:'#111111'},
+    eagles: {name:'Eagles', primary:'#004C54', secondary:'#A5ACAF', dark:'#000000'},
+    phillies: {name:'Phillies', primary:'#E81828', secondary:'#002D72', dark:'#002D72'}
+  };
+  const fonts = {
+    heavy: {family:'"Arial Black", "Arial", "Helvetica Neue", sans-serif', weight:900},
+    condensed: {family:'Impact, "Arial Narrow", "Franklin Gothic Medium", "Arial Black", sans-serif', weight:900},
+    rounded: {family:'"Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif', weight:900},
+    classic: {family:'Georgia, "Times New Roman", serif', weight:700}
+  };
+  const emojiFont = '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+  const segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter(undefined, {granularity:'grapheme'}) : null;
+  const characters = text => segmenter ? Array.from(segmenter.segment(text), x => x.segment) : Array.from(text);
+  const uid = () => 'layer-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,8);
+  function newLayer(team='sixers', text='SIXERS GAME\nHIGHLIGHTS') {
+    return {id:uid(), text, team, visible:true, x:540, y:1056, font:'heavy', fontSize:80,
+      maxWidth:86, align:'center', uppercase:true, style:'team', textColor:'#FFFFFF',
+      boxColor:teams[team].primary, boxShape:'lines', padding:12, radius:12, lineGap:-2,
+      boxOpacity:100, shadow:false, stroke:false, accentLast:false,
+      accentColor:teams[team].secondary, accentMode:'text', timed:false, startTime:0, endTime:null, emoji:'\uD83C\uDFC0', emojiSize:104};
+  }
+  function defaultState() {
+    const layer = newLayer();
+    return {team:'sixers', layers:[layer], selectedId:layer.id, guides:false, handles:true, video:videoDefaults(), branding:brandingDefaults(),
+      background:{mode:'transparent', color:'#121418', dim:0, showReference:true}, fileName:'sixers-overlay'};
+  }
+  function validColor(value, fallback='#FFFFFF') {
+    return typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value) ? value.toUpperCase() : fallback;
+  }
+  function cleanState(raw) {
+    if (!raw || typeof raw !== 'object' || !Array.isArray(raw.layers) || !raw.layers.length) throw new Error('This file does not contain a Sideline design.');
+    const base = defaultState();
+    base.team = Object.hasOwn(teams,raw.team) ? raw.team : 'sixers';
+    const number = (v, lo, hi, fallback) => typeof v === 'number' && Number.isFinite(v) ? clamp(v,lo,hi) : fallback;
+    const choice = (v, options, fallback) => options.includes(v) ? v : fallback;
+    const seen = new Set();
+    base.layers = raw.layers.slice(0,MAX_LAYERS).map(item => {
+      if (!item || typeof item !== 'object') throw new Error('This design contains an invalid layer.');
+      const l = newLayer(base.team,'');
+      l.id = typeof item.id==='string' && item.id.length<100 && !seen.has(item.id) ? item.id : uid(); seen.add(l.id);
+      l.text = typeof item.text==='string' ? item.text.slice(0,420) : '';
+      l.team = Object.hasOwn(teams,item.team) ? item.team : base.team;
+      l.emoji = typeof item.emoji==='string' ? item.emoji.slice(0,24) : '';
+      l.font = choice(item.font,Object.keys(fonts),'heavy');
+      l.align = choice(item.align,['left','center','right'],'center');
+      l.style = choice(item.style,['team','black','white','outline','custom'],'team');
+      l.boxShape = choice(item.boxShape,['lines','block','none'],'lines');
+      l.accentMode = choice(item.accentMode,['text','background'],'text');
+      for (const key of ['visible','uppercase','shadow','stroke','accentLast']) if (typeof item[key]==='boolean') l[key]=item[key];
+      for (const [key,lo,hi] of [['x',0,WIDTH],['y',0,HEIGHT],['fontSize',28,180],['maxWidth',30,96],['padding',0,46],['radius',0,60],['lineGap',-12,35],['boxOpacity',0,100],['emojiSize',42,240]]) l[key]=number(item[key],lo,hi,l[key]);
+      l.timed=item.timed===true;l.startTime=number(item.startTime,0,86400,0);
+      l.endTime=item.endTime==null?null:number(item.endTime,l.startTime+.001,86400,null);
+      for (const key of ['textColor','boxColor','accentColor']) l[key]=validColor(item[key],l[key]);
+      return l;
+    });
+    base.selectedId = base.layers.some(l=>l.id===raw.selectedId) ? raw.selectedId : base.layers[0].id;
+    base.guides = !!raw.guides;
+    base.handles = raw.handles !== false;
+    base.fileName = typeof raw.fileName==='string' ? raw.fileName.slice(0,80) : base.fileName;
+    if (raw.background && typeof raw.background==='object') {
+      base.background.mode=choice(raw.background.mode,['transparent','solid','photo'],'transparent');
+      base.background.color=validColor(raw.background.color,'#121418');
+      base.background.dim=number(raw.background.dim,0,75,0);
+      base.background.showReference=raw.background.showReference!==false;
+    }
+    if(raw.video&&typeof raw.video==='object'){
+      const v=raw.video;
+      base.video.fit=choice(v.fit,['cover','contain','blur'],'cover');
+      base.video.blurAmount=number(v.blurAmount,0,80,42);
+      base.video.blurDim=number(v.blurDim,0,70,20);
+      base.video.foregroundY=number(v.foregroundY,0,100,50);
+      base.video.resolution=choice(v.resolution,['1080','720'],'1080');
+      base.video.fps=v.fps===60?60:30;
+      for(const key of ['cropX','cropY'])base.video[key]=number(v[key],0,100,50);
+      base.video.keepAudio=v.keepAudio!==false;base.video.previewMuted=v.previewMuted===true;
+      base.video.trimStart=number(v.trimStart,0,86400,0);base.video.trimEnd=v.trimEnd==null?null:number(v.trimEnd,0,86400,null);
+      base.video.fileName=typeof v.fileName==='string'?v.fileName.slice(0,250):'';
+      base.video.fileSize=number(v.fileSize,0,1e13,0);base.video.fileModified=number(v.fileModified,0,1e15,0);
+    }
+    base.branding=cleanBranding(raw.branding);
+    return base;
+  }
+  let state = defaultState();
+  let restored = false;
+  try { const stored=localStorage.getItem(STORE_KEY); if(stored){const parsed=JSON.parse(stored);state=cleanState(parsed);restoredBugAssets=parsed.brandingAssets||[];restored=true;} } catch (_) { /* Local files and private windows may block storage. */ }
+  if (state.background.mode==='photo') state.background.mode='transparent';
+  let referenceImage=null, referenceData=null, referenceName='', loadingImage=false;
+  let undoStack=[], redoStack=[], historyKey='', historyTime=0, toastTimer=0, renderFrame=0;
+  let exportBusy=false, imageLoadToken=0;
+  const canvas=$('preview'), ctx=canvas.getContext('2d');
+  const scratch=document.createElement('canvas').getContext('2d');
+  // Isolate each layer so replacing an accent box never erases photos or lower layers.
+  const layerCanvas=document.createElement('canvas');layerCanvas.width=WIDTH;layerCanvas.height=HEIGHT;
+  const layerContext=layerCanvas.getContext('2d');
+  let layouts=new Map();
+  const current = () => state.layers.find(l=>l.id===state.selectedId) || state.layers[0];
+  const fontString = (l,size=l.fontSize) => `${fonts[l.font].weight} ${size}px ${fonts[l.font].family}`;
+  function toast(message,error=false) {
+    const el=$('toast'); el.textContent=message; el.classList.toggle('error',error); el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),error?6000:3200);
+  }
+  function autoSave() {
+    try { localStorage.setItem(STORE_KEY,JSON.stringify({...state,brandingAssets:packBrandAssets()})); $('autosaveStatus').innerHTML='<span class="autosave-dot"></span>Saved on this browser'; }
+    catch (_) { $('autosaveStatus').textContent='Use Save design to keep your work'; }
+  }
+  function remember(key='') {
+    const now=Date.now();
+    if (!key || key!==historyKey || now-historyTime>650) {
+      undoStack.push(JSON.stringify(state)); if(undoStack.length>60)undoStack.shift();
+    }
+    historyKey=key;historyTime=now;redoStack=[];
+  }
+  function change(mutator,key='') {
+    remember(key); mutator(); constrainAll(); syncUI(); render(); autoSave();
+  }
+  function undo() {
+    if(!undoStack.length)return;
+    redoStack.push(JSON.stringify(state));state=cleanState(JSON.parse(undoStack.pop()));historyKey='';
+    if(state.background.mode==='photo'&&!referenceImage)state.background.mode='transparent';
+    constrainAll();syncUI();render();autoSave();
+  }
+  function redo() {
+    if(!redoStack.length)return;
+    undoStack.push(JSON.stringify(state));state=cleanState(JSON.parse(redoStack.pop()));historyKey='';
+    if(state.background.mode==='photo'&&!referenceImage)state.background.mode='transparent';
+    constrainAll();syncUI();render();autoSave();
+  }
+  // Wrapping uses the same font metrics as export, including manual line breaks.
+  function wrapText(text,context,maxWidth) {
+    const rows=[];
+    for(const paragraph of text.split('\n')) {
+      if(!paragraph.trim()){rows.push('');continue;}
+      let row='';
+      for(const word of paragraph.trim().split(/\s+/)) {
+        if(context.measureText(word).width>maxWidth) {
+          if(row){rows.push(row);row='';}
+          let part='';
+          for(const ch of characters(word)) {
+            if(part && context.measureText(part+ch).width>maxWidth){rows.push(part);part=ch;}else part+=ch;
+          }
+          row=part;
+        }else {
+          const candidate=row ? row+' '+word : word;
+          if(row && context.measureText(candidate).width>maxWidth){rows.push(row);row=word;}else row=candidate;
+        }
+      }
+      if(row)rows.push(row);
+    }
+    return rows.length ? rows : [''];
+  }
+  function layoutLayer(layer,context=scratch) {
+    const text=(layer.uppercase?layer.text.toUpperCase():layer.text).replace(/\r/g,'');
+    const hasText=!!text.trim(), hasEmoji=!!layer.emoji.trim();
+    let size=layer.fontSize, rows=[], metrics=[], lineHeight=0, boxHeight=0, textHeight=0;
+    let px=0,py=0,width=0,height=0,emojiHeight=0,emojiSize=layer.emojiSize;
+    const maxWidth=WIDTH*layer.maxWidth/100;
+    // Auto-fit unusually tall text instead of silently cropping its last lines.
+    for(let attempt=0;attempt<85;attempt++) {
+      context.font=fontString(layer,size);
+      const scale=size/layer.fontSize;
+      px=(layer.padding+10)*scale;py=layer.padding*scale;
+      rows=hasText?wrapText(text,context,Math.max(25,maxWidth-px*2)):[];
+      metrics=rows.map(t=>context.measureText(t));
+      lineHeight=size*1.08;boxHeight=lineHeight+py*2;
+      const gap=Math.max(-boxHeight*.20,layer.lineGap*scale);
+      textHeight=rows.length?rows.length*boxHeight+(rows.length-1)*gap:0;
+      emojiSize=layer.emojiSize*scale;emojiHeight=hasEmoji?emojiSize*1.16+(hasText?size*.15:0):0;
+      height=textHeight+emojiHeight;
+      if(height<=HEIGHT-64 || size<=2)break;
+      size=Math.max(2,size*.94);
+    }
+    context.font=fontString(layer,size);
+    const gap=Math.max(-boxHeight*.20,layer.lineGap*(size/layer.fontSize));
+    width=Math.max(0,...metrics.map(m=>m.width+px*2));
+    let emojiWidth=0;
+    if(hasEmoji){context.font=`${emojiSize}px ${emojiFont}`;emojiWidth=context.measureText(layer.emoji).width;if(emojiWidth>maxWidth){emojiSize*=maxWidth/emojiWidth;emojiWidth=maxWidth;}}
+    width=Math.max(width,emojiWidth);height=hasText||hasEmoji?height:0;
+    const left=layer.x-width/2,top=layer.y-height/2;
+    const textTop=top+emojiHeight;
+    const rowBoxes=rows.map((text,i)=>{
+      const rowWidth=metrics[i].width+px*2;
+      let x=left+(width-rowWidth)/2;
+      if(layer.align==='left')x=left;
+      if(layer.align==='right')x=left+width-rowWidth;
+      return {text,x,y:textTop+i*(boxHeight+gap),width:rowWidth,height:boxHeight,metrics:metrics[i]};
+    });
+    return {left,top,width,height,size,rows:rowBoxes,px,py,lineHeight,boxHeight,textTop,textHeight,hasText,hasEmoji,emojiSize,emojiHeight,emojiWidth,autoFit:size<layer.fontSize-.5};
+  }
+  function constrainLayer(l) {
+    const b=layoutLayer(l),pad=16;
+    l.x=clamp(l.x,b.width/2+pad,WIDTH-b.width/2-pad);
+    l.y=clamp(l.y,b.height/2+pad,HEIGHT-b.height/2-pad);
+    if(!Number.isFinite(l.x))l.x=WIDTH/2;
+    if(!Number.isFinite(l.y))l.y=HEIGHT/2;
+  }
+  function constrainAll(){state.layers.forEach(constrainLayer);constrainBranding();}
+  function roundedPath(context,x,y,w,h,r) {
+    r=Math.max(0,Math.min(r,w/2,h/2));context.beginPath();
+    context.moveTo(x+r,y);context.arcTo(x+w,y,x+w,y+h,r);context.arcTo(x+w,y+h,x,y+h,r);
+    context.arcTo(x,y+h,x,y,r);context.arcTo(x,y,x+w,y,r);context.closePath();
+  }
+  function rgba(hex,alpha) { return `rgba(${parseInt(hex.slice(1,3),16)},${parseInt(hex.slice(3,5),16)},${parseInt(hex.slice(5,7),16)},${alpha})`; }
+  function drawShadow(context,enabled){context.shadowColor=enabled?'rgba(0,0,0,.38)':'transparent';context.shadowBlur=enabled?14:0;context.shadowOffsetX=0;context.shadowOffsetY=enabled?6:0;}
+  function drawLayer(context,layer,b) {
+    if(!layer.visible||!b.height)return;
+    context.save();
+    const radius=layer.radius*b.size/layer.fontSize, opacity=layer.boxOpacity/100;
+    if(layer.boxShape!=='none'&&b.hasText&&opacity>0) {
+      drawShadow(context,layer.shadow);
+      if(layer.boxShape==='block') {
+        roundedPath(context,b.left,b.textTop,b.width,b.textHeight,radius);
+        context.fillStyle=rgba(layer.boxColor,opacity);context.fill();
+        if(layer.accentLast&&layer.accentMode==='background'&&b.rows.length){
+          context.save();context.clip();drawShadow(context,false);
+          const row=b.rows[b.rows.length-1];context.fillStyle=rgba(layer.accentColor,opacity);
+          context.clearRect(b.left,row.y,b.width,row.height);
+          context.fillRect(b.left,row.y,b.width,row.height);context.restore();
+        }
+      }else {
+        // One union path avoids darker seams where translucent line boxes overlap.
+        context.beginPath();
+        for(const row of b.rows)if(row.text){
+          const x=row.x,y=row.y,w=row.width,h=row.height,r=Math.max(0,Math.min(radius,w/2,h/2));
+          context.moveTo(x+r,y);context.arcTo(x+w,y,x+w,y+h,r);context.arcTo(x+w,y+h,x,y+h,r);context.arcTo(x,y+h,x,y,r);context.arcTo(x,y,x+w,y,r);context.closePath();
+        }
+        context.fillStyle=rgba(layer.boxColor,opacity);context.fill();
+        if(layer.accentLast&&layer.accentMode==='background'&&b.rows.length){
+          const row=b.rows[b.rows.length-1];drawShadow(context,false);
+          context.save();roundedPath(context,row.x,row.y,row.width,row.height,radius);context.clip();
+          context.clearRect(row.x,row.y,row.width,row.height);
+          context.fillStyle=rgba(layer.accentColor,opacity);context.fillRect(row.x,row.y,row.width,row.height);context.restore();
+        }
+      }
+    }
+    drawShadow(context,false);context.font=fontString(layer,b.size);context.textAlign='left';context.textBaseline='alphabetic';
+    b.rows.forEach((row,index)=>{
+      if(!row.text)return;
+      const measured=context.measureText(row.text);
+      const ascent=measured.actualBoundingBoxAscent || b.size*.76,descent=measured.actualBoundingBoxDescent || 0;
+      const baseline=row.y+b.py+(b.lineHeight-ascent-descent)/2+ascent;
+      const x=row.x+b.px;
+      context.fillStyle=layer.accentLast&&layer.accentMode==='text'&&index===b.rows.length-1?layer.accentColor:layer.textColor;
+      if(layer.stroke){context.strokeStyle='#000000';context.lineWidth=Math.max(2,b.size*.085);context.lineJoin='round';context.strokeText(row.text,x,baseline);}
+      if(layer.shadow&&layer.boxShape==='none')drawShadow(context,true);
+      context.fillText(row.text,x,baseline);drawShadow(context,false);
+    });
+    if(b.hasEmoji){
+      context.font=`${b.emojiSize}px ${emojiFont}`;context.textAlign='center';context.textBaseline='middle';
+      const emojiY=b.top+(b.emojiHeight-(b.hasText?b.size*.15:0))/2;
+      if(layer.shadow)drawShadow(context,true);
+      context.fillStyle=layer.textColor;context.fillText(layer.emoji,layer.x,emojiY,b.emojiWidth+1);
+    }
+    context.restore();
+  }
+  function drawReference(context) {
+    if(!referenceImage)return;
+    const iw=referenceImage.naturalWidth,ih=referenceImage.naturalHeight;
+    const scale=Math.max(WIDTH/iw,HEIGHT/ih),sw=WIDTH/scale,sh=HEIGHT/scale;
+    context.drawImage(referenceImage,(iw-sw)/2,(ih-sh)/2,sw,sh,0,0,WIDTH,HEIGHT);
+    if(state.background.dim>0){context.fillStyle=`rgba(0,0,0,${state.background.dim/100})`;context.fillRect(0,0,WIDTH,HEIGHT);}
+  }
+  function drawScene(context,forExport=false) {
+    context.clearRect(0,0,WIDTH,HEIGHT);
+    if(!forExport&&videoFile&&sourceVideo.readyState>=2)drawVideoBackground(context);
+    else {
+      if(state.background.mode==='solid'){context.fillStyle=state.background.color;context.fillRect(0,0,WIDTH,HEIGHT);}
+      if(referenceImage&&(forExport?state.background.mode==='photo':state.background.showReference))drawReference(context);
+    }
+    const overlay=cachedOverlay(sourceVideo.currentTime||0,forExport||!videoFile);
+    context.drawImage(overlay.canvas,0,0);return overlay.layouts;
+  }
+  function render() {
+    layouts=drawScene(ctx,false);
+    const l=current(),b=brandSelected?brandLayout():layouts.get(l.id),box=$('selectionBox');
+    box.hidden=!state.handles||!b?.height||(!brandSelected&&(!l.visible||(videoFile&&!layerAt(l,sourceVideo.currentTime))));
+    if(!box.hidden){box.style.left=`${b.left/WIDTH*100}%`;box.style.top=`${b.top/HEIGHT*100}%`;box.style.width=`${b.width/WIDTH*100}%`;box.style.height=`${b.height/HEIGHT*100}%`;}
+    $('safeGuide').hidden=!state.guides;
+    const index=state.layers.indexOf(l)+1;
+    $('selectionTag').textContent=brandSelected?'LOGO STACK':`TEXT ${String(index).padStart(2,'0')}${b?.autoFit?' / AUTO-FIT':''}`;
+    $('resizeHandle').setAttribute('aria-label',brandSelected?'Drag to resize both logos':'Drag to resize text');
+    $('canvasEmpty').hidden=!!videoFile||!!brandLayout().height||state.layers.some(layer=>layer.visible&&(layer.text.trim()||layer.emoji.trim()));
+    $('zoomLabel').textContent=`${Math.round(canvas.getBoundingClientRect().width/WIDTH*100)}% VIEW`;
+  }
+  function scheduleRender(){if(renderFrame)return;renderFrame=requestAnimationFrame(()=>{renderFrame=0;render();});}
+  function setValue(id,value){const el=$(id);if(el.value!==String(value))el.value=value;}
+  function icon(name){const el=document.createElementNS('http://www.w3.org/2000/svg','svg');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#i-'+name);el.appendChild(use);return el;}
+  function syncLayers() {
+    const list=$('layerList');list.replaceChildren();
+    state.layers.slice().reverse().forEach(layer=>{
+      const item=document.createElement('div');item.className='layer-item'+(layer.id===state.selectedId?' active':'');
+      const select=document.createElement('button');select.className='layer-choose';select.type='button';
+      select.setAttribute('aria-label','Select '+(layer.text.trim().replace(/\n/g,' ')||'empty text layer'));
+      const thumb=document.createElement('span');thumb.className='layer-thumb';thumb.textContent='T';thumb.style.background=layer.boxShape==='none'?'#424851':layer.boxColor;thumb.style.color=layer.textColor;
+      const text=document.createElement('div');text.style.minWidth='0';
+      const name=document.createElement('div');name.className='layer-name';name.textContent=layer.text.trim().replace(/\n/g,' ')|| (layer.emoji.trim()?'Emoji accent':'Empty text');
+      const detail=document.createElement('div');detail.className='layer-type';detail.textContent=`${teams[layer.team].name} / ${layer.visible?'Text layer':'Hidden'}`;
+      text.append(name,detail);select.append(thumb,text);select.addEventListener('click',()=>selectLayer(layer.id));
+      const visible=document.createElement('button');visible.className='btn ghost layer-visibility';visible.title=layer.visible?'Hide layer':'Show layer';visible.setAttribute('aria-label',visible.title);visible.append(icon(layer.visible?'eye':'eye-off'));
+      visible.addEventListener('click',()=>change(()=>{layer.visible=!layer.visible;}));
+      item.append(select,visible);list.append(item);
+    });
+    $('layerCount').textContent=`${String(state.layers.length).padStart(2,'0')} / ${MAX_LAYERS}`;
+    $('addLayer').disabled=state.layers.length>=MAX_LAYERS;$('duplicateLayer').disabled=state.layers.length>=MAX_LAYERS;
+    const index=state.layers.findIndex(l=>l.id===state.selectedId);
+    $('moveLayerUp').disabled=index===state.layers.length-1;$('moveLayerDown').disabled=index===0;
+  }
+  function syncUI() {
+    const l=current(),team=teams[l.team];state.team=l.team;
+    document.documentElement.style.setProperty('--team',team.primary);
+    setValue('teamSelect',l.team);setValue('headline',l.text);setValue('emoji',l.emoji);
+    $('uppercase').checked=l.uppercase;$('accentLast').checked=l.accentLast;
+    $('accentControls').hidden=!l.accentLast;
+    $('charCount').textContent=l.text.length;
+    $('activeLayerLabel').textContent=`TEXT ${String(state.layers.indexOf(l)+1).padStart(2,'0')}`;
+    document.querySelectorAll('[data-style]').forEach(btn=>{btn.classList.toggle('active',btn.dataset.style===l.style);btn.setAttribute('aria-pressed',String(btn.dataset.style===l.style));});
+    document.querySelectorAll('[data-align]').forEach(btn=>{btn.classList.toggle('active',btn.dataset.align===l.align);btn.setAttribute('aria-pressed',String(btn.dataset.align===l.align));});
+    setValue('fontFamily',l.font);setValue('boxShape',l.boxShape);setValue('accentMode',l.accentMode);
+    const ranges={fontSize:[l.fontSize,' px'],maxWidth:[l.maxWidth,'%'],padding:[l.padding,' px'],radius:[l.radius,' px'],lineGap:[l.lineGap,' px'],boxOpacity:[l.boxOpacity,'%'],emojiSize:[l.emojiSize,' px'],posX:[l.x/WIDTH*100,'%'],posY:[l.y/HEIGHT*100,'%']};
+    for(const [id,[value,unit]] of Object.entries(ranges)){setValue(id,Math.round(value*10)/10);$(id+'Value').textContent=(id.startsWith('pos')?Math.round(value*10)/10:Math.round(value))+unit;}
+    for(const [picker,hex,key] of [['textColor','textHex','textColor'],['boxColor','boxHex','boxColor'],['accentColor','accentHex','accentColor']]){setValue(picker,l[key]);if(document.activeElement!==$(hex))setValue(hex,l[key]);}
+    $('shadow').checked=l.shadow;$('stroke').checked=l.stroke;
+    setValue('fileName',state.fileName);setValue('exportBackground',state.background.mode);
+    setValue('backgroundColor',state.background.color);if(document.activeElement!==$('backgroundHex'))setValue('backgroundHex',state.background.color);
+    $('backgroundColorControl').hidden=state.background.mode!=='solid';
+    $('photoOption').disabled=!referenceImage;
+    $('toggleGuides').classList.toggle('active',state.guides);$('toggleGuides').setAttribute('aria-pressed',String(state.guides));
+    $('toggleHandles').classList.toggle('active',state.handles);$('toggleHandles').setAttribute('aria-pressed',String(state.handles));
+    $('referenceInfo').hidden=!referenceImage;$('referenceControls').hidden=!referenceImage;$('uploadReference').hidden=!!referenceImage;
+    $('referenceName').textContent=referenceName;
+    $('referenceStatus').textContent=state.background.mode==='photo'?'Included in exported PNG':'Preview only / not exported';
+    $('showReference').checked=state.background.showReference;
+    setValue('referenceDim',state.background.dim);$('referenceDimValue').textContent=state.background.dim+'%';
+    const desc=state.background.mode==='transparent'?'Text, boxes and visible logos on transparency. Drop this PNG above your video in Premiere or any editor.':state.background.mode==='solid'?'Text and logos on a solid background. Your PNG will not be transparent.':'Reference photo, text and logos together. Your PNG will not be transparent.';
+    $('exportDescription').textContent=desc;
+    let badge='Checkerboard = transparent. Not exported.';
+    if(referenceImage&&state.background.showReference)badge=state.background.mode==='photo'?'Reference photo will be included in PNG.':'Reference photo is preview only. Not exported.';
+    else if(state.background.mode==='solid')badge='Solid background will be included in PNG.';
+    else if(state.background.mode==='photo')badge='Photo hidden in preview; included in PNG.';
+    $('previewBadge').textContent=badge;
+    $('undoButton').disabled=!undoStack.length;$('redoButton').disabled=!redoStack.length;
+    const palette=$('teamPalette');palette.replaceChildren();
+    for(const color of [...new Set([team.primary,team.secondary,team.dark,'#FFFFFF','#000000'])]){
+      const swatch=document.createElement('button');swatch.className='palette-swatch';swatch.style.background=color;swatch.title=`Set box color to ${color}`;swatch.setAttribute('aria-label',swatch.title);
+      swatch.addEventListener('click',()=>change(()=>{current().boxColor=color;current().style='custom';}));palette.append(swatch);
+    }
+    const label=document.createElement('span');label.className='palette-caption';label.textContent='Click to recolor box';palette.append(label);
+    syncLayers();syncVideoUI();syncBrandUI();
+  }
+  function selectLayer(id){brandSelected=false;state.selectedId=id;state.handles=true;historyKey='';syncUI();render();autoSave();}
+  function applyStyle(layer,style) {
+    const team=teams[layer.team];layer.style=style;layer.shadow=false;layer.stroke=false;layer.boxShape='lines';layer.boxOpacity=100;
+    if(style==='team'){layer.boxColor=team.primary;layer.textColor='#FFFFFF';layer.accentColor=team.secondary;layer.accentLast=false;}
+    if(style==='black'){layer.boxColor='#000000';layer.textColor='#FFFFFF';layer.accentColor=team.primary;layer.accentLast=true;layer.accentMode='text';}
+    if(style==='white'){layer.boxColor='#FFFFFF';layer.textColor='#111111';layer.accentColor=team.primary;layer.accentLast=false;}
+    if(style==='outline'){layer.boxShape='none';layer.textColor='#FFFFFF';layer.stroke=true;layer.shadow=true;layer.accentColor=team.primary;layer.accentLast=false;}
+  }
+  $('teamSelect').addEventListener('change',e=>change(()=>{
+    const layer=current(),oldTeam=layer.team;layer.team=e.target.value;state.team=layer.team;
+    const previousStyle=layer.style==='custom'?'team':layer.style,keepAccent=layer.accentLast;
+    applyStyle(layer,previousStyle);layer.accentLast=keepAccent||previousStyle==='black';
+    if(state.fileName===oldTeam+'-overlay')state.fileName=layer.team+'-overlay';
+  }));
+  $('headline').addEventListener('input',e=>change(()=>{current().text=e.target.value.slice(0,420);},'headline'));
+  $('emoji').addEventListener('input',e=>change(()=>{current().emoji=e.target.value.slice(0,24);},'emoji'));
+  document.querySelectorAll('[data-emoji]').forEach(btn=>btn.addEventListener('click',()=>change(()=>{current().emoji=btn.dataset.emoji;})));
+  document.querySelectorAll('[data-style]').forEach(btn=>btn.addEventListener('click',()=>change(()=>applyStyle(current(),btn.dataset.style))));
+  document.querySelectorAll('[data-align]').forEach(btn=>btn.addEventListener('click',()=>change(()=>{current().align=btn.dataset.align;})));
+  for(const id of ['uppercase','accentLast','shadow','stroke'])$(id).addEventListener('change',e=>change(()=>{current()[id]=e.target.checked;}));
+  for(const [id,key] of [['fontFamily','font'],['boxShape','boxShape'],['accentMode','accentMode']])$(id).addEventListener('change',e=>change(()=>{current()[key]=e.target.value;if(key==='boxShape')current().style='custom';}));
+  for(const id of ['fontSize','maxWidth','padding','radius','lineGap','boxOpacity','emojiSize'])$(id).addEventListener('input',e=>change(()=>{current()[id]=Number(e.target.value);},id));
+  for(const [id,key,dimension] of [['posX','x',WIDTH],['posY','y',HEIGHT]])$(id).addEventListener('input',e=>change(()=>{current()[key]=Number(e.target.value)/100*dimension;},id));
+  function bindColor(picker,hex,getter,setter) {
+    $(picker).addEventListener('input',e=>change(()=>{setter(e.target.value.toUpperCase());setValue(hex,e.target.value.toUpperCase());},picker));
+    $(hex).addEventListener('input',e=>{let value=e.target.value.trim();if(!value.startsWith('#'))value='#'+value;if(/^#[0-9a-f]{6}$/i.test(value))change(()=>setter(value.toUpperCase()),hex);});
+    $(hex).addEventListener('blur',()=>setValue(hex,getter()));
+  }
+  bindColor('textColor','textHex',()=>current().textColor,value=>{current().textColor=value;current().style='custom';});
+  bindColor('boxColor','boxHex',()=>current().boxColor,value=>{current().boxColor=value;current().style='custom';});
+  bindColor('accentColor','accentHex',()=>current().accentColor,value=>{current().accentColor=value;});
+  bindColor('backgroundColor','backgroundHex',()=>state.background.color,value=>{state.background.color=value;});
+  document.querySelectorAll('[data-position]').forEach(btn=>btn.addEventListener('click',()=>change(()=>{current().x=WIDTH/2;current().y={top:HEIGHT*.28,middle:HEIGHT*.5,lower:HEIGHT*.68}[btn.dataset.position];})));
+  $('toggleGuides').addEventListener('click',()=>change(()=>{state.guides=!state.guides;}));
+  $('toggleHandles').addEventListener('click',()=>change(()=>{state.handles=!state.handles;}));
+  $('exportBackground').addEventListener('change',e=>change(()=>{state.background.mode=e.target.value;}));
+  $('fileName').addEventListener('input',e=>{state.fileName=e.target.value.slice(0,80);autoSave();});
+  $('showReference').addEventListener('change',e=>change(()=>{state.background.showReference=e.target.checked;}));
+  $('referenceDim').addEventListener('input',e=>change(()=>{state.background.dim=Number(e.target.value);},'referenceDim'));
+  $('undoButton').addEventListener('click',undo);$('redoButton').addEventListener('click',redo);
+  function addLayer(duplicate=false) {
+    if(state.layers.length>=MAX_LAYERS){toast('You can add up to 10 text layers.',true);return;}
+    change(()=>{
+      brandSelected=false;const original=current();const layer=duplicate?clone(original):newLayer(original.team,'YOUR HEADLINE\nGOES HERE');
+      layer.id=uid();layer.visible=true;
+      if(duplicate){layer.y+=160;}else{layer.emoji='';layer.y=HEIGHT*.72;}
+      state.layers.push(layer);state.selectedId=layer.id;state.handles=true;
+    });
+    $('headline').focus();$('headline').select();
+  }
+  function deleteLayer(){change(()=>{const i=state.layers.findIndex(l=>l.id===state.selectedId);state.layers.splice(i,1);if(!state.layers.length){const layer=newLayer(state.team,'');layer.emoji='';state.layers.push(layer);}state.selectedId=state.layers[Math.min(i,state.layers.length-1)].id;});}
+  $('addLayer').addEventListener('click',()=>addLayer());$('duplicateLayer').addEventListener('click',()=>addLayer(true));$('deleteLayer').addEventListener('click',deleteLayer);
+  function reorder(delta){const i=state.layers.findIndex(l=>l.id===state.selectedId),j=i+delta;if(j<0||j>=state.layers.length)return;change(()=>{[state.layers[i],state.layers[j]]=[state.layers[j],state.layers[i]];});}
+  $('moveLayerUp').addEventListener('click',()=>reorder(1));$('moveLayerDown').addEventListener('click',()=>reorder(-1));
+  // Native MP4 export. No uploads, CDN, FFmpeg download, screen capture, or microphone.
+  // CanvasCaptureMediaStreamTrack provides video; Web Audio supplies the file's audio.
+  // MediaRecorder is real-time. Fail explicitly rather than relabeling WebM as MP4.
+  function videoDefaults(){return {fit:'cover',cropX:50,cropY:50,blurAmount:42,blurDim:20,foregroundY:50,keepAudio:true,resolution:'1080',fps:30,trimStart:0,trimEnd:null,previewMuted:false,fileName:'',fileSize:0,fileModified:0};}
+  const sourceVideo=$('sourceVideo');
+  let videoFile=null,videoURL='',videoLoadId=0,videoLoading=false,previewRAF=0;
+  let audioContext=null,audioSource=null,audioDestination=null,monitorGain=null;
+  let videoJob=null,resultURL='',previewLastPaint=0;
+  const overlayCache=document.createElement('canvas');overlayCache.width=WIDTH;overlayCache.height=HEIGHT;
+  const overlayCtx=overlayCache.getContext('2d');let overlayKey='',overlayLayouts=new Map();
+  function timeText(seconds,precision=1){
+    seconds=Math.max(0,Number(seconds)||0);const factor=10**precision;
+    seconds=Math.round(seconds*factor)/factor;
+    const minutes=Math.floor(seconds/60),rest=(seconds-minutes*60).toFixed(precision);
+    return minutes+':'+rest.padStart(precision?3+precision:2,'0');
+  }
+  function parseTime(text){
+    const parts=String(text).trim().split(':');
+    if(!parts.length||parts.length>3||parts.some(p=>!/^\d+(?:\.\d+)?$/.test(p)))return NaN;
+    if(parts.length>1&&parts.slice(1).some(p=>Number(p)>=60))return NaN;
+    return parts.reduce((total,p)=>total*60+Number(p),0);
+  }
+  function clipBounds(){
+    const duration=Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0;
+    return {start:clamp(state.video.trimStart||0,0,Math.max(0,duration-.05)),end:clamp(state.video.trimEnd??duration,0,duration),duration};
+  }
+  function layerAt(layer,time){return layer.visible&&(!layer.timed||(time>=(layer.startTime||0)&&time<(layer.endTime??Infinity)));}
+  function cachedOverlay(time,ignoreTiming=false){
+    const active=state.layers.map(l=>ignoreTiming?l.visible:layerAt(l,time));
+    const key=JSON.stringify(state.layers)+'|'+active.join(',')+'|'+JSON.stringify(state.branding)+'|'+bugAssetVersion;
+    if(key!==overlayKey){
+      overlayKey=key;overlayCtx.clearRect(0,0,WIDTH,HEIGHT);overlayLayouts=new Map();
+      state.layers.forEach((layer,index)=>{
+        const b=layoutLayer(layer,overlayCtx);overlayLayouts.set(layer.id,b);
+        if(!active[index]||!b.height)return;
+        layerContext.clearRect(0,0,WIDTH,HEIGHT);drawLayer(layerContext,layer,b);overlayCtx.drawImage(layerCanvas,0,0);
+      });
+      drawBranding(overlayCtx);
+    }
+    return {canvas:overlayCache,layouts:overlayLayouts};
+  }
+  // Use a modest-resolution background buffer; the foreground is always drawn
+  // directly from the full-resolution video. Both preview and MP4 use this path.
+  // A real pixel test avoids depending on Canvas 2D filters being implemented.
+  function supportsCanvasBlur(){
+    try{
+      const test=document.createElement('canvas');test.width=9;test.height=9;
+      const tc=test.getContext('2d',{willReadFrequently:true});
+      if(!('filter' in tc))return false;
+      tc.filter='blur(2px)';tc.fillStyle='#FFFFFF';tc.fillRect(4,4,1,1);
+      return tc.getImageData(4,2,1,1).data[3]>0;
+    }catch(_){return false;}
+  }
+  const nativeCanvasBlur=supportsCanvasBlur();
+  const blurInput=document.createElement('canvas');
+  const blurInputCtx=blurInput.getContext('2d',{willReadFrequently:!nativeCanvasBlur});
+  const blurOutput=document.createElement('canvas');blurOutput.width=270;blurOutput.height=480;
+  const blurOutputCtx=blurOutput.getContext('2d');
+  let blurFrameKey='',blurScratch=null;
+  function paintVideoCover(context,w,h,cropX=50,cropY=50){
+    const iw=sourceVideo.videoWidth,ih=sourceVideo.videoHeight;
+    const scale=Math.max(w/iw,h/ih),sw=w/scale,sh=h/scale;
+    const sx=Math.max(0,iw-sw)*cropX/100,sy=Math.max(0,ih-sh)*cropY/100;
+    context.drawImage(sourceVideo,sx,sy,sw,sh,0,0,w,h);
+  }
+  // Separable box blur, with clamped edges. Three passes approximate a Gaussian.
+  // This local fallback keeps the exported effect working without Canvas filters.
+  // Processing is restricted to the small, opaque background, never the text.
+  function boxBlurPass(src,dst,w,h,radius,horizontal){
+    const lines=horizontal?h:w,length=horizontal?w:h;
+    const step=horizontal?4:w*4,divisor=radius*2+1;
+    for(let line=0;line<lines;line++){
+      const base=horizontal?line*w*4:line*4;
+      let red=0,green=0,blue=0;
+      for(let k=-radius;k<=radius;k++){
+        const p=base+clamp(k,0,length-1)*step;
+        red+=src[p];green+=src[p+1];blue+=src[p+2];
+      }
+      for(let i=0;i<length;i++){
+        const p=base+i*step;
+        dst[p]=red/divisor;dst[p+1]=green/divisor;dst[p+2]=blue/divisor;dst[p+3]=255;
+        const remove=base+clamp(i-radius,0,length-1)*step;
+        const add=base+clamp(i+radius+1,0,length-1)*step;
+        red+=src[add]-src[remove];green+=src[add+1]-src[remove+1];blue+=src[add+2]-src[remove+2];
+      }
+    }
+  }
+  function softwareBackgroundBlur(context,w,h,sigma){
+    if(sigma<.1)return;
+    const image=context.getImageData(0,0,w,h),data=image.data;
+    if(!blurScratch||blurScratch.length!==data.length)blurScratch=new Uint8ClampedArray(data.length);
+    // Choose three odd box widths whose combined variance matches sigma.
+    const ideal=Math.sqrt(4*sigma*sigma+1);
+    let lower=Math.floor(ideal);if(lower%2===0)lower--;lower=Math.max(1,lower);
+    const upper=lower+2;
+    const count=clamp(Math.round((12*sigma*sigma-3*lower*lower-12*lower-9)/(-4*lower-4)),0,3);
+    for(let pass=0;pass<3;pass++){
+      const radius=((pass<count?lower:upper)-1)/2;
+      if(!radius)continue;
+      boxBlurPass(data,blurScratch,w,h,radius,true);
+      boxBlurPass(blurScratch,data,w,h,radius,false);
+    }
+    context.putImageData(image,0,0);
+  }
+  function drawBlurredVideo(context,w,h,settings){
+    const amount=clamp(Number(settings.blurAmount??42),0,80);
+    if(amount===0){paintVideoCover(context,w,h,settings.cropX,settings.cropY);return;}
+    const bw=blurOutput.width,bh=blurOutput.height,sigma=amount*bw/WIDTH;
+    // Overscan prevents a transparent/dark blur fringe around the frame edges.
+    const pad=Math.ceil(sigma*3)+2,iw=bw+pad*2,ih=bh+pad*2;
+    const key=[videoLoadId,sourceVideo.currentTime,sourceVideo.videoWidth,sourceVideo.videoHeight,
+      amount,settings.cropX,settings.cropY].join('|');
+    if(key!==blurFrameKey){
+      if(blurInput.width!==iw||blurInput.height!==ih){blurInput.width=iw;blurInput.height=ih;}
+      blurInputCtx.imageSmoothingEnabled=true;blurInputCtx.imageSmoothingQuality='high';
+      paintVideoCover(blurInputCtx,iw,ih,settings.cropX,settings.cropY);
+      blurOutputCtx.save();blurOutputCtx.clearRect(0,0,bw,bh);
+      if(nativeCanvasBlur){
+        blurOutputCtx.filter='blur('+sigma+'px)';
+      }else{
+        softwareBackgroundBlur(blurInputCtx,iw,ih,sigma);
+      }
+      blurOutputCtx.drawImage(blurInput,-pad,-pad);blurOutputCtx.restore();
+      blurFrameKey=key;
+    }
+    context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';
+    context.drawImage(blurOutput,0,0,w,h);
+  }
+  function drawVideoBackground(context,w=WIDTH,h=HEIGHT,settings=state.video){
+    context.save();
+    try{
+      if('filter' in context)context.filter='none';
+      context.globalAlpha=1;context.globalCompositeOperation='source-over';
+      context.fillStyle='#000000';context.fillRect(0,0,w,h);
+      if(sourceVideo.readyState<2||!sourceVideo.videoWidth)return;
+      const iw=sourceVideo.videoWidth,ih=sourceVideo.videoHeight;
+      if(settings.fit==='blur'){
+        drawBlurredVideo(context,w,h,settings);
+        const darkness=clamp(Number(settings.blurDim??20),0,70)/100;
+        if(darkness){context.fillStyle='rgba(0,0,0,'+darkness+')';context.fillRect(0,0,w,h);}
+      }
+      if(settings.fit==='contain'||settings.fit==='blur'){
+        const scale=Math.min(w/iw,h/ih),dw=iw*scale,dh=ih*scale;
+        const position=settings.fit==='blur'?clamp(Number(settings.foregroundY??50),0,100)/100:.5;
+        context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';
+        context.drawImage(sourceVideo,(w-dw)/2,(h-dh)*position,dw,dh);
+      }else{
+        paintVideoCover(context,w,h,settings.cropX,settings.cropY);
+      }
+    }finally{context.restore();}
+  }
+  function videoCandidates(withAudio=true){
+    if(typeof MediaRecorder==='undefined'||typeof HTMLCanvasElement.prototype.captureStream!=='function')return [];
+    const candidates=[],profiles=['avc1.64002A','avc1.640028','avc1.4D4028','avc1.42E028','avc1'];
+    const add=(video,audio,label)=>{const mime='video/mp4;codecs="'+video+(audio?','+audio:'')+'"';try{if(MediaRecorder.isTypeSupported(mime))candidates.push({mime,label,opus:audio==='opus'});}catch(_){}};
+    if(withAudio){for(const v of profiles)add(v,'mp4a.40.2','H.264 video + AAC audio');for(const v of profiles)add(v,'opus','H.264 video + Opus audio');}
+    else for(const v of profiles)add(v,'','H.264 video / no audio');
+    return candidates;
+  }
+  function syncVideoUI(){
+    const v=state.video,loaded=!!videoFile;
+    document.body.classList.toggle('video-mode',loaded);
+    $('uploadVideo').hidden=loaded;$('videoInfo').hidden=!loaded;$('videoControls').hidden=!loaded;
+    $('videoTransport').hidden=!loaded;$('layerTimingSection').hidden=!loaded;
+    $('videoName').textContent=videoFile?.name||'';
+    $('videoMeta').textContent=loaded?sourceVideo.videoWidth+' x '+sourceVideo.videoHeight+' / '+timeText(sourceVideo.duration)+' / '+(videoFile.size/1048576).toFixed(1)+' MB':'';
+    $('relinkNote').hidden=loaded||!v.fileName;
+    $('relinkNote').textContent=v.fileName?'Reopen '+v.fileName+' to restore the video. Design files keep settings, not the video itself.':'';
+    setValue('videoFit',v.fit);$('videoCropControls').hidden=v.fit!=='cover';
+    $('videoBlurControls').hidden=v.fit!=='blur';
+    setValue('videoBlurAmount',v.blurAmount);$('videoBlurAmountValue').textContent=String(v.blurAmount);
+    setValue('videoBlurDim',v.blurDim);$('videoBlurDimValue').textContent=v.blurDim+'%';
+    setValue('videoForegroundY',v.foregroundY);$('videoForegroundYValue').textContent=v.foregroundY===50?'Center':v.foregroundY===0?'Top':v.foregroundY===100?'Bottom':v.foregroundY+'%';
+    for(const [id,key] of [['videoCropX','cropX'],['videoCropY','cropY']]){setValue(id,v[key]);$(id+'Value').textContent=v[key]+'%';}
+    $('videoAudio').checked=v.keepAudio;setValue('videoResolution',v.resolution);setValue('videoFPS',v.fps);
+    const bounds=clipBounds();
+    if(document.activeElement!==$('trimStart'))setValue('trimStart',timeText(bounds.start,2));
+    if(document.activeElement!==$('trimEnd'))setValue('trimEnd',timeText(bounds.end,2));
+    $('clipDurationLabel').textContent=loaded?timeText(Math.max(0,bounds.end-bounds.start)):'';
+    const candidates=videoCandidates(v.keepAudio),best=candidates[0];
+    const status=$('codecStatus');status.className='codec-status'+(!best?' error':best.opus?' warning':'');
+    status.textContent=!best?'This browser cannot export H.264 MP4'+(v.keepAudio?' with audio.':' video.')+' Try a current desktop Chrome, Edge or Safari.':best.opus?'MP4 available with Opus audio. This browser lacks AAC recording; some social apps or editors may reject that audio. Use a browser with AAC support for maximum compatibility.':'MP4 ready / '+best.label;
+    $('exportVideoButton').disabled=!loaded||videoLoading||!best||exportBusy;
+    $('exportVideoTop').disabled=$('exportVideoButton').disabled;
+    $('uploadVideoTop').disabled=videoLoading||exportBusy;
+    const l=current();$('layerFullClip').checked=!l.timed;$('layerTimeFields').hidden=!l.timed;
+    if(document.activeElement!==$('layerStart'))setValue('layerStart',timeText(l.startTime||0,2));
+    if(document.activeElement!==$('layerEnd'))setValue('layerEnd',l.endTime==null?'':timeText(l.endTime,2));
+    if(loaded)$('previewBadge').textContent=v.fit==='blur'?'Blur background + sharp video + text / included in MP4.':'Video + text preview / PNG still exports separately.';
+    syncTransport();
+  }
+  function syncTransport(){
+    $('playPause').innerHTML='<svg><use href="#i-'+(sourceVideo.paused?'play':'pause')+'"/></svg>';
+    $('playPause').setAttribute('aria-label',sourceVideo.paused?'Play video':'Pause video');
+    const currentTime=sourceVideo.currentTime||0,duration=Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0;
+    $('videoTime').textContent=timeText(currentTime)+' / '+timeText(duration);
+    $('videoSeek').max=String(duration||1);$('videoSeek').value=String(currentTime);
+    $('previewMute').innerHTML='<svg><use href="#i-'+(state.video.previewMuted?'muted':'sound')+'"/></svg>';
+    $('previewMute').setAttribute('aria-label',state.video.previewMuted?'Unmute preview (export audio unchanged)':'Mute preview (export audio unchanged)');
+    $('previewMute').setAttribute('aria-pressed',String(state.video.previewMuted));
+  }
+  function updateMonitor(){
+    if(audioContext&&monitorGain){sourceVideo.muted=false;sourceVideo.volume=1;monitorGain.gain.value=state.video.previewMuted||exportBusy?0:1;}
+    else sourceVideo.muted=state.video.previewMuted||exportBusy;
+  }
+  function previewTick(now){
+    previewRAF=0;if(!videoFile||sourceVideo.paused||exportBusy)return;
+    if(now-previewLastPaint>=1000/30){previewLastPaint=now;render();syncTransport();}
+    if(sourceVideo.currentTime>=clipBounds().end){sourceVideo.pause();return;}
+    previewRAF=requestAnimationFrame(previewTick);
+  }
+  function startPreviewTick(){if(!previewRAF&&!exportBusy)previewRAF=requestAnimationFrame(previewTick);}
+  function waitMedia(event,timeout=20000){
+    return new Promise((resolve,reject)=>{
+      let timer;const finish=(error)=>{clearTimeout(timer);sourceVideo.removeEventListener(event,ok);sourceVideo.removeEventListener('error',fail);error?reject(error):resolve();};
+      const ok=()=>finish(),fail=()=>finish(new Error('The browser could not decode this video. Try an H.264 MP4 with AAC audio.'));
+      sourceVideo.addEventListener(event,ok,{once:true});sourceVideo.addEventListener('error',fail,{once:true});
+      timer=setTimeout(()=>finish(new Error('Video loading timed out. Try a smaller H.264 MP4.')),timeout);
+    });
+  }
+  async function seekVideo(time){
+    time=clamp(time,0,Math.max(0,(sourceVideo.duration||0)-.001));
+    if(Math.abs(sourceVideo.currentTime-time)<.005&&sourceVideo.readyState>=2)return;
+    const waiting=waitMedia('seeked');sourceVideo.currentTime=time;await waiting;
+  }
+  async function loadVideo(file){
+    if(!file||exportBusy)return;
+    if(!file.type.startsWith('video/')&&!/\.(mp4|mov|m4v|webm|mkv)$/i.test(file.name)){toast('Choose a video file, such as MP4 or MOV.',true);return;}
+    const token=++videoLoadId;videoLoading=true;sourceVideo.pause();
+    if(videoURL)URL.revokeObjectURL(videoURL);videoFile=null;
+    videoURL=URL.createObjectURL(file);$('uploadVideo').disabled=true;$('uploadVideo').querySelector('strong').textContent='Opening video...';syncVideoUI();
+    try{
+      const ready=waitMedia('loadeddata');sourceVideo.src=videoURL;sourceVideo.load();await ready;
+      if(token!==videoLoadId)return;
+      if(!Number.isFinite(sourceVideo.duration)||sourceVideo.duration<=0||!sourceVideo.videoWidth)throw new Error('This file has no readable video duration. Try a regular MP4 export.');
+      const same=state.video.fileName===file.name&&state.video.fileSize===file.size&&state.video.fileModified===file.lastModified;
+      videoFile=file;
+      if(!same){
+        state.video.trimStart=0;state.video.trimEnd=null;state.video.cropX=50;state.video.cropY=50;
+        // Reopening a saved source keeps its chosen framing; a new widescreen
+        // source gets the full-picture blur treatment automatically.
+        state.video.fit=sourceVideo.videoWidth>sourceVideo.videoHeight?'blur':'cover';
+        state.video.foregroundY=50;
+      }
+      blurFrameKey='';
+      state.video.fileName=file.name;state.video.fileSize=file.size;state.video.fileModified=file.lastModified;
+      if(clipBounds().end<=clipBounds().start){state.video.trimStart=0;state.video.trimEnd=null;}
+      if(!same&&state.video.fit==='blur')toast('Widescreen video loaded. Blur background is on; your full video stays sharp.');else toast('Video loaded. Position your text, then export MP4.');
+      updateMonitor();await seekVideo(clipBounds().start);autoSave();
+    }catch(error){
+      if(token!==videoLoadId)return;videoFile=null;sourceVideo.removeAttribute('src');sourceVideo.load();if(videoURL)URL.revokeObjectURL(videoURL);videoURL='';toast(error.message,true);
+    }finally{if(token===videoLoadId){videoLoading=false;$('uploadVideo').disabled=false;$('uploadVideo').querySelector('strong').textContent='Add your video';syncUI();render();}}
+  }
+  function clearVideo(forget=true){
+    videoLoadId++;sourceVideo.pause();cancelAnimationFrame(previewRAF);previewRAF=0;videoLoading=false;videoFile=null;
+    sourceVideo.removeAttribute('src');sourceVideo.load();if(videoURL)URL.revokeObjectURL(videoURL);videoURL='';
+    if(forget)state.video=videoDefaults();
+    $('uploadVideo').disabled=false;$('uploadVideo').querySelector('strong').textContent='Add your video';
+  }
+  for(const id of ['uploadVideo','uploadVideoTop','replaceVideo'])$(id).addEventListener('click',()=>$('videoFile').click());
+  $('videoFile').addEventListener('change',e=>{loadVideo(e.target.files[0]);e.target.value='';});
+  $('removeVideo').addEventListener('click',()=>{clearVideo();syncUI();render();autoSave();toast('Video removed. Your text layers are unchanged.');});
+  $('playPause').addEventListener('click',async()=>{
+    if(!videoFile||exportBusy)return;
+    if(!sourceVideo.paused){sourceVideo.pause();return;}
+    try{if(audioContext?.state==='suspended')await audioContext.resume();updateMonitor();const b=clipBounds();if(sourceVideo.currentTime<b.start||sourceVideo.currentTime>=b.end-.02)await seekVideo(b.start);await sourceVideo.play();}catch(e){toast('Playback failed: '+e.message,true);}
+  });
+  $('previewMute').addEventListener('click',()=>{state.video.previewMuted=!state.video.previewMuted;updateMonitor();syncTransport();autoSave();});
+  $('videoSeek').addEventListener('input',e=>{if(exportBusy)return;sourceVideo.pause();sourceVideo.currentTime=Number(e.target.value);syncTransport();});
+  sourceVideo.addEventListener('seeked',()=>{if(!exportBusy){render();syncTransport();}});
+  sourceVideo.addEventListener('play',()=>{syncTransport();startPreviewTick();});
+  sourceVideo.addEventListener('pause',()=>{cancelAnimationFrame(previewRAF);previewRAF=0;syncTransport();if(!exportBusy)render();});
+  sourceVideo.addEventListener('ended',()=>{if(!exportBusy){syncTransport();render();}});
+  $('videoFit').addEventListener('change',e=>change(()=>{state.video.fit=e.target.value;}));
+  for(const [id,key] of [['videoBlurAmount','blurAmount'],['videoBlurDim','blurDim'],['videoForegroundY','foregroundY']]){
+    $(id).addEventListener('input',e=>change(()=>{state.video[key]=Number(e.target.value);},id));
+  }
+  $('resetVideoBlur').addEventListener('click',()=>change(()=>{state.video.blurAmount=42;state.video.blurDim=20;state.video.foregroundY=50;}));
+  for(const [id,key] of [['videoCropX','cropX'],['videoCropY','cropY']])$(id).addEventListener('input',e=>change(()=>{state.video[key]=Number(e.target.value);},id));
+  $('videoAudio').addEventListener('change',e=>change(()=>{state.video.keepAudio=e.target.checked;}));
+  $('videoResolution').addEventListener('change',e=>change(()=>{state.video.resolution=e.target.value;}));
+  $('videoFPS').addEventListener('change',e=>change(()=>{state.video.fps=Number(e.target.value);}));
+  function setTrim(start,end){
+    const duration=sourceVideo.duration;if(!videoFile)return;
+    if(!Number.isFinite(start)||!Number.isFinite(end)||start<0||end>duration+.05||end-start<.1){toast('Use valid times inside your video, with out at least 0.1 seconds after in.',true);syncVideoUI();return;}
+    sourceVideo.pause();change(()=>{state.video.trimStart=start;state.video.trimEnd=Math.min(end,duration);});
+    if(sourceVideo.currentTime<start||sourceVideo.currentTime>=end)sourceVideo.currentTime=start;
+  }
+  for(const id of ['trimStart','trimEnd'])$(id).addEventListener('change',()=>setTrim(parseTime($('trimStart').value),parseTime($('trimEnd').value)));
+  $('markIn').addEventListener('click',()=>setTrim(sourceVideo.currentTime,clipBounds().end));
+  $('markOut').addEventListener('click',()=>setTrim(clipBounds().start,sourceVideo.currentTime));
+  $('resetTrim').addEventListener('click',()=>setTrim(0,sourceVideo.duration));
+  $('layerFullClip').addEventListener('change',e=>change(()=>{const l=current();l.timed=!e.target.checked;if(l.timed&&l.endTime==null){l.startTime=clipBounds().start;l.endTime=clipBounds().end;}}));
+  for(const id of ['layerStart','layerEnd'])$(id).addEventListener('change',()=>{
+    const start=parseTime($('layerStart').value),end=$('layerEnd').value.trim()?parseTime($('layerEnd').value):null;
+    if(!Number.isFinite(start)||start<0||(end!==null&&(!Number.isFinite(end)||end<=start))){toast('Set a valid start and a later end time. Leave end blank for the rest of the video.',true);syncVideoUI();return;}
+    change(()=>{current().startTime=start;current().endTime=end;});
+  });
+  async function prepareAudio(){
+    const AudioCtx=window.AudioContext||window.webkitAudioContext;
+    if(!AudioCtx)throw new Error('This browser cannot preserve the file audio. Use a current desktop browser, or turn off Include original video audio.');
+    if(!audioContext){
+      audioContext=new AudioCtx();audioSource=audioContext.createMediaElementSource(sourceVideo);
+      audioDestination=audioContext.createMediaStreamDestination();monitorGain=audioContext.createGain();
+      audioSource.connect(audioDestination);audioSource.connect(monitorGain);monitorGain.connect(audioContext.destination);
+    }
+    await audioContext.resume();updateMonitor();
+    if(audioContext.state!=='running')throw new Error('Audio playback is blocked. Click Play once, then try the export again.');
+  }
+  function setExportStatus(title,detail){$('videoExportTitle').textContent=title;$('videoExportDetail').textContent=detail;}
+  function makeRecorder(stream,candidates,settings){
+    let error;
+    for(const candidate of candidates){
+      try{
+        const recorder=new MediaRecorder(stream,{mimeType:candidate.mime,videoBitsPerSecond:(settings.resolution==='1080'?12000000:6500000)*(settings.fps===60?1.45:1),audioBitsPerSecond:192000});
+        return {recorder,candidate};
+      }catch(e){error=e;}
+    }
+    throw new Error('MP4 recording could not start'+(error?': '+error.message:'.')+' Try 720 x 1280 at 30 fps or another browser.');
+  }
+  async function exportMP4(){
+    if(exportBusy||!videoFile||videoLoading)return;
+    try{ensureBrandAssets();}catch(error){toast(error.message,true);return;}
+    const bounds=clipBounds(),settings=clone(state.video),duration=bounds.end-bounds.start;
+    if(duration<.1){toast('Choose a clip at least 0.1 seconds long.',true);return;}
+    const candidates=videoCandidates(settings.keepAudio);
+    if(!candidates.length){toast('H.264 MP4 recording is not available in this browser. Open this file in a current Chrome, Edge or Safari.',true);return;}
+    const estimate=duration*((settings.resolution==='1080'?12000000:6500000)*(settings.fps===60?1.45:1)+192000)/8;
+    if(estimate>500*1048576){toast('This export could exceed 500 MB of browser memory. Trim a shorter clip or select 720p.',true);return;}
+    const previousTime=sourceVideo.currentTime;sourceVideo.pause();exportBusy=true;
+    const job={cancelled:false,reason:'',recorder:null,stream:null,timer:0,raf:0,wakeLock:null,finish:null};videoJob=job;
+    const dialog=$('videoExportDialog'),out=$('videoExportCanvas');
+    if(resultURL){URL.revokeObjectURL(resultURL);resultURL='';}$('exportResultVideo').removeAttribute('src');$('exportResultVideo').load();
+    $('exportResultVideo').hidden=true;out.hidden=false;
+    $('saveVideoAgain').hidden=true;$('closeVideoExport').hidden=true;$('cancelVideoExport').hidden=false;$('cancelVideoExport').disabled=false;
+    $('videoProgress').value=0;$('videoPercent').textContent='0%';$('videoElapsed').textContent='Preparing video';
+    $('videoExportWarning').hidden=false;$('videoExportWarning').textContent='Keep this tab visible and your device awake. Export runs at playback speed. Switching tabs stops the export to avoid a damaged video.';
+    setExportStatus('Creating your MP4','Your video, text and logos are rendered together on this device.');
+    document.querySelector('.workspace').inert=true;document.querySelector('.topbar').inert=true;dialog.showModal();
+    const audioReady=settings.keepAudio?prepareAudio():Promise.resolve();audioReady.catch(()=>{});updateMonitor();
+    try{
+      await audioReady;if(job.cancelled)throw new Error(job.reason||'Export cancelled.');
+      if(navigator.wakeLock){try{job.wakeLock=await navigator.wakeLock.request('screen');}catch(_){}}
+      await document.fonts.ready;await seekVideo(bounds.start);
+      if(job.cancelled)throw new Error(job.reason||'Export cancelled.');
+      if(document.hidden)throw new Error('Keep this tab visible, then try exporting again.');
+      out.width=Number(settings.resolution);out.height=out.width*16/9;
+      const oc=out.getContext('2d',{alpha:false});oc.imageSmoothingEnabled=true;oc.imageSmoothingQuality='high';
+      const paint=()=>{drawVideoBackground(oc,out.width,out.height,settings);oc.drawImage(cachedOverlay(sourceVideo.currentTime).canvas,0,0,out.width,out.height);};
+      paint();job.stream=out.captureStream(0);
+      let captureTrack=job.stream.getVideoTracks()[0];
+      if(typeof captureTrack?.requestFrame!=='function'){
+        job.stream.getTracks().forEach(track=>track.stop());job.stream=out.captureStream(settings.fps);captureTrack=job.stream.getVideoTracks()[0];
+      }
+      if(settings.keepAudio){
+        const audioTrack=audioDestination.stream.getAudioTracks()[0];
+        if(!audioTrack||audioTrack.readyState!=='live')throw new Error('The original audio could not be attached. Export stopped rather than silently removing it.');
+        job.stream.addTrack(audioTrack.clone());
+      }
+      const {recorder,candidate}=makeRecorder(job.stream,candidates,settings);job.recorder=recorder;
+      const chunks=[];let bytes=0,started=false,finished=false,recordError=null,lastPaint=0,lastTime=bounds.start,lastAdvance=performance.now();
+      $('videoExportDetail').textContent=out.width+' x '+out.height+' / '+settings.fps+' fps target / '+candidate.label;
+      if(candidate.opus)$('videoExportWarning').textContent+=' This browser uses Opus audio; some social apps require AAC instead.';
+      const complete=new Promise((resolve,reject)=>{
+        recorder.ondataavailable=e=>{if(e.data.size){chunks.push(e.data);bytes+=e.data.size;if(bytes>500*1048576)job.finish(new Error('Export exceeded the 500 MB memory limit. Trim a shorter clip.'));}};
+        recorder.onerror=e=>{recordError=e.error||new Error('The MP4 encoder failed. Try 720p at 30 fps.');job.finish(recordError);};
+        recorder.onstop=()=>{if(recordError)reject(recordError);else if(job.cancelled)reject(new Error(job.reason||'Export cancelled.'));else resolve();};
+        job.finish=(error=null)=>{
+          if(finished)return;finished=true;if(error)recordError=error;
+          clearInterval(job.timer);cancelAnimationFrame(job.raf);sourceVideo.pause();
+          if(recorder.state!=='inactive'){try{recorder.stop();}catch(e){reject(error||e);}}
+          else if(error||job.cancelled)reject(error||new Error(job.reason||'Export cancelled.'));
+          else reject(new Error('The recorder stopped before producing a video.'));
+        };
+        const start=()=>{
+          if(started||finished)return;
+          if(job.cancelled){job.finish(new Error(job.reason||'Export cancelled.'));return;}
+          started=true;
+          try{paint();recorder.start(1000);job.stream.getVideoTracks()[0]?.requestFrame?.();}
+          catch(e){job.finish(new Error('MP4 encoder could not start: '+e.message));return;}
+          const loop=now=>{
+            if(finished)return;
+            if(now-lastPaint>=1000/settings.fps-2){paint();captureTrack?.requestFrame?.();lastPaint=now;}
+            job.raf=requestAnimationFrame(loop);
+          };
+          job.raf=requestAnimationFrame(loop);
+        };
+        const onPlaying=()=>{start();if(recorder.state==='paused')recorder.resume();};
+        const onWaiting=()=>{if(started&&recorder.state==='recording')recorder.pause();};
+        const onEnded=()=>job.finish();
+        const onError=()=>job.finish(new Error('Video playback failed during export. Try an H.264 MP4 source.'));
+        sourceVideo.addEventListener('playing',onPlaying);sourceVideo.addEventListener('waiting',onWaiting);sourceVideo.addEventListener('ended',onEnded);sourceVideo.addEventListener('error',onError);
+        job.removeListeners=()=>{sourceVideo.removeEventListener('playing',onPlaying);sourceVideo.removeEventListener('waiting',onWaiting);sourceVideo.removeEventListener('ended',onEnded);sourceVideo.removeEventListener('error',onError);};
+        job.timer=setInterval(()=>{
+          if(finished)return;
+          const t=sourceVideo.currentTime,now=performance.now();
+          if(t>lastTime+.001){lastAdvance=now;lastTime=t;}
+          if(now-lastAdvance>20000){job.finish(new Error('Playback stalled. Try a smaller source file or export at 720p / 30 fps.'));return;}
+          const progress=clamp((t-bounds.start)/duration,0,1);
+          $('videoProgress').value=progress;$('videoPercent').textContent=Math.min(99,Math.floor(progress*100))+'%';
+          $('videoElapsed').textContent=timeText(Math.max(0,t-bounds.start))+' / '+timeText(duration);
+          if(t>=bounds.end-.008)job.finish();
+        },20);
+        sourceVideo.playbackRate=1;sourceVideo.loop=false;
+        sourceVideo.play().then(()=>start()).catch(e=>job.finish(new Error('Playback was blocked: '+e.message)));
+      });
+      await complete;
+      $('videoPercent').textContent='Finalizing';setExportStatus('Finalizing MP4','Checking the file before saving.');
+      const mime=recorder.mimeType||candidate.mime;
+      if(!/^video\/mp4/i.test(mime))throw new Error('The browser returned a non-MP4 recording. No mislabeled file was saved.');
+      const blob=new Blob(chunks,{type:'video/mp4'});
+      if(blob.size<100)throw new Error('The recorder produced an empty file. Try another browser.');
+      const header=new Uint8Array(await blob.slice(0,32).arrayBuffer());
+      if(String.fromCharCode(...header.slice(4,8))!=='ftyp')throw new Error('The recording did not contain an MP4 header. No mislabeled file was saved.');
+      if(job.cancelled)throw new Error(job.reason||'Export cancelled.');
+      resultURL=URL.createObjectURL(blob);
+      const name=sanitizedName(state.fileName)+'-'+out.width+'x'+out.height+'.mp4';
+      const save=$('saveVideoAgain');save.href=resultURL;save.download=name;save.hidden=false;
+      $('exportResultVideo').src=resultURL;$('exportResultVideo').hidden=false;out.hidden=true;
+      $('videoProgress').value=1;$('videoPercent').textContent='100%';$('videoElapsed').textContent=(blob.size/1048576).toFixed(1)+' MB';
+      setExportStatus('Your reel is ready',out.width+' x '+out.height+' MP4 / '+candidate.label+'. Text and logos are permanently rendered into the video.');
+      $('videoExportWarning').hidden=!candidate.opus;
+      if(candidate.opus)$('videoExportWarning').textContent='This MP4 uses H.264 video with Opus audio because AAC recording is unavailable here. Some social platforms and editors require AAC. For that workflow, open this editor in a browser that reports H.264 + AAC.';
+      downloadBlob(blob,name);toast('MP4 created. Your download is ready.');
+    }catch(error){
+      setExportStatus(job.cancelled?'Export stopped':'Export could not finish',error.message||String(error));
+      $('videoExportWarning').hidden=false;$('videoExportWarning').textContent=job.cancelled?'No partial video was saved. Your source video and text layers are unchanged.':'Try 720 x 1280 at 30 fps, or open this editor in a different current desktop browser. Your source video and text are unchanged.';
+      $('videoPercent').textContent=job.cancelled?'Stopped':'Not saved';
+    }finally{
+      clearInterval(job.timer);cancelAnimationFrame(job.raf);job.removeListeners?.();
+      if(job.recorder&&job.recorder.state!=='inactive'){try{job.recorder.stop();}catch(_){}}
+      sourceVideo.pause();job.stream?.getTracks().forEach(track=>track.stop());try{await job.wakeLock?.release();}catch(_){}
+      job.stream=null;videoJob=null;exportBusy=false;updateMonitor();
+      document.querySelector('.workspace').inert=false;document.querySelector('.topbar').inert=false;
+      $('cancelVideoExport').hidden=true;$('closeVideoExport').hidden=false;
+      try{await seekVideo(previousTime);}catch(_){}syncUI();render();
+    }
+  }
+  function cancelVideoExport(reason='Export cancelled.'){
+    if(!videoJob)return;videoJob.cancelled=true;videoJob.reason=reason;$('cancelVideoExport').disabled=true;
+    videoJob.finish?.(new Error(reason));
+  }
+  $('exportVideoButton').addEventListener('click',exportMP4);$('exportVideoTop').addEventListener('click',exportMP4);
+  $('cancelVideoExport').addEventListener('click',()=>cancelVideoExport());
+  $('closeVideoExport').addEventListener('click',()=>{$('exportResultVideo').pause();$('videoExportDialog').close();});
+  $('videoExportDialog').addEventListener('cancel',e=>{if(exportBusy){e.preventDefault();cancelVideoExport();}else $('exportResultVideo').pause();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&videoJob)cancelVideoExport('Export stopped because the tab was hidden. Keep this tab visible and try again.');});
+  window.addEventListener('beforeunload',e=>{if(exportBusy){e.preventDefault();e.returnValue='';}});
+
+  // Pointer positions are always converted to full-resolution canvas coordinates.
+  const pointerPoint=e=>{const rect=canvas.getBoundingClientRect();return{x:(e.clientX-rect.left)/rect.width*WIDTH,y:(e.clientY-rect.top)/rect.height*HEIGHT};};
+  let drag=null;
+  canvas.addEventListener('pointerdown',e=>{
+    if(e.button!==0||exportBusy)return;
+    const p=pointerPoint(e),bb=brandLayout();let hit=null;
+    if(bb.height&&p.x>=bb.left-12&&p.x<=bb.left+bb.width+12&&p.y>=bb.top-12&&p.y<=bb.top+bb.height+12){
+      e.preventDefault();canvas.focus({preventScroll:true});selectBranding();remember();drag={kind:'brand-move',dx:p.x-bb.x,dy:p.y-bb.top};canvas.setPointerCapture(e.pointerId);return;
+    }
+    for(const l of state.layers.slice().reverse()){if(!l.visible||(videoFile&&!layerAt(l,sourceVideo.currentTime)))continue;const b=layouts.get(l.id);if(b&&b.height&&p.x>=b.left-16&&p.x<=b.left+b.width+16&&p.y>=b.top-16&&p.y<=b.top+b.height+16){hit=l;break;}}
+    if(!hit)return;
+    e.preventDefault();canvas.focus({preventScroll:true});selectLayer(hit.id);remember();
+    drag={kind:'move',id:hit.id,dx:p.x-hit.x,dy:p.y-hit.y};canvas.setPointerCapture(e.pointerId);
+  });
+  $('resizeHandle').addEventListener('pointerdown',e=>{
+    if(e.button!==0||exportBusy)return;e.preventDefault();e.stopPropagation();remember();
+    if(brandSelected){const p=pointerPoint(e),b=brandLayout();drag={kind:'brand-resize',left:b.left,top:b.top,startDist:Math.max(30,Math.hypot(p.x-b.left,p.y-b.top)),nbcWidth:state.branding.nbc.width,sponsorWidth:state.branding.sponsor.width};$('resizeHandle').setPointerCapture(e.pointerId);return;}
+    const l=current(),p=pointerPoint(e);drag={kind:'resize',id:l.id,startDist:Math.max(30,Math.hypot(p.x-l.x,p.y-l.y)),size:l.fontSize,emojiSize:l.emojiSize};
+    $('resizeHandle').setPointerCapture(e.pointerId);
+  });
+  function dragMove(e){
+    if(!drag)return;const p=pointerPoint(e);
+    if(drag.kind.startsWith('brand-')){
+      if(drag.kind==='brand-move'){state.branding.x=p.x-drag.dx;state.branding.y=p.y-drag.dy;}
+      else{const ratio=Math.hypot(p.x-drag.left,p.y-drag.top)/drag.startDist;state.branding.nbc.width=Math.round(clamp(drag.nbcWidth*ratio,80,480));state.branding.sponsor.width=Math.round(clamp(drag.sponsorWidth*ratio,80,600));}
+      constrainBranding();syncBrandUI();scheduleRender();return;
+    }
+    const l=state.layers.find(x=>x.id===drag.id);if(!l)return;
+    if(drag.kind==='move'){
+      l.x=p.x-drag.dx;l.y=p.y-drag.dy;
+      const snap=Math.abs(l.x-WIDTH/2)<14;if(snap&&!e.altKey)l.x=WIDTH/2;
+      $('centerGuide').hidden=!snap||e.altKey;
+    }else{
+      const ratio=Math.hypot(p.x-l.x,p.y-l.y)/drag.startDist;
+      l.fontSize=Math.round(clamp(drag.size*ratio,28,180));
+      l.emojiSize=Math.round(clamp(drag.emojiSize*ratio,42,240));
+    }
+    constrainLayer(l);scheduleRender();
+    setValue('posX',(l.x/WIDTH*100).toFixed(1));setValue('posY',(l.y/HEIGHT*100).toFixed(1));
+    $('posXValue').textContent=(l.x/WIDTH*100).toFixed(1)+'%';$('posYValue').textContent=(l.y/HEIGHT*100).toFixed(1)+'%';
+    setValue('fontSize',l.fontSize);$('fontSizeValue').textContent=l.fontSize+' px';
+  }
+  function dragEnd(){if(!drag)return;drag=null;$('centerGuide').hidden=true;syncUI();render();autoSave();}
+  for(const el of [canvas,$('resizeHandle')]){el.addEventListener('pointermove',dragMove);el.addEventListener('pointerup',dragEnd);el.addEventListener('pointercancel',dragEnd);el.addEventListener('lostpointercapture',dragEnd);}
+  document.addEventListener('keydown',e=>{
+    if(exportBusy||$('videoExportDialog').open||$('helpDialog').open||$('resetDialog').open)return;
+    const typing=e.target.closest('input,textarea,select,[contenteditable="true"]');
+    if(typing)return;
+    const mod=e.ctrlKey||e.metaKey,key=e.key.toLowerCase();
+    if(mod&&key==='z'){e.preventDefault();e.shiftKey?redo():undo();return;}
+    if(mod&&key==='y'){e.preventDefault();redo();return;}
+    if(mod&&key==='d'){e.preventDefault();if(!brandSelected)addLayer(true);return;}
+    if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();if(brandSelected){change(()=>{state.branding.nbc.enabled=false;state.branding.sponsor.enabled=false;});}else deleteLayer();return;}
+    const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};
+    if(moves[e.key]){e.preventDefault();const step=e.shiftKey?10:1;change(()=>{const target=brandSelected?state.branding:current();target.x+=moves[e.key][0]*step;target.y+=moves[e.key][1]*step;},brandSelected?'nudge-logos':'nudge');}
+  });
+  // The supplied NBC asset is embedded once; uploaded assets are referenced by ID.
+  // Undo snapshots keep IDs, not repeated base64 images. Designs embed used assets.
+  function brandingDefaults(){return {x:890,y:245,gap:16,nbc:{enabled:true,asset:BUILTIN_NBC,width:230},sponsor:{enabled:false,asset:null,width:252,white:false,padding:12,radius:12}};}
+  function cleanBranding(raw){
+    const b=brandingDefaults();
+    // Older designs should not acquire a new watermark without the user's choice.
+    if(!raw||typeof raw!=='object'){b.nbc.enabled=false;return b;}
+    const num=(v,min,max,fallback)=>typeof v==='number'&&Number.isFinite(v)?clamp(v,min,max):fallback;
+    b.x=num(raw.x,0,WIDTH,b.x);b.y=num(raw.y,0,HEIGHT,b.y);b.gap=num(raw.gap,0,100,b.gap);
+    for(const kind of ['nbc','sponsor']){
+      const v=raw[kind];if(!v||typeof v!=='object')continue;
+      b[kind].enabled=v.enabled===true;
+      b[kind].asset=typeof v.asset==='string'&&/^[a-zA-Z0-9_-]{1,100}$/.test(v.asset)?v.asset:(kind==='nbc'?BUILTIN_NBC:null);
+      b[kind].width=num(v.width,80,kind==='nbc'?480:600,b[kind].width);
+    }
+    const s=raw.sponsor||{};b.sponsor.white=s.white===true;
+    b.sponsor.padding=num(s.padding,0,48,12);b.sponsor.radius=num(s.radius,0,48,12);
+    if(!b.sponsor.asset)b.sponsor.enabled=false;
+    return b;
+  }
+  function usedBrandAssets(design=state){
+    return [...new Set(['nbc','sponsor'].map(k=>design.branding[k].asset).filter(id=>id&&id!==BUILTIN_NBC))];
+  }
+  function packBrandAssets(design=state){
+    return usedBrandAssets(design).map(id=>{const a=bugAssets.get(id);if(!a)throw new Error('A logo is missing. Upload it again before saving.');return {id,name:a.name,data:a.data};});
+  }
+  async function decodeBrandAssets(design,list=[]){
+    if(!Array.isArray(list)||list.length>4)throw new Error('This design contains invalid logo assets.');
+    for(const id of usedBrandAssets(design)){
+      const item=list.find(a=>a&&a.id===id);
+      if(!item){if(bugAssets.has(id))continue;throw new Error('A logo is missing from this design.');}
+      if(typeof item.data!=='string'||item.data.length>3*1024*1024||!/^data:image\/(png|jpeg|webp);base64,[a-zA-Z0-9+/=]+$/.test(item.data))throw new Error('A saved logo is not a supported PNG, JPG or WebP image.');
+      const image=await loadImage(item.data);
+      if(!image.naturalWidth||!image.naturalHeight||image.naturalWidth>4096||image.naturalHeight>4096)throw new Error('A saved logo is too large.');
+      bugAssets.set(id,{data:item.data,image,name:String(item.name||'Saved logo').slice(0,150)});bugAssetVersion++;
+    }
+  }
+  function brandAsset(kind){return bugAssets.get(state.branding[kind].asset);}
+  function brandLayout(){
+    const b=state.branding,items=[];
+    for(const kind of ['nbc','sponsor']){
+      const config=b[kind],asset=brandAsset(kind);if(!config.enabled||!asset?.image)continue;
+      const w=config.width,white=kind==='sponsor'&&config.white,pad=white?Math.min(config.padding,w*.3):0;
+      const aspect=asset.image.naturalWidth/asset.image.naturalHeight,available=Math.max(1,w-2*pad);
+      const ih=Math.min(available/aspect,Math.max(1,w*(kind==='nbc'?1:1.2)-2*pad)),iw=ih*aspect;
+      items.push({kind,asset,width:w,height:ih+2*pad,imageWidth:iw,imageHeight:ih,padding:pad,white});
+    }
+    const width=items.length?Math.max(...items.map(i=>i.width)):0;
+    const height=items.reduce((h,i)=>h+i.height,0)+(items.length===2?b.gap:0);
+    const x=clamp(b.x,width/2+20,WIDTH-width/2-20),top=clamp(b.y,20,Math.max(20,HEIGHT-height-20));
+    let y=top;
+    for(const item of items){item.left=x-item.width/2;item.top=y;y+=item.height+b.gap;}
+    return {left:x-width/2,top,width,height,x,items};
+  }
+  function constrainBranding(){
+    if(!state.branding)return;const b=brandLayout();if(!b.height)return;
+    state.branding.x=b.x;state.branding.y=b.top;
+  }
+  function drawBranding(context){
+    const b=brandLayout();context.save();context.globalAlpha=1;context.globalCompositeOperation='source-over';
+    context.shadowColor='transparent';context.shadowBlur=0;context.shadowOffsetX=0;context.shadowOffsetY=0;
+    context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';
+    for(const item of b.items){
+      if(item.white){context.fillStyle='#FFFFFF';roundedPath(context,item.left,item.top,item.width,item.height,state.branding.sponsor.radius);context.fill();}
+      context.drawImage(item.asset.image,item.left+(item.width-item.imageWidth)/2,item.top+item.padding,item.imageWidth,item.imageHeight);
+    }
+    context.restore();
+  }
+  function ensureBrandAssets(){
+    if(bugLoading)throw new Error('A logo is still loading. Export after it appears in the preview.');
+    for(const kind of ['nbc','sponsor']){const b=state.branding[kind];if(b.enabled&&(!b.asset||!bugAssets.has(b.asset)))throw new Error('The '+(kind==='nbc'?'NBC':'sponsor')+' logo is missing. Upload it again or switch it off.');}
+  }
+  function syncBrandUI(){
+    const b=state.branding,n=brandAsset('nbc'),s=brandAsset('sponsor');
+    $('bugNBCEnabled').checked=b.nbc.enabled;$('bugSponsorEnabled').checked=b.sponsor.enabled;$('bugSponsorEnabled').disabled=!s;
+    $('bugSponsorWhite').checked=b.sponsor.white;$('sponsorWhiteControls').hidden=!b.sponsor.white;
+    for(const [kind,asset] of [['NBC',n],['Sponsor',s]]){
+      const img=$('bug'+kind+'Thumb');if(asset){if(img.getAttribute('src')!==asset.data)img.src=asset.data;}else img.removeAttribute('src');
+    }
+    $('bugNBCName').textContent=n?.name||'Included logo';$('restoreNBCBug').hidden=b.nbc.asset===BUILTIN_NBC;
+    $('bugSponsorName').textContent=s?.name||'';$('sponsorPreviewWrap').hidden=!s;$('uploadSponsorBug').hidden=!!s;$('removeSponsorBug').hidden=!s;
+    $('replaceSponsorBug').classList.toggle('white-card',b.sponsor.white);
+    const values={bugNBCWidth:[b.nbc.width,' px'],bugSponsorWidth:[b.sponsor.width,' px'],bugSponsorPadding:[b.sponsor.padding,' px'],bugSponsorRadius:[b.sponsor.radius,' px'],bugGap:[b.gap,' px'],bugPosX:[b.x/WIDTH*100,'%'],bugPosY:[b.y/HEIGHT*100,'%']};
+    for(const [id,[v,unit]] of Object.entries(values)){const value=id.startsWith('bugPos')?Math.round(v*10)/10:Math.round(v);setValue(id,value);$(id+'Value').textContent=value+unit;}
+    const hasVisible=brandLayout().height>0;
+    $('selectBugStack').disabled=!hasVisible;$('selectBugStack').classList.toggle('active',brandSelected&&hasVisible);
+    $('brandingSection').classList.toggle('bug-section-active',brandSelected&&hasVisible);
+    $('bugLoadingStatus').hidden=!bugLoading;
+  }
+  function selectBranding(){brandSelected=true;state.handles=true;historyKey='';syncUI();render();}
+  function readLogoFile(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(new Error('The logo file could not be read.'));r.readAsDataURL(file);});}
+  async function addBugLogo(kind,file){
+    if(!file||exportBusy)return;
+    if(!['image/png','image/jpeg','image/webp'].includes(file.type)&&!(/\.(png|jpe?g|webp)$/i.test(file.name)&&!file.type)){toast('Choose a PNG, JPG or WebP logo. PNG keeps transparent edges.',true);return;}
+    if(file.size>20*1024*1024){toast('Choose a logo smaller than 20 MB.',true);return;}
+    const token=++bugLoadTokens[kind];bugLoading++;syncBrandUI();
+    try{
+      const source=await loadImage(await readLogoFile(file));
+      if(source.naturalWidth*source.naturalHeight>50000000)throw new Error('That logo is too large. Use an image under 50 megapixels.');
+      const scale=Math.min(1,1280/Math.max(source.naturalWidth,source.naturalHeight));
+      const tmp=document.createElement('canvas');tmp.width=Math.max(1,Math.round(source.naturalWidth*scale));tmp.height=Math.max(1,Math.round(source.naturalHeight*scale));
+      const tc=tmp.getContext('2d',{willReadFrequently:true});tc.drawImage(source,0,0,tmp.width,tmp.height);
+      // Remove fully transparent outside margins only. Never erase white artwork.
+      const pixels=tc.getImageData(0,0,tmp.width,tmp.height).data;let x0=tmp.width,y0=tmp.height,x1=-1,y1=-1;
+      for(let y=0;y<tmp.height;y++)for(let x=0;x<tmp.width;x++){if(pixels[(y*tmp.width+x)*4+3]){x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);}}
+      if(x1<0)throw new Error('This logo is completely transparent. Choose a visible logo.');
+      const cropped=document.createElement('canvas');cropped.width=x1-x0+1;cropped.height=y1-y0+1;
+      cropped.getContext('2d').drawImage(tmp,x0,y0,cropped.width,cropped.height,0,0,cropped.width,cropped.height);
+      const data=cropped.toDataURL('image/png');if(data.length>3*1024*1024)throw new Error('The logo is too detailed to save efficiently. Use a smaller PNG.');
+      const image=await loadImage(data);if(token!==bugLoadTokens[kind])return;
+      const id='logo-'+uid();bugAssets.set(id,{data,image,name:(file.name||'Uploaded logo').slice(0,150)});bugAssetVersion++;
+      change(()=>{state.branding[kind].asset=id;state.branding[kind].enabled=true;brandSelected=true;});
+      toast(kind==='nbc'?'NBC bug updated.':'Sponsor added below the NBC bug. White backing is optional.');
+    }catch(error){if(token===bugLoadTokens[kind])toast(error.message,true);}
+    finally{bugLoading=Math.max(0,bugLoading-1);syncBrandUI();}
+  }
+  $('bugNBCEnabled').addEventListener('change',e=>change(()=>{state.branding.nbc.enabled=e.target.checked;brandSelected=true;}));
+  $('bugSponsorEnabled').addEventListener('change',e=>change(()=>{state.branding.sponsor.enabled=e.target.checked;brandSelected=true;}));
+  $('bugSponsorWhite').addEventListener('change',e=>change(()=>{state.branding.sponsor.white=e.target.checked;brandSelected=true;}));
+  for(const [id,kind,key] of [['bugNBCWidth','nbc','width'],['bugSponsorWidth','sponsor','width'],['bugSponsorPadding','sponsor','padding'],['bugSponsorRadius','sponsor','radius']]){
+    $(id).addEventListener('input',e=>change(()=>{state.branding[kind][key]=Number(e.target.value);brandSelected=true;},id));
+  }
+  $('bugGap').addEventListener('input',e=>change(()=>{state.branding.gap=Number(e.target.value);brandSelected=true;},'bugGap'));
+  for(const [id,key,size] of [['bugPosX','x',WIDTH],['bugPosY','y',HEIGHT]])$(id).addEventListener('input',e=>change(()=>{state.branding[key]=Number(e.target.value)/100*size;brandSelected=true;},id));
+  for(const [id,right] of [['bugTopLeft',false],['bugTopRight',true]])$(id).addEventListener('click',()=>change(()=>{const w=brandLayout().width||252;state.branding.x=right?WIDTH-64-w/2:64+w/2;state.branding.y=245;brandSelected=true;}));
+  $('selectBugStack').addEventListener('click',()=>{selectBranding();$('artboard').scrollIntoView({behavior:'smooth',block:'center'});canvas.focus({preventScroll:true});});
+  $('brandingShortcut').addEventListener('click',()=>{$('brandingSection').scrollIntoView({behavior:'smooth',block:'start'});if(brandLayout().height)selectBranding();});
+  $('replaceNBCBug').addEventListener('click',()=>$('nbcBugFile').click());
+  for(const id of ['uploadSponsorBug','replaceSponsorBug'])$(id).addEventListener('click',()=>$('sponsorBugFile').click());
+  for(const [id,kind] of [['nbcBugFile','nbc'],['sponsorBugFile','sponsor']])$(id).addEventListener('change',e=>{addBugLogo(kind,e.target.files[0]);e.target.value='';});
+  $('restoreNBCBug').addEventListener('click',()=>{bugLoadTokens.nbc++;change(()=>{state.branding.nbc.asset=BUILTIN_NBC;state.branding.nbc.enabled=true;brandSelected=true;});});
+  $('removeSponsorBug').addEventListener('click',()=>{bugLoadTokens.sponsor++;change(()=>{state.branding.sponsor.asset=null;state.branding.sponsor.enabled=false;});toast('Sponsor removed.');});
+  $('sponsorCard').addEventListener('dragover',e=>{e.preventDefault();e.stopPropagation();$('uploadSponsorBug').classList.add('drag-active');});
+  $('sponsorCard').addEventListener('dragleave',()=>$('uploadSponsorBug').classList.remove('drag-active'));
+  $('sponsorCard').addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();$('uploadSponsorBug').classList.remove('drag-active');const f=Array.from(e.dataTransfer.files).find(f=>f.type.startsWith('image/'));if(f)addBugLogo('sponsor',f);});
+  document.querySelector('.left-panel').addEventListener('focusin',()=>{if(brandSelected){brandSelected=false;syncBrandUI();render();}});
+
+  // Use image decoding, not remote URLs, so reference photos cannot taint the canvas.
+  function loadImage(src) {return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('That image could not be opened. Try a JPG, PNG, or WebP.'));image.src=src;});}
+  async function addReference(file) {
+    if(!file)return;
+    if(!['image/png','image/jpeg','image/webp','image/gif'].includes(file.type)){toast('Choose a JPG, PNG, WebP, or GIF image.',true);return;}
+    if(file.size>40*1024*1024){toast('Choose a reference image smaller than 40 MB.',true);return;}
+    const token=++imageLoadToken;loadingImage=true;$('loadingOverlay').hidden=false;
+    const objectURL=URL.createObjectURL(file);
+    try {
+      const image=await loadImage(objectURL);
+      // Downsample only the optional reference, never the overlay export.
+      const scale=Math.min(1,2560/Math.max(image.naturalWidth,image.naturalHeight));
+      const buffer=document.createElement('canvas');buffer.width=Math.max(1,Math.round(image.naturalWidth*scale));buffer.height=Math.max(1,Math.round(image.naturalHeight*scale));
+      const bc=buffer.getContext('2d');bc.drawImage(image,0,0,buffer.width,buffer.height);
+      const data=buffer.toDataURL('image/jpeg',.92),decoded=await loadImage(data);
+      if(token!==imageLoadToken)return;
+      referenceImage=decoded;referenceData=data;referenceName=file.name||'Pasted reference';
+      $('referenceThumb').src=data;state.background.showReference=true;syncUI();render();autoSave();
+      toast('Reference added. Your PNG stays transparent by default.');
+    }catch(error){toast(error.message,true);}finally{URL.revokeObjectURL(objectURL);if(token===imageLoadToken){loadingImage=false;$('loadingOverlay').hidden=true;}}
+  }
+  $('uploadReference').addEventListener('click',()=>$('referenceFile').click());
+  $('referenceFile').addEventListener('change',e=>{addReference(e.target.files[0]);e.target.value='';});
+  function clearReference(){imageLoadToken++;referenceImage=null;referenceData=null;referenceName='';loadingImage=false;$('loadingOverlay').hidden=true;$('referenceThumb').removeAttribute('src');if(state.background.mode==='photo')state.background.mode='transparent';}
+  $('removeReference').addEventListener('click',()=>{clearReference();syncUI();render();autoSave();toast('Reference removed.');});
+  for(const target of [$('artboard'),$('uploadReference'),$('uploadVideo')]){
+    target.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='copy';$('artboard').classList.add('drop-active');});
+    target.addEventListener('dragleave',()=>$('artboard').classList.remove('drop-active'));
+    target.addEventListener('drop',e=>{e.preventDefault();$('artboard').classList.remove('drop-active');if(exportBusy)return;const files=Array.from(e.dataTransfer.files),video=files.find(f=>f.type.startsWith('video/')||/\.(mp4|mov|m4v|webm)$/i.test(f.name));if(video){loadVideo(video);return;}const file=files.find(f=>f.type.startsWith('image/'));if(file)addReference(file);});
+  }
+  window.addEventListener('dragover',e=>{if(e.dataTransfer.types.includes('Files'))e.preventDefault();});
+  window.addEventListener('drop',e=>{if(e.dataTransfer.types.includes('Files'))e.preventDefault();});
+  document.addEventListener('paste',e=>{const image=Array.from(e.clipboardData?.items||[]).find(item=>item.type.startsWith('image/'));if(image){e.preventDefault();addReference(image.getAsFile());}});
+  function sanitizedName(value,fallback='philly-overlay'){const name=value.replace(/\.(png|json|mp4|mov|webm)$/i,'').trim().replace(/[^a-zA-Z0-9_-]+/g,'-').replace(/^-+|-+$/g,'').slice(0,90);return name||fallback;}
+  function downloadBlob(blob,name) {
+    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+  }
+  async function exportPNG() {
+    if(exportBusy)return;
+    try{ensureBrandAssets();}catch(error){toast(error.message,true);return;}
+    if(loadingImage&&state.background.mode==='photo'){toast('The reference photo is still loading. Try exporting once it appears.',true);return;}
+    if(state.background.mode==='photo'&&!referenceImage){toast('Add a reference photo or choose a transparent background.',true);return;}
+    exportBusy=true;const buttons=[$('exportButton'),$('exportTop')];buttons.forEach(b=>{b.disabled=true;});
+    try {
+      if(document.fonts?.ready)await document.fonts.ready;
+      const output=document.createElement('canvas');output.width=WIDTH;output.height=HEIGHT;
+      drawScene(output.getContext('2d'),true);
+      const blob=await new Promise((resolve,reject)=>output.toBlob(b=>b?resolve(b):reject(new Error('The PNG could not be created.')), 'image/png'));
+      downloadBlob(blob,sanitizedName(state.fileName)+'-1080x1920.png');
+      toast(`PNG exported / 1080 \u00d7 1920${state.background.mode==='transparent'?' / transparent':''}`);
+    } catch(error){toast('Export failed: '+error.message,true);}finally{exportBusy=false;buttons.forEach(b=>{b.disabled=false;});}
+  }
+  $('exportButton').addEventListener('click',exportPNG);$('exportTop').addEventListener('click',exportPNG);
+  $('saveDesign').addEventListener('click',()=>{
+    if(bugLoading){toast('Finish loading your logo before saving.',true);return;}
+    const project={app:'sideline-philly-overlay',version:4,savedAt:new Date().toISOString(),state,brandingAssets:packBrandAssets(),reference:referenceData?{data:referenceData,name:referenceName}:null};
+    downloadBlob(new Blob([JSON.stringify(project,null,2)],{type:'application/json'}),sanitizedName(state.fileName)+'-design.json');toast('Editable design saved.');
+  });
+  $('openDesign').addEventListener('click',()=>$('designFile').click());
+  $('designFile').addEventListener('change',async e=>{
+    const file=e.target.files[0];e.target.value='';if(!file)return;
+    if(file.size>25*1024*1024){toast('That design is too large. The limit is 25 MB.',true);return;}
+    try {
+      const project=JSON.parse(await file.text());
+      if(project.app!=='sideline-philly-overlay'||![1,2,3,4].includes(project.version))throw new Error('Choose a Sideline design JSON file.');
+      const next=cleanState(project.state);await decodeBrandAssets(next,project.brandingAssets||[]);let image=null;
+      if(project.reference?.data){
+        if(typeof project.reference.data!=='string'||!/^data:image\/(png|jpeg|webp);base64,/.test(project.reference.data))throw new Error('This design has an unsupported reference image.');
+        image=await loadImage(project.reference.data);
+      }
+      remember();bugLoadTokens.nbc++;bugLoadTokens.sponsor++;brandSelected=false;clearReference();sourceVideo.pause();state=next;if(videoFile&&(state.video.fileName!==videoFile.name||state.video.fileSize!==videoFile.size||state.video.fileModified!==videoFile.lastModified))clearVideo(false);
+      if(image){referenceImage=image;referenceData=project.reference.data;referenceName=String(project.reference.name||'Saved reference').slice(0,150);$('referenceThumb').src=referenceData;}
+      if(state.background.mode==='photo'&&!referenceImage)state.background.mode='transparent';
+      constrainAll();syncUI();render();autoSave();toast('Design opened.');
+    }catch(error){toast('Could not open design: '+error.message,true);}
+  });
+  $('helpButton').addEventListener('click',()=>$('helpDialog').showModal());$('closeHelp').addEventListener('click',()=>$('helpDialog').close());
+  $('resetButton').addEventListener('click',()=>$('resetDialog').showModal());$('cancelReset').addEventListener('click',()=>$('resetDialog').close());
+  $('confirmReset').addEventListener('click',()=>{remember();bugLoadTokens.nbc++;bugLoadTokens.sponsor++;brandSelected=false;clearReference();clearVideo();state=defaultState();$('resetDialog').close();syncUI();render();autoSave();toast('Fresh canvas. Make it yours.');});
+  for(const dialog of [$('helpDialog'),$('resetDialog')])dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+  new ResizeObserver(scheduleRender).observe($('artboard'));
+  document.fonts?.ready.then(()=>{constrainAll();render();});
+  try{
+    const image=await loadImage(NBC_LOGO_DATA);bugAssets.set(BUILTIN_NBC,{image,data:NBC_LOGO_DATA,name:'Included NBC Philadelphia logo'});bugAssetVersion++;
+    await decodeBrandAssets(state,restoredBugAssets);
+  }catch(error){
+    for(const kind of ['nbc','sponsor'])if(!bugAssets.has(state.branding[kind].asset)){state.branding[kind].enabled=false;state.branding[kind].asset=kind==='nbc'?BUILTIN_NBC:null;}
+    toast('Saved logo could not be restored. Reopen your saved design or upload it again.',true);
+  }
+  constrainAll();syncUI();render();autoSave();
+  // Read-only inspection is useful for testing and integration without altering a design.
+  window.SidelineOverlay=Object.freeze({getState:()=>clone(state),dimensions:Object.freeze({width:WIDTH,height:HEIGHT}),version:'3.0-branding',branding:()=>({layout:clone(brandLayout().items.map(({asset,...item})=>({...item,name:asset.name}))),assets:usedBrandAssets(),loading:bugLoading}),video:()=>({loaded:!!videoFile,duration:Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0,exporting:exportBusy,blurEngine:nativeCanvasBlur?'canvas-filter':'software',mp4:videoCandidates(state.video.keepAudio)})});
+})();
+</script>
+</body>
+</html>
