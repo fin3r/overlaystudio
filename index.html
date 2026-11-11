@@ -44,6 +44,41 @@ dialog{border:1px solid #424a56;border-radius:16px;background:var(--surface);col
 #selectBugStack.active{border-color:var(--lime);color:var(--lime)}#bugLoadingStatus{color:var(--lime)}#brandingShortcut{min-width:30px}
 @media(max-width:760px){.bug-image-well{height:78px}.bug-file{max-width:58vw}.bug-card .check-label{font-size:12px}.bug-card .field-label{font-size:11px}.bug-upload strong{font-size:12px}.bug-upload span{font-size:10px}.bug-card .help,.bug-footnote{font-size:10px}.bug-card .section-tag{font-size:8px}}
 
+
+/* NBC Local-inspired visual refresh */
+:root{--bg:#0d0f11;--surface:#15181c;--raised:#1d2126;--input:#101316;--line:#394049;--text:#f5f5f1;--muted:#a1a7b1;--quiet:#6f7782;--lime:#c9f46b;--lime-dark:#27321a;--radius:14px}
+html{background:#0a0c0e}
+body{background:radial-gradient(900px 420px at 50% -10%,rgba(201,244,107,.045),transparent 60%),linear-gradient(180deg,#0d0f11 0%,#0b0d0f 100%);letter-spacing:.01em}
+.topbar{height:72px;padding:0 28px;background:rgba(13,15,17,.96);border-bottom:1px solid #343a42;box-shadow:0 8px 30px rgba(0,0,0,.16);backdrop-filter:blur(12px)}
+.brand{gap:11px}.brand-symbol{width:36px;height:36px;border-radius:11px;background:var(--lime);color:#11170a;font-size:20px;transform:none;letter-spacing:-2px;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 22px rgba(201,244,107,.08)}
+.brand-name{font-size:15px;font-weight:900;letter-spacing:1.15px;line-height:1}.brand-sub{font-size:8px;letter-spacing:1.5px;color:#87909b;font-weight:700;margin-top:6px}.brand-eyebrow{color:var(--lime);font-weight:900;letter-spacing:1.8px;margin-right:5px}
+.topbar-actions{gap:7px}.btn{min-height:40px;padding:10px 14px;border-radius:10px;background:#171a1e;border-color:#3a414a;font-size:11px;font-weight:750;box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
+.btn:hover:not(:disabled){background:#20252b;border-color:#5b6571}.btn.primary{background:var(--lime);color:#141b0d;border-color:var(--lime);box-shadow:0 7px 20px rgba(201,244,107,.09)}.btn.primary:hover{background:#dcff95;border-color:#dcff95}.btn.ghost{background:transparent;border-color:transparent}.btn.ghost:hover{background:#1b2025;border-color:transparent}
+.workspace{height:calc(100dvh - 72px);grid-template-columns:320px minmax(320px,1fr) 300px;background:#0d0f11}
+.panel{background:rgba(18,21,24,.88);scrollbar-color:#4a525c transparent}.left-panel{border-right:1px solid #343a42}.right-panel{border-left:1px solid #343a42}
+.section{padding:20px 20px;border-bottom:1px solid #2d333a}.section-title{margin-bottom:15px}.section-title h2{font-size:10px;letter-spacing:1.8px;color:#d6dbe1;font-weight:850}.section-tag{font-size:9px;color:#8d96a2;letter-spacing:.7px}.help{color:#8d96a2;line-height:1.55}
+.field-label{font-size:10px;color:#c7cdd4;font-weight:700;letter-spacing:.15px}.step-number{color:#737c87}
+select,input[type=text],input[type=number],textarea{border-color:#3b434d;background:#101316;border-radius:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.015)}
+select{height:42px;font-size:12px}.team-select{height:48px;font-size:13px}.select-wrap::after{right:15px}
+input[type=text]{height:40px}textarea{min-height:105px}
+.style-grid{gap:8px}.style-btn{border-color:#39414b;border-radius:11px;background:#111519;padding:11px 5px 9px}.style-btn:hover{border-color:#64707d;background:#171c21}.style-btn.active{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 8px 22px rgba(201,244,107,.05)}
+.style-sample{border-radius:5px}
+.segmented{border-radius:10px;background:#0f1215;border-color:#39414a;padding:3px}.segmented button{border-radius:7px}.segmented button.active{background:#272d34}
+.reference-drop{border:1px dashed #4b5560!important;background:linear-gradient(180deg,#171b20,#13171a);border-radius:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.02);transition:.15s}.reference-drop:hover{border-color:var(--lime)!important;background:#181d21;transform:translateY(-1px)}
+.stage-panel{background:#090b0d}.stage-toolbar{padding:10px 12px;border:1px solid #2f363f;border-radius:14px;background:rgba(16,19,22,.84);box-shadow:0 10px 30px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.stage-body{background:radial-gradient(500px 460px at 50% 40%,rgba(255,255,255,.025),transparent 65%)}
+.artboard{box-shadow:0 26px 70px rgba(0,0,0,.46),0 0 0 1px rgba(255,255,255,.05)}
+.canvas-caption{color:#818a95}.stage-label,.selection-tag{letter-spacing:1.1px;color:#89929d}.preview-badge{border-color:#303740;background:#12161a;color:#868f9a;border-radius:9px}
+.layer-card,.video-file-card,.bug-card,.export-card,.video-export-settings{background:#13171a!important;border:1px solid #333a43!important;border-radius:12px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.015)}
+.layer-card:hover,.bug-card:hover,.video-file-card:hover{border-color:#4d5661!important}
+.bug-connector{color:#7f8894;letter-spacing:1px;font-size:8px}.bug-connector span{background:#343b44}
+.btn.subtle-btn{border:1px dashed #4a535e;background:transparent}.btn.subtle-btn:hover{border-color:var(--lime);background:#171c20}
+input[type=range]{accent-color:var(--lime)}input[type=range]::-webkit-slider-runnable-track{background:#454c55;height:5px}.range-value{color:var(--lime)}
+kbd{background:#15191d;border-color:#3b444e;color:#abb3bd;border-radius:5px}
+.toast{background:#161a1e!important;border-color:#4a545f!important;box-shadow:0 18px 40px rgba(0,0,0,.35)!important}
+.modal,.dialog-card,.export-modal{background:#171b1f!important;border-color:#3d4650!important;border-radius:18px!important;box-shadow:0 30px 80px rgba(0,0,0,.55)!important}
+.modal-kicker,.dialog-kicker{color:var(--lime)!important;letter-spacing:2px;font-weight:900}
+@media(max-width:760px){.topbar{height:64px;padding:0 13px}.workspace{height:auto;min-height:0}.stage-panel{padding:16px 16px 18px}.section{padding:18px 16px}.stage-toolbar{border-radius:12px}.brand-name{font-size:13px}.brand-sub{font-size:7px}.btn{border-radius:9px}}
 </style>
 <!-- Implementation references (no requests are made to these sites):
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
@@ -85,7 +120,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
 <symbol id="i-muted" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3V9Zm13 0 5 6m0-6-5 6"/></symbol>
 </defs></svg>
 <header class="topbar">
- <div class="brand"><div class="brand-symbol" aria-hidden="true">S/</div><div><div class="brand-name">sideline<span style="color:var(--lime)">.</span></div><div class="brand-sub">PHILLY VIDEO + OVERLAY STUDIO</div></div><span class="version">9:16</span></div>
+ <div class="brand"><div class="brand-symbol" aria-hidden="true">S/</div><div><div class="brand-name">SIDELINE<span style="color:var(--lime)">.</span></div><div class="brand-sub"><span class="brand-eyebrow">LOCAL</span> VIDEO OVERLAY STUDIO</div></div><span class="version">9:16</span></div>
  <div class="topbar-actions">
   <button class="btn ghost icon-btn desktop-only" id="undoButton" title="Undo (Ctrl/Cmd + Z)" aria-label="Undo"><svg><use href="#i-undo"/></svg></button>
   <button class="btn ghost icon-btn desktop-only" id="redoButton" title="Redo (Ctrl/Cmd + Shift + Z)" aria-label="Redo"><svg><use href="#i-redo"/></svg></button>
@@ -110,16 +145,15 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
    <label class="field-label" for="headline">Your headline</label>
    <textarea id="headline" rows="3" maxlength="420" spellcheck="true" placeholder="WRITE YOUR HEADLINE&#10;RIGHT HERE"></textarea>
    <div class="text-meta"><label class="check-label"><input type="checkbox" id="uppercase">ALL CAPS</label><span class="char-count"><span id="charCount">0</span> / 420</span></div>
-   <p class="help">Enter creates a new line. Long lines wrap automatically.</p>
+   <p class="help">Enter creates a new line. Long lines wrap automatically. Use <strong>*asterisks*</strong> around words to highlight them.</p>
    <div class="layer-time" id="layerTimingSection" hidden><div class="layer-time-label">WHEN THIS TEXT APPEARS</div><label class="check-label"><input type="checkbox" id="layerFullClip" checked>Show for the entire clip</label><div id="layerTimeFields" hidden><div class="two-col field"><div><label class="field-label" for="layerStart">Start (m:ss.s)</label><input type="text" id="layerStart" value="0:00.0" spellcheck="false" inputmode="decimal"></div><div><label class="field-label" for="layerEnd">End (m:ss.s)</label><input type="text" id="layerEnd" placeholder="To end" spellcheck="false" inputmode="decimal"></div></div><p class="help">Times refer to the original video. Scrub the preview to see when this layer appears. PNG exports ignore timing.</p></div></div>
-   <div class="field"><label class="field-label" for="emoji">Emoji above headline <span style="color:var(--quiet);font-weight:400">/ optional</span></label><div class="emoji-row"><input type="text" id="emoji" class="emoji-input" maxlength="24" aria-label="Emoji or short accent above headline"><div class="emoji-picker" aria-label="Emoji shortcuts"><button class="emoji-button" data-emoji="&#x1f440;" title="Eyes">&#x1f440;</button><button class="emoji-button" data-emoji="&#x1f525;" title="Fire">&#x1f525;</button><button class="emoji-button" data-emoji="&#x1f92f;" title="Mind blown">&#x1f92f;</button><button class="emoji-button" data-emoji="&#x1f3c0;" title="Basketball">&#x1f3c0;</button><button class="emoji-button" data-emoji="" title="No emoji" aria-label="Remove emoji"><svg style="height:14px;width:14px"><use href="#i-close"/></svg></button></div></div></div>
    <div class="field"><span class="field-label">Banner style</span><div class="style-grid" role="group" aria-label="Banner styles"><button class="style-btn active" data-style="team"><span class="style-sample team">Aa</span>Team</button><button class="style-btn" data-style="black"><span class="style-sample black">Aa</span>Black</button><button class="style-btn" data-style="white"><span class="style-sample white">Aa</span>White</button><button class="style-btn" data-style="outline"><span class="style-sample outline">Aa</span>No box</button></div></div>
    <div class="field"><label class="check-label"><input type="checkbox" id="accentLast">Highlight the last line</label><div class="accent-controls" id="accentControls" hidden><div class="color-control"><input type="color" id="accentColor" aria-label="Accent color"><input type="text" id="accentHex" class="hex-input" maxlength="7" aria-label="Accent hex color" spellcheck="false"></div><div class="select-wrap small-select-wrap"><select id="accentMode" class="small-select" aria-label="Accent applies to"><option value="text">Text color</option><option value="background">Box color</option></select></div></div></div>
   </section>
   <section class="section">
    <div class="section-title"><h2><span class="step-number">03</span>Type &amp; layout</h2></div>
    <div class="two-col"><div><label class="field-label" for="fontFamily">Typeface</label><div class="select-wrap"><select id="fontFamily"><option value="heavy">Heavy sans</option><option value="condensed">Condensed</option><option value="rounded">Rounded</option><option value="classic">Classic serif</option></select></div></div><div><span class="field-label">Alignment</span><div class="segmented" id="alignment" role="group" aria-label="Text alignment"><button data-align="left" aria-label="Left align" title="Left"><svg><use href="#i-left"/></svg></button><button data-align="center" class="active" aria-label="Center align" title="Center"><svg><use href="#i-center"/></svg></button><button data-align="right" aria-label="Right align" title="Right"><svg><use href="#i-right"/></svg></button></div></div></div>
-   <div class="field"><div class="range-heading"><label class="field-label" for="fontSize">Text size</label><output class="range-value" id="fontSizeValue" for="fontSize">64 px</output></div><input type="range" min="28" max="180" step="1" id="fontSize"></div>
+   <div class="field"><div class="range-heading"><label class="field-label" for="fontSize">Text size</label><output class="range-value" id="fontSizeValue" for="fontSize">55 px</output></div><input type="range" min="28" max="180" step="1" value="55" id="fontSize"></div>
    <div class="field"><div class="range-heading"><label class="field-label" for="maxWidth">Banner width</label><output class="range-value" id="maxWidthValue" for="maxWidth">86%</output></div><input type="range" min="30" max="96" step="1" id="maxWidth"></div>
    <div class="field"><div class="two-col"><div><div class="color-label">Text</div><div class="color-control"><input type="color" id="textColor" aria-label="Text color"><input type="text" id="textHex" class="hex-input" maxlength="7" aria-label="Text hex color" spellcheck="false"></div></div><div><div class="color-label">Box</div><div class="color-control"><input type="color" id="boxColor" aria-label="Box color"><input type="text" id="boxHex" class="hex-input" maxlength="7" aria-label="Box hex color" spellcheck="false"></div></div></div></div>
    <div class="field"><label class="field-label" for="boxShape">Background shape</label><div class="select-wrap"><select id="boxShape"><option value="lines">Fit each line / Instagram style</option><option value="block">One solid rectangle</option><option value="none">Text only / no background</option></select></div></div>
@@ -128,7 +162,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     <div class="field"><div class="range-heading"><label class="field-label" for="radius">Roundness</label><output class="range-value" id="radiusValue">12 px</output></div><input type="range" id="radius" min="0" max="60" step="1"></div>
     <div class="field"><div class="range-heading"><label class="field-label" for="lineGap">Space between lines</label><output class="range-value" id="lineGapValue">-2 px</output></div><input type="range" id="lineGap" min="-12" max="35" step="1"></div>
     <div class="field"><div class="range-heading"><label class="field-label" for="boxOpacity">Box opacity</label><output class="range-value" id="boxOpacityValue">100%</output></div><input type="range" id="boxOpacity" min="0" max="100" step="1"></div>
-    <div class="field"><div class="range-heading"><label class="field-label" for="emojiSize">Emoji size</label><output class="range-value" id="emojiSizeValue">104 px</output></div><input type="range" id="emojiSize" min="42" max="240" step="1"></div>
     <div class="field row wrap"><label class="check-label"><input type="checkbox" id="shadow">Soft shadow</label><label class="check-label"><input type="checkbox" id="stroke">Text outline</label></div>
    </details>
   </section>
@@ -258,7 +291,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
 <input type="file" id="designFile" accept=".json,application/json" hidden>
 <dialog id="videoExportDialog" aria-labelledby="videoExportTitle"><div class="export-kicker">SIDELINE / MP4 EXPORT</div><h2 id="videoExportTitle">Creating your MP4</h2><p class="export-summary" id="videoExportDetail"></p><div class="export-visual"><canvas id="videoExportCanvas" width="1080" height="1920" aria-label="Rendered video export preview"></canvas><video id="exportResultVideo" playsinline controls preload="metadata" hidden></video></div><progress class="export-progress" id="videoProgress" value="0" max="1" aria-label="Video export progress"></progress><div class="export-status-row" role="status" aria-live="polite"><span id="videoElapsed"></span><span id="videoPercent">0%</span></div><p class="export-warning" id="videoExportWarning"></p><div class="export-actions"><button class="btn" id="cancelVideoExport">Cancel export</button><button class="btn" id="closeVideoExport" hidden>Back to editor</button><a class="btn primary" id="saveVideoAgain" download hidden><svg><use href="#i-download"/></svg>Save MP4</a></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<dialog id="helpDialog"><h2>Your video. Your headline. Your team.</h2><p><strong>For video:</strong> click <strong>Add video</strong>, position your text and press <strong>Export MP4</strong>. New widescreen videos automatically use <strong>Blur background / full video</strong>: the full picture stays sharp over a moving, blurred copy. Adjust blur strength, background darkness and video vertical position in the Video source panel. The blur is included in the exported MP4, not just the preview. Use Fill to crop to 9:16, or Fit to show the full picture with black bars. The default output is 1080 x 1920. Original file audio is included unless you turn it off. Preview mute never changes export audio.</p><p>Exports run in real time using native browser recording. Keep this tab visible and your device awake. Long clips, high-resolution sources and 60 fps can strain slower devices; use 720p / 30 fps as needed. Start and end points are approximate, not frame-accurate. The export panel shows your browser's MP4/audio support. AAC is preferred; a clearly labeled Opus fallback is available when necessary. No WebM is renamed as MP4.</p><p><strong>Branding &amp; sponsor:</strong> your supplied NBC Sports Philadelphia logo is built in. Switch it on or off in the Branding &amp; sponsor panel. Add a separate sponsor PNG, JPG or WebP; it is centered directly beneath the NBC logo. Enable <strong>White background behind sponsor</strong> to add a white card, then adjust its padding and corner roundness. This does not remove an existing background from a logo file. Use a transparent PNG for the cleanest edges. Drag either logo to move the stack; use the corner handle to scale both, or use separate width sliders. Logo proportions are preserved. Branding stays on for the entire clip unless switched off. Both MP4 and PNG exports contain visible logos.</p><p><strong>Text timing:</strong> select a layer and uncheck Show for the entire clip. Times use the original video's clock. PNG exports ignore timing. Video files are not embedded in saved designs; reopen the same file after loading a design to restore its trim.</p><ol><li>Choose Sixers, Flyers, Eagles, or Phillies. The selected layer takes that team's palette.</li><li>Type your headline. Use Enter for line breaks, choose a banner style, and add an optional emoji. Fonts use the typefaces available on your device.</li><li>Drag your banner in the preview. Resize with the corner handle or text-size slider. Add more text layers for separate callouts.</li><li>Keep <strong>Transparent / overlay only</strong> selected and export a full-size <strong>1080 &times; 1920 PNG</strong>. Checkerboards, guides, and selection handles never appear in the file.</li></ol><p>Add a reference photo to line things up. It is only a preview unless you select <strong>Include reference photo</strong>. Local autosave stores the text, logos and settings; <strong>Save design</strong> also keeps your logos and reference image in an editable JSON file.</p><p><code>Ctrl/Cmd + Z</code> undo &nbsp; <code>Ctrl/Cmd + Shift + Z</code> redo<br><code>Arrow keys</code> move 1 px &nbsp; <code>Shift + arrows</code> move 10 px<br><code>Delete</code> remove selected layer &nbsp; <code>Ctrl/Cmd + D</code> duplicate</p><p>Color presets are editable, team-inspired palettes. This editor is not affiliated with Instagram or the teams.</p><div class="dialog-foot"><button class="btn primary" id="closeHelp">Start creating</button></div></dialog>
+<dialog id="helpDialog"><h2>Your video. Your headline. Your team.</h2><p><strong>For video:</strong> click <strong>Add video</strong>, position your text and press <strong>Export MP4</strong>. New widescreen videos automatically use <strong>Blur background / full video</strong>: the full picture stays sharp over a moving, blurred copy. Adjust blur strength, background darkness and video vertical position in the Video source panel. The blur is included in the exported MP4, not just the preview. Use Fill to crop to 9:16, or Fit to show the full picture with black bars. The default output is 1080 x 1920. Original file audio is included unless you turn it off. Preview mute never changes export audio.</p><p>Exports run in real time using native browser recording. Keep this tab visible and your device awake. Long clips, high-resolution sources and 60 fps can strain slower devices; use 720p / 30 fps as needed. Start and end points are approximate, not frame-accurate. The export panel shows your browser's MP4/audio support. AAC is preferred; a clearly labeled Opus fallback is available when necessary. No WebM is renamed as MP4.</p><p><strong>Branding &amp; sponsor:</strong> your supplied NBC Sports Philadelphia logo is built in. Switch it on or off in the Branding &amp; sponsor panel. Add a separate sponsor PNG, JPG or WebP; it is centered directly beneath the NBC logo. Enable <strong>White background behind sponsor</strong> to add a white card, then adjust its padding and corner roundness. This does not remove an existing background from a logo file. Use a transparent PNG for the cleanest edges. Drag either logo to move the stack; use the corner handle to scale both, or use separate width sliders. Logo proportions are preserved. Branding stays on for the entire clip unless switched off. Both MP4 and PNG exports contain visible logos.</p><p><strong>Text timing:</strong> select a layer and uncheck Show for the entire clip. Times use the original video's clock. PNG exports ignore timing. Video files are not embedded in saved designs; reopen the same file after loading a design to restore its trim.</p><ol><li>Choose Sixers, Flyers, Eagles, or Phillies. The selected layer takes that team's palette.</li><li>Type your headline. Use Enter for line breaks, <strong>*asterisks*</strong> to highlight words, and choose a banner style. Fonts use the typefaces available on your device.</li><li>Drag your banner in the preview. Resize with the corner handle or text-size slider. Add more text layers for separate callouts.</li><li>Keep <strong>Transparent / overlay only</strong> selected and export a full-size <strong>1080 &times; 1920 PNG</strong>. Checkerboards, guides, and selection handles never appear in the file.</li></ol><p>Add a reference photo to line things up. It is only a preview unless you select <strong>Include reference photo</strong>. Local autosave stores the text, logos and settings; <strong>Save design</strong> also keeps your logos and reference image in an editable JSON file.</p><p><code>Ctrl/Cmd + Z</code> undo &nbsp; <code>Ctrl/Cmd + Shift + Z</code> redo<br><code>Arrow keys</code> move 1 px &nbsp; <code>Shift + arrows</code> move 10 px<br><code>Delete</code> remove selected layer &nbsp; <code>Ctrl/Cmd + D</code> duplicate</p><p>Color presets are editable, team-inspired palettes. This editor is not affiliated with Instagram or the teams.</p><div class="dialog-foot"><button class="btn primary" id="closeHelp">Start creating</button></div></dialog>
 <dialog id="resetDialog"><h2>Start a fresh design?</h2><p>This clears your layers, uploaded logos, reference photo and video selection. The included NBC logo is restored. Save your design first to keep an editable copy.</p><div class="dialog-foot" style="gap:8px"><button class="btn" id="cancelReset">Keep editing</button><button class="btn primary" id="confirmReset">Reset design</button></div></dialog>
 <script>
 'use strict';
@@ -292,11 +325,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   const characters = text => segmenter ? Array.from(segmenter.segment(text), x => x.segment) : Array.from(text);
   const uid = () => 'layer-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,8);
   function newLayer(team='sixers', text='SIXERS GAME\nHIGHLIGHTS') {
-    return {id:uid(), text, team, visible:true, x:540, y:1056, font:'heavy', fontSize:80,
+    return {id:uid(), text, team, visible:true, x:540, y:1056, font:'heavy', fontSize:55,
       maxWidth:86, align:'center', uppercase:true, style:'team', textColor:'#FFFFFF',
       boxColor:teams[team].primary, boxShape:'lines', padding:12, radius:12, lineGap:-2,
       boxOpacity:100, shadow:false, stroke:false, accentLast:false,
-      accentColor:teams[team].secondary, accentMode:'text', timed:false, startTime:0, endTime:null, emoji:'\uD83C\uDFC0', emojiSize:104};
+      accentColor:teams[team].secondary, accentMode:'text', timed:false, startTime:0, endTime:null, emoji:'', emojiSize:104};
   }
   function defaultState() {
     const layer = newLayer();
@@ -319,7 +352,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
       l.id = typeof item.id==='string' && item.id.length<100 && !seen.has(item.id) ? item.id : uid(); seen.add(l.id);
       l.text = typeof item.text==='string' ? item.text.slice(0,420) : '';
       l.team = Object.hasOwn(teams,item.team) ? item.team : base.team;
-      l.emoji = typeof item.emoji==='string' ? item.emoji.slice(0,24) : '';
+      l.emoji = ''; // Emoji accent option removed; imported designs no longer display it.
       l.font = choice(item.font,Object.keys(fonts),'heavy');
       l.align = choice(item.align,['left','center','right'],'center');
       l.style = choice(item.style,['team','black','white','outline','custom'],'team');
@@ -404,23 +437,36 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     if(state.background.mode==='photo'&&!referenceImage)state.background.mode='transparent';
     constrainAll();syncUI();render();autoSave();
   }
-  // Wrapping uses the same font metrics as export, including manual line breaks.
+  // Inline highlight syntax: wrap words in single asterisks, e.g. *PAUL GEORGE*.
+  // The markers are never drawn; highlighted segments use the layer accent color.
+  function visibleText(text) { return text.replace(/\*([^*]+)\*/g,'$1').replace(/\*/g,''); }
+  function highlightSegments(text) {
+    const parts=[]; let last=0, m; const re=/\*([^*]+)\*/g;
+    while((m=re.exec(text))) {
+      if(m.index>last) parts.push({text:text.slice(last,m.index),highlight:false});
+      parts.push({text:m[1],highlight:true});
+      last=re.lastIndex;
+    }
+    if(last<text.length) parts.push({text:text.slice(last),highlight:false});
+    return parts.filter(p=>p.text);
+  }
+  function measureMarkedText(context,text){ return context.measureText(visibleText(text)).width; }
   function wrapText(text,context,maxWidth) {
     const rows=[];
     for(const paragraph of text.split('\n')) {
       if(!paragraph.trim()){rows.push('');continue;}
       let row='';
       for(const word of paragraph.trim().split(/\s+/)) {
-        if(context.measureText(word).width>maxWidth) {
+        if(measureMarkedText(context,word)>maxWidth) {
           if(row){rows.push(row);row='';}
           let part='';
           for(const ch of characters(word)) {
-            if(part && context.measureText(part+ch).width>maxWidth){rows.push(part);part=ch;}else part+=ch;
+            if(part && measureMarkedText(context,part+ch)>maxWidth){rows.push(part);part=ch;}else part+=ch;
           }
           row=part;
         }else {
           const candidate=row ? row+' '+word : word;
-          if(row && context.measureText(candidate).width>maxWidth){rows.push(row);row=word;}else row=candidate;
+          if(row && measureMarkedText(context,candidate)>maxWidth){rows.push(row);row=word;}else row=candidate;
         }
       }
       if(row)rows.push(row);
@@ -439,7 +485,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
       const scale=size/layer.fontSize;
       px=(layer.padding+10)*scale;py=layer.padding*scale;
       rows=hasText?wrapText(text,context,Math.max(25,maxWidth-px*2)):[];
-      metrics=rows.map(t=>context.measureText(t));
+      metrics=rows.map(t=>context.measureText(visibleText(t)));
       lineHeight=size*1.08;boxHeight=lineHeight+py*2;
       const gap=Math.max(-boxHeight*.20,layer.lineGap*scale);
       textHeight=rows.length?rows.length*boxHeight+(rows.length-1)*gap:0;
@@ -496,16 +542,35 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
           context.fillRect(b.left,row.y,b.width,row.height);context.restore();
         }
       }else {
-        // One union path avoids darker seams where translucent line boxes overlap.
+        // Instagram-style stacked line boxes: only the outermost top and bottom
+        // corners are rounded. Shared corners between lines stay square so the
+        // boxes visually interlock instead of looking like separate pills.
         context.beginPath();
-        for(const row of b.rows)if(row.text){
+        for(const [index,row] of b.rows.entries()) if(row.text){
           const x=row.x,y=row.y,w=row.width,h=row.height,r=Math.max(0,Math.min(radius,w/2,h/2));
-          context.moveTo(x+r,y);context.arcTo(x+w,y,x+w,y+h,r);context.arcTo(x+w,y+h,x,y+h,r);context.arcTo(x,y+h,x,y,r);context.arcTo(x,y,x+w,y,r);context.closePath();
+          const topRound=index===0, bottomRound=index===b.rows.length-1;
+          const rtl=topRound?r:0,rtr=topRound?r:0,rbr=bottomRound?r:0,rbl=bottomRound?r:0;
+          context.moveTo(x+rtl,y);
+          context.lineTo(x+w-rtr,y);
+          context.quadraticCurveTo(x+w,y,x+w,y+rtr);
+          context.lineTo(x+w,y+h-rbr);
+          context.quadraticCurveTo(x+w,y+h,x+w-rbr,y+h);
+          context.lineTo(x+rbl,y+h);
+          context.quadraticCurveTo(x,y+h,x,y+h-rbl);
+          context.lineTo(x,y+rtl);
+          context.quadraticCurveTo(x,y,x+rtl,y);
+          context.closePath();
         }
         context.fillStyle=rgba(layer.boxColor,opacity);context.fill();
         if(layer.accentLast&&layer.accentMode==='background'&&b.rows.length){
           const row=b.rows[b.rows.length-1];drawShadow(context,false);
-          context.save();roundedPath(context,row.x,row.y,row.width,row.height,radius);context.clip();
+          const rr=Math.max(0,Math.min(radius,row.width/2,row.height/2));
+          context.save();
+          // Last row is the bottom segment, so keep only its bottom corners rounded.
+          context.beginPath();context.moveTo(row.x,row.y);context.lineTo(row.x+row.width,row.y);
+          context.lineTo(row.x+row.width,row.y+row.height-rr);context.quadraticCurveTo(row.x+row.width,row.y+row.height,row.x+row.width-rr,row.y+row.height);
+          context.lineTo(row.x+rr,row.y+row.height);context.quadraticCurveTo(row.x,row.y+row.height,row.x,row.y+row.height-rr);
+          context.closePath();context.clip();
           context.clearRect(row.x,row.y,row.width,row.height);
           context.fillStyle=rgba(layer.accentColor,opacity);context.fillRect(row.x,row.y,row.width,row.height);context.restore();
         }
@@ -514,14 +579,21 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     drawShadow(context,false);context.font=fontString(layer,b.size);context.textAlign='left';context.textBaseline='alphabetic';
     b.rows.forEach((row,index)=>{
       if(!row.text)return;
-      const measured=context.measureText(row.text);
+      const measured=context.measureText(visibleText(row.text));
       const ascent=measured.actualBoundingBoxAscent || b.size*.76,descent=measured.actualBoundingBoxDescent || 0;
       const baseline=row.y+b.py+(b.lineHeight-ascent-descent)/2+ascent;
-      const x=row.x+b.px;
-      context.fillStyle=layer.accentLast&&layer.accentMode==='text'&&index===b.rows.length-1?layer.accentColor:layer.textColor;
-      if(layer.stroke){context.strokeStyle='#000000';context.lineWidth=Math.max(2,b.size*.085);context.lineJoin='round';context.strokeText(row.text,x,baseline);}
-      if(layer.shadow&&layer.boxShape==='none')drawShadow(context,true);
-      context.fillText(row.text,x,baseline);drawShadow(context,false);
+      let x=row.x+b.px;
+      const defaultColor=layer.accentLast&&layer.accentMode==='text'&&index===b.rows.length-1?layer.accentColor:layer.textColor;
+      for(const seg of highlightSegments(row.text)){
+        const segText=visibleText(seg.text);
+        if(!segText)continue;
+        const segWidth=context.measureText(segText).width;
+        context.fillStyle=seg.highlight?layer.accentColor:defaultColor;
+        if(layer.stroke){context.strokeStyle='#000000';context.lineWidth=Math.max(2,b.size*.085);context.lineJoin='round';context.strokeText(segText,x,baseline);}
+        if(layer.shadow&&layer.boxShape==='none')drawShadow(context,true);
+        context.fillText(segText,x,baseline);drawShadow(context,false);
+        x+=segWidth;
+      }
     });
     if(b.hasEmoji){
       context.font=`${b.emojiSize}px ${emojiFont}`;context.textAlign='center';context.textBaseline='middle';
@@ -571,7 +643,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
       select.setAttribute('aria-label','Select '+(layer.text.trim().replace(/\n/g,' ')||'empty text layer'));
       const thumb=document.createElement('span');thumb.className='layer-thumb';thumb.textContent='T';thumb.style.background=layer.boxShape==='none'?'#424851':layer.boxColor;thumb.style.color=layer.textColor;
       const text=document.createElement('div');text.style.minWidth='0';
-      const name=document.createElement('div');name.className='layer-name';name.textContent=layer.text.trim().replace(/\n/g,' ')|| (layer.emoji.trim()?'Emoji accent':'Empty text');
+      const name=document.createElement('div');name.className='layer-name';name.textContent=layer.text.trim().replace(/\n/g,' ')|| 'Empty text';
       const detail=document.createElement('div');detail.className='layer-type';detail.textContent=`${teams[layer.team].name} / ${layer.visible?'Text layer':'Hidden'}`;
       text.append(name,detail);select.append(thumb,text);select.addEventListener('click',()=>selectLayer(layer.id));
       const visible=document.createElement('button');visible.className='btn ghost layer-visibility';visible.title=layer.visible?'Hide layer':'Show layer';visible.setAttribute('aria-label',visible.title);visible.append(icon(layer.visible?'eye':'eye-off'));
@@ -586,7 +658,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   function syncUI() {
     const l=current(),team=teams[l.team];state.team=l.team;
     document.documentElement.style.setProperty('--team',team.primary);
-    setValue('teamSelect',l.team);setValue('headline',l.text);setValue('emoji',l.emoji);
+    setValue('teamSelect',l.team);setValue('headline',l.text);
     $('uppercase').checked=l.uppercase;$('accentLast').checked=l.accentLast;
     $('accentControls').hidden=!l.accentLast;
     $('charCount').textContent=l.text.length;
@@ -594,7 +666,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     document.querySelectorAll('[data-style]').forEach(btn=>{btn.classList.toggle('active',btn.dataset.style===l.style);btn.setAttribute('aria-pressed',String(btn.dataset.style===l.style));});
     document.querySelectorAll('[data-align]').forEach(btn=>{btn.classList.toggle('active',btn.dataset.align===l.align);btn.setAttribute('aria-pressed',String(btn.dataset.align===l.align));});
     setValue('fontFamily',l.font);setValue('boxShape',l.boxShape);setValue('accentMode',l.accentMode);
-    const ranges={fontSize:[l.fontSize,' px'],maxWidth:[l.maxWidth,'%'],padding:[l.padding,' px'],radius:[l.radius,' px'],lineGap:[l.lineGap,' px'],boxOpacity:[l.boxOpacity,'%'],emojiSize:[l.emojiSize,' px'],posX:[l.x/WIDTH*100,'%'],posY:[l.y/HEIGHT*100,'%']};
+    const ranges={fontSize:[l.fontSize,' px'],maxWidth:[l.maxWidth,'%'],padding:[l.padding,' px'],radius:[l.radius,' px'],lineGap:[l.lineGap,' px'],boxOpacity:[l.boxOpacity,'%'],posX:[l.x/WIDTH*100,'%'],posY:[l.y/HEIGHT*100,'%']};
     for(const [id,[value,unit]] of Object.entries(ranges)){setValue(id,Math.round(value*10)/10);$(id+'Value').textContent=(id.startsWith('pos')?Math.round(value*10)/10:Math.round(value))+unit;}
     for(const [picker,hex,key] of [['textColor','textHex','textColor'],['boxColor','boxHex','boxColor'],['accentColor','accentHex','accentColor']]){setValue(picker,l[key]);if(document.activeElement!==$(hex))setValue(hex,l[key]);}
     $('shadow').checked=l.shadow;$('stroke').checked=l.stroke;
@@ -640,13 +712,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     if(state.fileName===oldTeam+'-overlay')state.fileName=layer.team+'-overlay';
   }));
   $('headline').addEventListener('input',e=>change(()=>{current().text=e.target.value.slice(0,420);},'headline'));
-  $('emoji').addEventListener('input',e=>change(()=>{current().emoji=e.target.value.slice(0,24);},'emoji'));
-  document.querySelectorAll('[data-emoji]').forEach(btn=>btn.addEventListener('click',()=>change(()=>{current().emoji=btn.dataset.emoji;})));
   document.querySelectorAll('[data-style]').forEach(btn=>btn.addEventListener('click',()=>change(()=>applyStyle(current(),btn.dataset.style))));
   document.querySelectorAll('[data-align]').forEach(btn=>btn.addEventListener('click',()=>change(()=>{current().align=btn.dataset.align;})));
   for(const id of ['uppercase','accentLast','shadow','stroke'])$(id).addEventListener('change',e=>change(()=>{current()[id]=e.target.checked;}));
   for(const [id,key] of [['fontFamily','font'],['boxShape','boxShape'],['accentMode','accentMode']])$(id).addEventListener('change',e=>change(()=>{current()[key]=e.target.value;if(key==='boxShape')current().style='custom';}));
-  for(const id of ['fontSize','maxWidth','padding','radius','lineGap','boxOpacity','emojiSize'])$(id).addEventListener('input',e=>change(()=>{current()[id]=Number(e.target.value);},id));
+  for(const id of ['fontSize','maxWidth','padding','radius','lineGap','boxOpacity'])$(id).addEventListener('input',e=>change(()=>{current()[id]=Number(e.target.value);},id));
   for(const [id,key,dimension] of [['posX','x',WIDTH],['posY','y',HEIGHT]])$(id).addEventListener('input',e=>change(()=>{current()[key]=Number(e.target.value)/100*dimension;},id));
   function bindColor(picker,hex,getter,setter) {
     $(picker).addEventListener('input',e=>change(()=>{setter(e.target.value.toUpperCase());setValue(hex,e.target.value.toUpperCase());},picker));
@@ -682,7 +752,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   // Native MP4 export. No uploads, CDN, FFmpeg download, screen capture, or microphone.
   // CanvasCaptureMediaStreamTrack provides video; Web Audio supplies the file's audio.
   // MediaRecorder is real-time. Fail explicitly rather than relabeling WebM as MP4.
-  function videoDefaults(){return {fit:'cover',cropX:50,cropY:50,blurAmount:42,blurDim:20,foregroundY:50,keepAudio:true,resolution:'1080',fps:30,trimStart:0,trimEnd:null,previewMuted:false,fileName:'',fileSize:0,fileModified:0};}
+  function videoDefaults(){return {fit:'cover',cropX:50,cropY:50,blurAmount:42,blurDim:38,foregroundY:35,keepAudio:true,resolution:'1080',fps:30,trimStart:0,trimEnd:null,previewMuted:false,fileName:'',fileSize:0,fileModified:0};}
   const sourceVideo=$('sourceVideo');
   let videoFile=null,videoURL='',videoLoadId=0,videoLoading=false,previewRAF=0;
   let audioContext=null,audioSource=null,audioDestination=null,monitorGain=null;
@@ -921,7 +991,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
         // Reopening a saved source keeps its chosen framing; a new widescreen
         // source gets the full-picture blur treatment automatically.
         state.video.fit=sourceVideo.videoWidth>sourceVideo.videoHeight?'blur':'cover';
-        state.video.foregroundY=50;
+        state.video.blurDim=38;
+        state.video.foregroundY=35;
       }
       blurFrameKey='';
       state.video.fileName=file.name;state.video.fileSize=file.size;state.video.fileModified=file.lastModified;
@@ -1412,7 +1483,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   constrainAll();syncUI();render();autoSave();
   // Read-only inspection is useful for testing and integration without altering a design.
-  window.SidelineOverlay=Object.freeze({getState:()=>clone(state),dimensions:Object.freeze({width:WIDTH,height:HEIGHT}),version:'3.0-branding',branding:()=>({layout:clone(brandLayout().items.map(({asset,...item})=>({...item,name:asset.name}))),assets:usedBrandAssets(),loading:bugLoading}),video:()=>({loaded:!!videoFile,duration:Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0,exporting:exportBusy,blurEngine:nativeCanvasBlur?'canvas-filter':'software',mp4:videoCandidates(state.video.keepAudio)})});
+  window.SidelineOverlay=Object.freeze({getState:()=>clone(state),dimensions:Object.freeze({width:WIDTH,height:HEIGHT}),version:'3.1-overlay',branding:()=>({layout:clone(brandLayout().items.map(({asset,...item})=>({...item,name:asset.name}))),assets:usedBrandAssets(),loading:bugLoading}),video:()=>({loaded:!!videoFile,duration:Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0,exporting:exportBusy,blurEngine:nativeCanvasBlur?'canvas-filter':'software',mp4:videoCandidates(state.video.keepAudio)})});
 })();
 </script>
 </body>
