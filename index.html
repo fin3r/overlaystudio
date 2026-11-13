@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#121418">
-<meta name="description" content="Create Philadelphia sports text overlays, add a blurred background to widescreen video, and export 9:16 MP4 videos or transparent PNGs. Add NBC Sports Philadelphia and sponsor logos with optional white backing. Private, standalone, offline editor.">
-<title>Sideline | Philly Video + Overlay Studio - NBC + Sponsor Bugs</title>
+<meta name="description" content="Create Philadelphia sports text overlays, add a blurred background to widescreen video, and export 9:16 MP4 videos or transparent PNGs. Add an upper-left show logo plus NBC Sports Philadelphia and sponsor logos at upper right. Private, standalone, offline editor.">
+<title>Sideline | Philly Video + Overlay Studio - Breaking News Presets</title>
 <style>
-:root{color-scheme:dark;--bg:#111317;--surface:#191c21;--raised:#22262d;--input:#101216;--line:#30343c;--text:#f4f4f0;--muted:#969ca8;--quiet:#69717f;--lime:#d0f58a;--lime-dark:#27331d;--team:#006bb6;--radius:12px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-synthesis:none}
+:root{color-scheme:dark;--bg:#111317;--surface:#191c21;--raised:#22262d;--input:#101216;--line:#30343c;--text:#f4f4f0;--muted:#969ca8;--quiet:#69717f;--lime:#00AEEF;--lime-dark:#07384A;--team:#006bb6;--radius:12px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-synthesis:none}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}body{font-size:13px}button,input,select,textarea{font:inherit}button{cursor:pointer}button,select,input,textarea{outline:none}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offset:3px}button:disabled{cursor:not-allowed;opacity:.35}button{color:inherit}svg{width:18px;height:18px;flex:none;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}button svg{pointer-events:none}.hidden,[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.topbar{height:78px;padding:0 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(17,19,23,.97);position:sticky;top:0;z-index:30}.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}.brand-symbol{width:38px;height:38px;display:grid;place-items:center;background:var(--lime);color:#14200d;border-radius:10px;font-size:23px;font-weight:950;letter-spacing:-3px;padding-right:3px;transform:rotate(-4deg)}.brand-name{font-size:18px;font-weight:850;letter-spacing:-.65px}.brand-sub{font-size:9px;letter-spacing:2px;color:var(--muted);font-weight:650;margin-top:4px}.topbar-actions{display:flex;gap:8px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:9px 13px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:12px;font-weight:650;transition:background .15s,border-color .15s,transform .15s}.btn:hover:not(:disabled){background:#2a2e35;border-color:#555c68}.btn:active:not(:disabled){transform:translateY(1px)}.btn.primary{background:var(--lime);color:#172010;border-color:var(--lime);font-weight:800}.btn.primary:hover{background:#e1ffae;border-color:#e1ffae}.btn.ghost{background:transparent;border-color:transparent}.btn.ghost:hover{background:var(--raised);border-color:transparent}.icon-btn{padding:8px;min-width:34px;min-height:34px}.header-separator{height:24px;width:1px;background:var(--line);margin:0 6px}.version{font-size:10px;color:var(--muted);border:1px solid var(--line);padding:5px 7px;border-radius:5px;margin-left:8px;font-family:ui-monospace,monospace}
+.topbar{height:78px;padding:0 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(17,19,23,.97);position:sticky;top:0;z-index:30}.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}.brand-symbol{width:38px;height:38px;display:grid;place-items:center;background:var(--lime);color:#041923;border-radius:10px;font-size:23px;font-weight:950;letter-spacing:-3px;padding-right:3px;transform:rotate(-4deg)}.brand-name{font-size:18px;font-weight:850;letter-spacing:-.65px}.brand-sub{font-size:9px;letter-spacing:2px;color:var(--muted);font-weight:650;margin-top:4px}.topbar-actions{display:flex;gap:8px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:9px 13px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:12px;font-weight:650;transition:background .15s,border-color .15s,transform .15s}.btn:hover:not(:disabled){background:#2a2e35;border-color:#555c68}.btn:active:not(:disabled){transform:translateY(1px)}.btn.primary{background:var(--lime);color:#041923;border-color:var(--lime);font-weight:800}.btn.primary:hover{background:#39C3FF;border-color:#39C3FF}.btn.ghost{background:transparent;border-color:transparent}.btn.ghost:hover{background:var(--raised);border-color:transparent}.icon-btn{padding:8px;min-width:34px;min-height:34px}.header-separator{height:24px;width:1px;background:var(--line);margin:0 6px}.version{font-size:10px;color:var(--muted);border:1px solid var(--line);padding:5px 7px;border-radius:5px;margin-left:8px;font-family:ui-monospace,monospace}
 .workspace{height:calc(100dvh - 78px);min-height:630px;display:grid;grid-template-columns:326px minmax(290px,1fr) 274px}.panel{background:var(--surface);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#424751 transparent}.left-panel{border-right:1px solid var(--line)}.right-panel{border-left:1px solid var(--line)}.section{padding:23px 22px;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0}.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;gap:8px}.section-title h2{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin:0;font-weight:750;color:#cbd0d8}.step-number{font:10px ui-monospace,monospace;color:var(--quiet);margin-right:7px}.section-tag{color:var(--muted);font-size:10px}.field-label{display:block;font-size:11px;font-weight:600;color:#bfc4ce;margin-bottom:8px}.help{font-size:10.5px;color:var(--muted);line-height:1.6;margin:8px 0 0}.row{display:flex;align-items:center;gap:10px}.row.between{justify-content:space-between}.row.wrap{flex-wrap:wrap}.field{margin-top:18px}.field:first-child{margin-top:0}.select-wrap{position:relative}.select-wrap::after{content:"";width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);position:absolute;right:14px;top:16px;pointer-events:none}select,input[type=text],input[type=number],textarea{width:100%;border:1px solid var(--line);background:var(--input);border-radius:8px;color:var(--text);transition:border-color .15s}select{appearance:none;height:40px;padding:0 32px 0 12px;font-weight:600;font-size:12px}select:hover,input[type=text]:hover,textarea:hover{border-color:#505764}input[type=text]{padding:10px 12px;height:39px}textarea{resize:vertical;min-height:108px;padding:12px;line-height:1.55;font-size:13px;font-weight:650;letter-spacing:.1px}.team-select{height:47px;padding-left:42px;font-size:14px}.team-dot{position:absolute;top:17px;left:16px;width:13px;height:13px;border-radius:50%;background:var(--team);box-shadow:0 0 0 3px rgba(255,255,255,.07);pointer-events:none}.palette{display:flex;align-items:center;gap:5px;margin-top:11px}.palette-swatch{width:23px;height:23px;border-radius:6px;border:1px solid #ffffff25;padding:0}.palette-swatch:hover{outline:2px solid #ffffff77;outline-offset:2px}.palette-caption{font-size:10px;color:var(--muted);margin-left:4px}.palette-hint{font-size:10px;color:var(--quiet);margin:7px 0 0}.style-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.style-btn{border:1px solid var(--line);border-radius:9px;background:var(--input);padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:9px;min-width:0}.style-btn:hover{border-color:#687180}.style-btn.active{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime);color:var(--text)}.style-sample{display:inline-block;border-radius:3px;padding:3px 6px;font-weight:900;font-size:16px;letter-spacing:-1px;line-height:1.15}.style-sample.team{background:var(--team);color:white}.style-sample.black{background:#000;color:#fff}.style-sample.white{background:white;color:#111}.style-sample.outline{color:#fff;-webkit-text-stroke:.8px #111;text-shadow:0 0 2px #fff}.text-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px}.check-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#c3c8d0;line-height:1.4;cursor:pointer}.check-label input{accent-color:var(--lime);width:14px;height:14px;margin:0;flex:none}.char-count{font-size:10px;color:var(--quiet);font-variant-numeric:tabular-nums}.emoji-row{display:flex;gap:6px;align-items:center}.emoji-input{width:55px!important;text-align:center;font-size:22px!important;padding:5px!important}.emoji-picker{display:flex;gap:3px;flex:1;justify-content:space-between}.emoji-button{border:1px solid transparent;background:var(--raised);font-size:19px;width:32px;height:35px;padding:0;border-radius:7px}.emoji-button:hover{background:#343a44;border-color:#616978}.range-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}.range-heading .field-label{margin:0}.range-value{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;color:var(--lime);font-variant-numeric:tabular-nums}.range-value.muted{color:var(--muted)}input[type=range]{width:100%;height:20px;accent-color:var(--lime);cursor:pointer;margin:0;display:block;background:transparent}input[type=range]::-webkit-slider-runnable-track{height:4px;background:#383f48;border-radius:5px}input[type=range]::-webkit-slider-thumb{margin-top:-6px}input[type=range]::-moz-range-track{height:4px;background:#383f48;border-radius:5px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.color-row{display:flex;gap:10px}.color-control{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;background:var(--input);padding:5px 7px;flex:1;min-width:0}.color-control input[type=color]{appearance:none;width:24px;height:25px;border:0;background:transparent;padding:0;cursor:pointer;flex:none}.color-control input[type=color]::-webkit-color-swatch-wrapper{padding:0}.color-control input[type=color]::-webkit-color-swatch{border:1px solid #ffffff30;border-radius:4px}.hex-input{border:0!important;background:transparent!important;padding:0!important;height:24px!important;font:10px ui-monospace,monospace!important;min-width:0}.color-label{font-size:10px;color:var(--muted);margin-bottom:6px}.small-select{height:33px;font-size:11px}.small-select-wrap::after{top:13px}.segmented{display:flex;gap:3px;padding:3px;background:var(--input);border:1px solid var(--line);border-radius:8px}.segmented button{flex:1;background:none;border:0;padding:7px 6px;border-radius:5px;color:var(--muted);font-size:11px;display:flex;align-items:center;justify-content:center;gap:5px}.segmented button.active{background:#343a43;color:white}.segmented button:hover{color:white}.wide-btn{width:100%}.subtle-btn{border:1px dashed #454d59;background:transparent;color:#c0c7d2;font-weight:600}.detail-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;font-size:11px;color:#c0c6d0;font-weight:600;padding:3px 0}.detail-toggle::-webkit-details-marker{display:none}.detail-toggle::after{content:"+";color:var(--muted);font-size:17px;font-weight:400}details[open]>.detail-toggle::after{content:"-"}details .field{margin-top:16px}.accent-controls{display:flex;gap:9px;align-items:center;margin-top:10px}.accent-controls .color-control{flex:0 0 112px}.accent-controls .select-wrap{flex:1}.position-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.position-buttons .btn{font-size:10px;padding:8px 4px;min-height:32px}.position-buttons .btn svg{width:14px;height:14px}
-.stage-panel{display:flex;flex-direction:column;align-items:stretch;min-width:0;padding:23px 28px 17px;background:radial-gradient(ellipse at 50% 28%,#22262d 0%,#15171c 60%,#111317 100%);overflow:hidden}.stage-toolbar{display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px}.stage-label{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#aaaebb;white-space:nowrap}.live-dot{display:inline-block;background:var(--lime);height:5px;width:5px;border-radius:50%;vertical-align:middle;margin-right:7px;box-shadow:0 0 8px #d0f53544}.stage-tools{display:flex;gap:3px;align-items:center}.tool-toggle{font-size:10px;min-height:29px;padding:6px 8px}.tool-toggle svg{height:14px;width:14px}.tool-toggle.active{color:var(--lime);background:#d0f58a0b;border-color:#d0f58a35}.stage-body{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:22px 0 13px}.artboard-wrap{display:flex;flex-direction:column;align-items:center;gap:11px;min-width:0;width:100%}.artboard{width:min(100%,calc((100dvh - 244px)*.5625));max-width:396px;min-width:200px;aspect-ratio:9/16;position:relative;box-shadow:0 16px 65px #0007,0 0 0 1px #ffffff1a;border-radius:5px;isolation:isolate;background-color:#292d34;background-image:linear-gradient(45deg,#22262d 25%,transparent 25%),linear-gradient(-45deg,#22262d 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#22262d 75%),linear-gradient(-45deg,transparent 75%,#22262d 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}.artboard.drop-active{outline:3px solid var(--lime);outline-offset:5px}#preview{width:100%;height:100%;display:block;touch-action:none;cursor:grab;border-radius:5px}#preview:active{cursor:grabbing}.safe-guide{position:absolute;inset:12% 12% 20% 6%;border:1px dashed #ffffff65;pointer-events:none;border-radius:3px}.safe-guide span{position:absolute;top:6px;left:6px;color:#fff9;font-size:8px;letter-spacing:1px;font-weight:500}.center-guide{position:absolute;left:50%;top:0;height:100%;border-left:1px solid #d0f58a99;pointer-events:none}.selection-box{position:absolute;border:1px solid var(--lime);pointer-events:none;box-shadow:0 0 0 1px #0005}.selection-box::before,.selection-box::after{content:"";position:absolute;width:5px;height:5px;background:var(--lime);top:-3px}.selection-box::before{left:-3px}.selection-box::after{right:-3px}.selection-tag{position:absolute;bottom:calc(100% + 6px);left:0;font-size:8px;font-weight:700;letter-spacing:.75px;color:#18200f;background:var(--lime);padding:4px 6px;white-space:nowrap;border-radius:3px;max-width:180px;text-overflow:ellipsis;overflow:hidden}.resize-handle{position:absolute;width:12px;height:12px;bottom:-6px;right:-6px;background:var(--lime);border:2px solid #27351a;border-radius:2px;pointer-events:auto;cursor:nwse-resize;padding:0;touch-action:none}.canvas-caption{display:flex;justify-content:space-between;gap:20px;font:9px ui-monospace,monospace;color:var(--quiet);width:min(100%,350px);letter-spacing:.4px}.canvas-caption b{color:#aab1bf;font-weight:500}.stage-bottom{display:flex;flex-direction:column;align-items:center;gap:10px}.drag-hint{font-size:10px;color:#89919e;text-align:center;line-height:1.6}.drag-hint kbd{font-family:inherit;background:#24282e;padding:1px 4px;border:1px solid #373d46;border-radius:3px;font-size:9px}.preview-badge{font-size:9px;color:#b8c8dc;background:#35435833;border:1px solid #6c829333;border-radius:20px;padding:5px 9px}.preview-badge i{display:inline-block;width:4px;height:4px;background:#95b4df;border-radius:50%;margin-right:4px}.canvas-empty{position:absolute;top:32%;left:10%;right:10%;text-align:center;pointer-events:none;color:#69717e;font-size:13px;line-height:1.7}.canvas-empty svg{height:30px;width:30px;margin-bottom:8px}
-.export-dimensions{border:1px solid var(--line);background:var(--input);border-radius:9px;padding:13px;display:flex;gap:12px;align-items:center}.ratio-symbol{width:23px;height:39px;border:1.5px solid #6f7786;border-radius:3px;display:grid;place-items:center;color:var(--lime);font-size:7px;flex:none}.dimension-title{font-size:14px;font-weight:750;letter-spacing:-.4px}.dimension-sub{font-size:10px;color:var(--muted);margin-top:4px}.export-note{font-size:10px;color:var(--muted);line-height:1.6;margin:10px 0 15px}.export-btn{width:100%;min-height:44px;font-size:12px}.privacy-note{font-size:9px;line-height:1.6;color:var(--quiet);text-align:center;margin:10px 0 0}.layer-list{display:flex;flex-direction:column;gap:6px}.layer-item{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--input);gap:7px;padding:7px;min-height:48px}.layer-item.active{background:#262d20;border-color:#a2c16b88}.layer-choose{display:flex;align-items:center;gap:8px;min-width:0;flex:1;padding:0;border:0;background:none;text-align:left}.layer-thumb{width:27px;height:29px;border-radius:5px;color:white;background:var(--team);font-size:14px;font-weight:900;display:grid;place-items:center;flex:none;text-shadow:0 1px 2px #0007}.layer-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:650}.layer-type{font-size:9px;color:var(--muted);margin-top:3px;font-weight:400}.layer-visibility{width:25px;height:29px;min-height:0;min-width:0;padding:5px;color:#a7adba}.layer-visibility svg{width:14px;height:14px}.layer-actions{display:flex;justify-content:space-between;margin-top:9px;gap:4px}.layer-actions .btn{font-size:9px;min-height:29px;padding:6px}.layer-actions svg{width:13px;height:13px}.reference-drop{border:1px dashed #454b56;border-radius:10px;text-align:center;padding:19px 12px;background:#ffffff02;cursor:pointer;transition:background .15s;width:100%;display:block}.reference-drop:hover{background:#ffffff05;border-color:#748090}.reference-drop svg{height:23px;width:23px;color:#8c95a5;display:block;margin:0 auto 10px}.reference-drop strong{font-size:11px;font-weight:650;display:block}.reference-drop span{font-size:9px;color:var(--muted);display:block;margin-top:5px}.reference-info{display:flex;gap:8px;align-items:center;padding:9px;background:var(--input);border-radius:8px;border:1px solid var(--line)}.reference-info img{width:36px;height:43px;object-fit:cover;border-radius:4px}.reference-info-text{flex:1;min-width:0}.reference-name{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reference-status{font-size:9px;color:var(--muted);margin-top:5px}.reference-controls{margin-top:11px}.local-note{display:flex;gap:8px;align-items:flex-start;color:var(--quiet);font-size:10px;line-height:1.7}.local-note svg{width:14px;height:14px;margin-top:2px}.local-note strong{color:#a2aab7;font-weight:600}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(12px);padding:12px 18px;border:1px solid #516038;border-radius:10px;background:#26321e;color:#e0f2c7;font-size:12px;box-shadow:0 8px 30px #0007;z-index:100;opacity:0;pointer-events:none;transition:.2s;max-width:calc(100% - 32px);text-align:center}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.toast.error{background:#382423;border-color:#87514d;color:#ffd6d2}.autosave-dot{display:inline-block;height:5px;width:5px;border-radius:50%;background:#8eaa6e;margin-right:5px}.mobile-section-label{display:none}.loading-overlay{position:absolute;inset:0;background:#111a;display:grid;place-items:center;z-index:9;color:var(--lime);font-size:12px}.warning-note{padding:8px 10px;border-radius:7px;background:#80612820;color:#d1b979;font-size:10px;line-height:1.6;margin-top:10px}.background-color-control{margin-top:10px}.footer-brand{font-size:9px;letter-spacing:2px;color:#606a77;margin-top:16px}
+.stage-panel{display:flex;flex-direction:column;align-items:stretch;min-width:0;padding:23px 28px 17px;background:radial-gradient(ellipse at 50% 28%,#22262d 0%,#15171c 60%,#111317 100%);overflow:hidden}.stage-toolbar{display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px}.stage-label{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#aaaebb;white-space:nowrap}.live-dot{display:inline-block;background:var(--lime);height:5px;width:5px;border-radius:50%;vertical-align:middle;margin-right:7px;box-shadow:0 0 8px #00AEEF44}.stage-tools{display:flex;gap:3px;align-items:center}.tool-toggle{font-size:10px;min-height:29px;padding:6px 8px}.tool-toggle svg{height:14px;width:14px}.tool-toggle.active{color:var(--lime);background:#00AEEF0B;border-color:#00AEEF35}.stage-body{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:22px 0 13px}.artboard-wrap{display:flex;flex-direction:column;align-items:center;gap:11px;min-width:0;width:100%}.artboard{width:min(100%,calc((100dvh - 244px)*.5625));max-width:396px;min-width:200px;aspect-ratio:9/16;position:relative;box-shadow:0 16px 65px #0007,0 0 0 1px #ffffff1a;border-radius:5px;isolation:isolate;background-color:#292d34;background-image:linear-gradient(45deg,#22262d 25%,transparent 25%),linear-gradient(-45deg,#22262d 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#22262d 75%),linear-gradient(-45deg,transparent 75%,#22262d 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}.artboard.drop-active{outline:3px solid var(--lime);outline-offset:5px}#preview{width:100%;height:100%;display:block;touch-action:none;cursor:grab;border-radius:5px}#preview:active{cursor:grabbing}.safe-guide{position:absolute;inset:12% 12% 20% 6%;border:1px dashed #ffffff65;pointer-events:none;border-radius:3px}.safe-guide span{position:absolute;top:6px;left:6px;color:#fff9;font-size:8px;letter-spacing:1px;font-weight:500}.center-guide{position:absolute;left:50%;top:0;height:100%;border-left:1px solid #00AEEF99;pointer-events:none}.selection-box{position:absolute;border:1px solid var(--lime);pointer-events:none;box-shadow:0 0 0 1px #0005}.selection-box::before,.selection-box::after{content:"";position:absolute;width:5px;height:5px;background:var(--lime);top:-3px}.selection-box::before{left:-3px}.selection-box::after{right:-3px}.selection-tag{position:absolute;bottom:calc(100% + 6px);left:0;font-size:8px;font-weight:700;letter-spacing:.75px;color:#041923;background:var(--lime);padding:4px 6px;white-space:nowrap;border-radius:3px;max-width:180px;text-overflow:ellipsis;overflow:hidden}.resize-handle{position:absolute;width:12px;height:12px;bottom:-6px;right:-6px;background:var(--lime);border:2px solid #27351a;border-radius:2px;pointer-events:auto;cursor:nwse-resize;padding:0;touch-action:none}.canvas-caption{display:flex;justify-content:space-between;gap:20px;font:9px ui-monospace,monospace;color:var(--quiet);width:min(100%,350px);letter-spacing:.4px}.canvas-caption b{color:#aab1bf;font-weight:500}.stage-bottom{display:flex;flex-direction:column;align-items:center;gap:10px}.drag-hint{font-size:10px;color:#89919e;text-align:center;line-height:1.6}.drag-hint kbd{font-family:inherit;background:#24282e;padding:1px 4px;border:1px solid #373d46;border-radius:3px;font-size:9px}.preview-badge{font-size:9px;color:#b8c8dc;background:#35435833;border:1px solid #6c829333;border-radius:20px;padding:5px 9px}.preview-badge i{display:inline-block;width:4px;height:4px;background:#95b4df;border-radius:50%;margin-right:4px}.canvas-empty{position:absolute;top:32%;left:10%;right:10%;text-align:center;pointer-events:none;color:#69717e;font-size:13px;line-height:1.7}.canvas-empty svg{height:30px;width:30px;margin-bottom:8px}
+.export-dimensions{border:1px solid var(--line);background:var(--input);border-radius:9px;padding:13px;display:flex;gap:12px;align-items:center}.ratio-symbol{width:23px;height:39px;border:1.5px solid #6f7786;border-radius:3px;display:grid;place-items:center;color:var(--lime);font-size:7px;flex:none}.dimension-title{font-size:14px;font-weight:750;letter-spacing:-.4px}.dimension-sub{font-size:10px;color:var(--muted);margin-top:4px}.export-note{font-size:10px;color:var(--muted);line-height:1.6;margin:10px 0 15px}.export-btn{width:100%;min-height:44px;font-size:12px}.privacy-note{font-size:9px;line-height:1.6;color:var(--quiet);text-align:center;margin:10px 0 0}.layer-list{display:flex;flex-direction:column;gap:6px}.layer-item{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--input);gap:7px;padding:7px;min-height:48px}.layer-item.active{background:#102A37;border-color:#00AEEF88}.layer-choose{display:flex;align-items:center;gap:8px;min-width:0;flex:1;padding:0;border:0;background:none;text-align:left}.layer-thumb{width:27px;height:29px;border-radius:5px;color:white;background:var(--team);font-size:14px;font-weight:900;display:grid;place-items:center;flex:none;text-shadow:0 1px 2px #0007}.layer-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:650}.layer-type{font-size:9px;color:var(--muted);margin-top:3px;font-weight:400}.layer-visibility{width:25px;height:29px;min-height:0;min-width:0;padding:5px;color:#a7adba}.layer-visibility svg{width:14px;height:14px}.layer-actions{display:flex;justify-content:space-between;margin-top:9px;gap:4px}.layer-actions .btn{font-size:9px;min-height:29px;padding:6px}.layer-actions svg{width:13px;height:13px}.reference-drop{border:1px dashed #454b56;border-radius:10px;text-align:center;padding:19px 12px;background:#ffffff02;cursor:pointer;transition:background .15s;width:100%;display:block}.reference-drop:hover{background:#ffffff05;border-color:#748090}.reference-drop svg{height:23px;width:23px;color:#8c95a5;display:block;margin:0 auto 10px}.reference-drop strong{font-size:11px;font-weight:650;display:block}.reference-drop span{font-size:9px;color:var(--muted);display:block;margin-top:5px}.reference-info{display:flex;gap:8px;align-items:center;padding:9px;background:var(--input);border-radius:8px;border:1px solid var(--line)}.reference-info img{width:36px;height:43px;object-fit:cover;border-radius:4px}.reference-info-text{flex:1;min-width:0}.reference-name{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reference-status{font-size:9px;color:var(--muted);margin-top:5px}.reference-controls{margin-top:11px}.local-note{display:flex;gap:8px;align-items:flex-start;color:var(--quiet);font-size:10px;line-height:1.7}.local-note svg{width:14px;height:14px;margin-top:2px}.local-note strong{color:#a2aab7;font-weight:600}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(12px);padding:12px 18px;border:1px solid #14516B;border-radius:10px;background:#102A37;color:#D9F5FF;font-size:12px;box-shadow:0 8px 30px #0007;z-index:100;opacity:0;pointer-events:none;transition:.2s;max-width:calc(100% - 32px);text-align:center}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.toast.error{background:#382423;border-color:#87514d;color:#ffd6d2}.autosave-dot{display:inline-block;height:5px;width:5px;border-radius:50%;background:#00AEEF;margin-right:5px}.mobile-section-label{display:none}.loading-overlay{position:absolute;inset:0;background:#111a;display:grid;place-items:center;z-index:9;color:var(--lime);font-size:12px}.warning-note{padding:8px 10px;border-radius:7px;background:#80612820;color:#d1b979;font-size:10px;line-height:1.6;margin-top:10px}.background-color-control{margin-top:10px}.footer-brand{font-size:9px;letter-spacing:2px;color:#606a77;margin-top:16px}
 dialog{border:1px solid #424a56;border-radius:16px;background:var(--surface);color:var(--text);padding:27px;max-width:480px;width:calc(100% - 36px);box-shadow:0 30px 100px #000a}dialog::backdrop{background:#0009;backdrop-filter:blur(4px)}dialog h2{font-size:20px;letter-spacing:-.5px;margin:0 0 16px}dialog p,dialog li{font-size:12px;color:#bbc2ce;line-height:1.8}dialog ol{padding-left:18px}dialog .dialog-foot{margin-top:20px;display:flex;justify-content:flex-end}dialog code{font:11px ui-monospace,monospace;color:var(--lime)}
 @media(min-width:1600px){.workspace{grid-template-columns:354px minmax(350px,1fr) 306px}.section{padding-left:27px;padding-right:27px}.artboard{max-width:440px}.stage-panel{padding-left:44px;padding-right:44px}}
 @media(max-width:1140px) and (min-width:761px){.workspace{grid-template-columns:288px minmax(270px,1fr) 245px}.section{padding:20px 17px}.stage-panel{padding-left:16px;padding-right:16px}.stage-label{font-size:9px;letter-spacing:.7px}.tool-toggle{padding:5px 6px}.stage-tools .tool-text{display:none}.emoji-button{width:29px}.emoji-picker{gap:2px}.accent-controls{gap:5px}.accent-controls .color-control{flex-basis:102px}}
@@ -23,8 +23,25 @@ dialog{border:1px solid #424a56;border-radius:16px;background:var(--surface);col
 /* Video extension: the existing overlay editor stays unchanged. */
 .video-section{background:linear-gradient(150deg,#232a22 0%,var(--surface) 70%)}
 .video-drop{padding:20px 12px}.video-drop svg{width:25px;height:25px;color:var(--lime)}
-.video-file-card{display:flex;align-items:center;gap:10px}.video-file-card>div{min-width:0}.video-file-card strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px;font-size:11px}.video-file-card span:not(.file-icon){font:9px ui-monospace,monospace;color:var(--muted);display:block;margin-top:6px;line-height:1.5}.file-icon{background:var(--lime-dark);border:1px solid #d0f58a22;border-radius:8px;padding:10px;color:var(--lime)}
-.video-transport{width:100%;max-width:430px;background:#171a20;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:2px auto 8px}.transport-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}.transport-top .timecode{margin-left:auto;font:10px ui-monospace,monospace;color:#cbd0d8;font-variant-numeric:tabular-nums}.transport-top button{min-height:29px;padding:5px 8px}.transport-top svg{width:14px;height:14px}.transport-label{font-size:9px;letter-spacing:1px;color:var(--muted)}.tiny-btn{font-size:9px;padding:5px 7px;min-height:28px}
+.video-file-card{display:flex;align-items:center;gap:10px}.video-file-card>div{min-width:0}.video-file-card strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px;font-size:11px}.video-file-card span:not(.file-icon){font:9px ui-monospace,monospace;color:var(--muted);display:block;margin-top:6px;line-height:1.5}.file-icon{background:var(--lime-dark);border:1px solid #00AEEF22;border-radius:8px;padding:10px;color:var(--lime)}
+.video-transport{width:100%;max-width:430px;background:#171a20;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:2px auto 8px}.transport-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}.transport-top .timecode{margin-left:auto;font:10px ui-monospace,monospace;color:#cbd0d8;font-variant-numeric:tabular-nums}.transport-top button{min-height:29px;padding:5px 8px}.transport-top svg{width:14px;height:14px}.transport-label{font-size:9px;letter-spacing:1px;color:var(--muted)}.graphic-timing{margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.graphic-timing-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+.graphic-timing-title{font-size:10px;letter-spacing:1px;font-weight:800;color:#dce2e9}
+.graphic-timing-time{font:10px ui-monospace,monospace;color:var(--lime);white-space:nowrap}
+.graphic-track{height:34px;position:relative;border-radius:7px;background:#292e36;border:1px solid #3d444e;touch-action:none;cursor:pointer;user-select:none}
+.graphic-track::before{content:"";position:absolute;left:0;right:0;top:15px;height:3px;background:#505866;border-radius:3px}
+.graphic-range{position:absolute;top:10px;height:13px;left:0;width:100%;background:linear-gradient(90deg,#008CCB,#00AEEF);border-radius:4px;box-shadow:0 0 0 1px #00AEEF40;pointer-events:none}
+.graphic-playhead{position:absolute;top:3px;bottom:3px;width:2px;background:#fff;box-shadow:0 0 0 1px #1119;transform:translateX(-1px);pointer-events:none;z-index:3}
+.graphic-handle{position:absolute;top:2px;width:13px;height:28px;min-height:0;padding:0;border:2px solid #B7EBFF;border-radius:5px;background:#07384A;transform:translateX(-50%);z-index:4;touch-action:none;box-shadow:0 1px 4px #0008}
+.graphic-handle::after{content:"";position:absolute;top:6px;bottom:6px;left:4px;width:1px;background:#B7EBFF;box-shadow:3px 0 #B7EBFF}
+.graphic-handle:hover,.graphic-handle:focus-visible{background:#587a34;outline:2px solid #B7EBFF;outline-offset:2px}
+.graphic-track-labels{display:flex;justify-content:space-between;gap:8px;margin-top:7px;color:var(--muted);font:9px ui-monospace,monospace}
+.graphic-track-help{font-size:9px;color:var(--quiet);line-height:1.5;margin-top:6px}
+.graphic-timing-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
+.graphic-timing-actions .check-label{font-size:10px}
+.graphic-timing-actions .btn{min-height:26px;padding:4px 8px;font-size:9px}
+@media(max-width:760px){.graphic-handle{width:16px;height:30px;top:1px}.graphic-track{height:34px}}
+.tiny-btn{font-size:9px;padding:5px 7px;min-height:28px}
 .video-export-settings{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.video-export-settings .two-col{gap:8px}.video-export-settings select{font-size:10px}.codec-status{font-size:10px;line-height:1.6;margin:10px 0;color:#adc48d}.codec-status.warning{color:#e1b77f}.codec-status.error{color:#f09b96}.mp4-export{width:100%;margin-top:9px;min-height:44px}.video-mode .artboard{width:min(100%,calc((100dvh - 340px)*.5625));max-width:365px}.media-source{position:fixed;left:-10000px;top:0;width:2px;height:2px;opacity:.01;pointer-events:none}
 .layer-time{border:1px solid var(--line);padding:12px;border-radius:9px;background:var(--input);margin-top:18px}.layer-time .field-label{font-size:10px}.layer-time input[type=text]{height:33px;font-size:11px}.layer-time .help{font-size:9px}.layer-time-label{font-size:9px;letter-spacing:1px;color:var(--lime);margin-bottom:9px}
 #videoExportDialog{max-width:550px;width:calc(100% - 30px);padding:26px;max-height:92dvh;overflow:auto}#videoExportDialog h2{margin:8px 0 10px}.export-kicker{font-size:10px;letter-spacing:2px;color:var(--lime);font-weight:750}.export-summary{line-height:1.7;color:var(--muted);font-size:12px}.export-visual{display:flex;justify-content:center;margin:18px 0;background:#0d1014;border:1px solid var(--line);border-radius:10px;padding:12px}.export-visual canvas,.export-visual video{display:block;width:auto;height:min(35dvh,280px);max-width:100%;aspect-ratio:9/16;background:#000;object-fit:contain;border-radius:3px}.export-progress{width:100%;height:6px;accent-color:var(--lime);border:0;border-radius:8px;display:block;margin:14px 0}.export-progress::-webkit-progress-bar{background:#343a43;border-radius:8px}.export-progress::-webkit-progress-value{background:var(--lime);border-radius:8px}.export-progress::-moz-progress-bar{background:var(--lime);border-radius:8px}.export-status-row{display:flex;justify-content:space-between;gap:16px;font:10px ui-monospace,monospace;color:var(--muted);line-height:1.5}.export-warning{padding:10px 12px;border:1px solid #89704466;background:#382b1c55;border-radius:8px;color:#e4c69b;font-size:11px;line-height:1.6}.export-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.export-actions a{text-decoration:none}.video-source-status{font:9px ui-monospace,monospace;color:var(--muted)}
@@ -33,27 +50,27 @@ dialog{border:1px solid #424a56;border-radius:16px;background:var(--surface);col
 
 /* Station and sponsor bugs are part of the same canvas as the finished export. */
 .branding-section{scroll-margin-top:88px;background:linear-gradient(145deg,#222930,var(--surface) 65%)}
-.bug-tag{color:var(--lime);font-size:8px;letter-spacing:1.2px;border:1px solid #d0f58a35;padding:4px 6px;border-radius:4px}
+.bug-tag{color:var(--lime);font-size:8px;letter-spacing:1.2px;border:1px solid #00AEEF35;padding:4px 6px;border-radius:4px}
 .bug-intro{margin:-5px 0 15px}.bug-card{padding:12px;background:#14171c;border:1px solid var(--line);border-radius:10px;min-width:0}
 .bug-card .check-label{font-size:10px}.bug-card strong{font-weight:650}.bug-image-well{height:68px;margin:12px 0 6px;border:1px solid #ffffff12;border-radius:7px;padding:12px 17px;display:flex;align-items:center;justify-content:center;background:#333e49;width:100%}
 .bug-image-well img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}.sponsor-well{cursor:pointer;background-color:#333e49}.sponsor-well.white-card{background:#fff}.sponsor-well:hover{border-color:var(--lime)}
 .bug-file{font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;max-width:138px}.bug-card .section-tag{font-size:7px;white-space:nowrap}.bug-card .field{margin-top:13px}.bug-card .field-label{font-size:10px}.bug-card .range-value{font-size:9px}
 .bug-connector{display:flex;align-items:center;justify-content:center;gap:9px;color:var(--quiet);font-size:7px;letter-spacing:1.5px;padding:10px 2px}.bug-connector span{height:1px;flex:1;background:var(--line)}
-.bug-upload{margin:12px 0;padding:16px 8px}.bug-upload strong{font-size:10px}.bug-upload span{font-size:9px}.bug-upload.drag-active{border-color:var(--lime);background:#d0f58a0c}
+.bug-upload{margin:12px 0;padding:16px 8px}.bug-upload strong{font-size:10px}.bug-upload span{font-size:9px}.bug-upload.drag-active{border-color:var(--lime);background:#00AEEF0C}
 .bug-white-label{margin-top:14px;align-items:flex-start!important}.bug-card .help{font-size:9px}.bug-card .detail-toggle{font-size:10px}.bug-position-row{margin:12px 0 8px;gap:7px}.bug-position-row .btn{flex:1;font-size:10px}.bug-footnote{font-size:9px}.bug-section-active{box-shadow:inset 3px 0 var(--lime)}
 #selectBugStack.active{border-color:var(--lime);color:var(--lime)}#bugLoadingStatus{color:var(--lime)}#brandingShortcut{min-width:30px}
 @media(max-width:760px){.bug-image-well{height:78px}.bug-file{max-width:58vw}.bug-card .check-label{font-size:12px}.bug-card .field-label{font-size:11px}.bug-upload strong{font-size:12px}.bug-upload span{font-size:10px}.bug-card .help,.bug-footnote{font-size:10px}.bug-card .section-tag{font-size:8px}}
 
 
 /* NBC Local-inspired visual refresh */
-:root{--bg:#0d0f11;--surface:#15181c;--raised:#1d2126;--input:#101316;--line:#394049;--text:#f5f5f1;--muted:#a1a7b1;--quiet:#6f7782;--lime:#c9f46b;--lime-dark:#27321a;--radius:14px}
+:root{--bg:#0d0f11;--surface:#15181c;--raised:#1d2126;--input:#101316;--line:#394049;--text:#f5f5f1;--muted:#a1a7b1;--quiet:#6f7782;--lime:#00AEEF;--lime-dark:#07384A;--radius:14px}
 html{background:#0a0c0e}
 body{background:radial-gradient(900px 420px at 50% -10%,rgba(201,244,107,.045),transparent 60%),linear-gradient(180deg,#0d0f11 0%,#0b0d0f 100%);letter-spacing:.01em}
 .topbar{height:72px;padding:0 28px;background:rgba(13,15,17,.96);border-bottom:1px solid #343a42;box-shadow:0 8px 30px rgba(0,0,0,.16);backdrop-filter:blur(12px)}
 .brand{gap:11px}.brand-symbol{width:36px;height:36px;border-radius:11px;background:var(--lime);color:#11170a;font-size:20px;transform:none;letter-spacing:-2px;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 22px rgba(201,244,107,.08)}
 .brand-name{font-size:15px;font-weight:900;letter-spacing:1.15px;line-height:1}.brand-sub{font-size:8px;letter-spacing:1.5px;color:#87909b;font-weight:700;margin-top:6px}.brand-eyebrow{color:var(--lime);font-weight:900;letter-spacing:1.8px;margin-right:5px}
 .topbar-actions{gap:7px}.btn{min-height:40px;padding:10px 14px;border-radius:10px;background:#171a1e;border-color:#3a414a;font-size:11px;font-weight:750;box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
-.btn:hover:not(:disabled){background:#20252b;border-color:#5b6571}.btn.primary{background:var(--lime);color:#141b0d;border-color:var(--lime);box-shadow:0 7px 20px rgba(201,244,107,.09)}.btn.primary:hover{background:#dcff95;border-color:#dcff95}.btn.ghost{background:transparent;border-color:transparent}.btn.ghost:hover{background:#1b2025;border-color:transparent}
+.btn:hover:not(:disabled){background:#20252b;border-color:#5b6571}.btn.primary{background:var(--lime);color:#041923;border-color:var(--lime);box-shadow:0 7px 20px rgba(201,244,107,.09)}.btn.primary:hover{background:#39C3FF;border-color:#39C3FF}.btn.ghost{background:transparent;border-color:transparent}.btn.ghost:hover{background:#1b2025;border-color:transparent}
 .workspace{height:calc(100dvh - 72px);grid-template-columns:320px minmax(320px,1fr) 300px;background:#0d0f11}
 .panel{background:rgba(18,21,24,.88);scrollbar-color:#4a525c transparent}.left-panel{border-right:1px solid #343a42}.right-panel{border-left:1px solid #343a42}
 .section{padding:20px 20px;border-bottom:1px solid #2d333a}.section-title{margin-bottom:15px}.section-title h2{font-size:10px;letter-spacing:1.8px;color:#d6dbe1;font-weight:850}.section-tag{font-size:9px;color:#8d96a2;letter-spacing:.7px}.help{color:#8d96a2;line-height:1.55}
@@ -79,6 +96,81 @@ kbd{background:#15191d;border-color:#3b444e;color:#abb3bd;border-radius:5px}
 .modal,.dialog-card,.export-modal{background:#171b1f!important;border-color:#3d4650!important;border-radius:18px!important;box-shadow:0 30px 80px rgba(0,0,0,.55)!important}
 .modal-kicker,.dialog-kicker{color:var(--lime)!important;letter-spacing:2px;font-weight:900}
 @media(max-width:760px){.topbar{height:64px;padding:0 13px}.workspace{height:auto;min-height:0}.stage-panel{padding:16px 16px 18px}.section{padding:18px 16px}.stage-toolbar{border-radius:12px}.brand-name{font-size:13px}.brand-sub{font-size:7px}.btn{border-radius:9px}}
+
+.show-preset-section{background:linear-gradient(135deg,#20252b,#171a1f)}.preset-status{margin-top:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:#101216;color:var(--muted);font-size:10px;line-height:1.55}.preset-status strong{color:var(--lime);font-weight:700}.show-preset-section .team-select{height:45px}
+
+/* Keep the video preview and its timeline in separate, non-overlapping rows. */
+@media (min-width:761px){
+  .video-mode .stage-panel{
+    display:grid;
+    grid-template-rows:auto minmax(0,1fr) auto auto;
+    align-items:stretch;
+    min-height:0;
+    overflow:hidden;
+  }
+  .video-mode .stage-body{
+    flex:none;
+    min-height:0;
+    height:100%;
+    overflow:hidden;
+    padding:10px 0 8px;
+  }
+  .video-mode .artboard-wrap{
+    height:100%;
+    min-height:0;
+    justify-content:center;
+  }
+  .video-mode .artboard{
+    height:min(100%, calc((100dvh - 340px) * .5625));
+    width:auto;
+    max-height:100%;
+    max-width:100%;
+    min-width:0;
+    aspect-ratio:9 / 16;
+    flex:none;
+  }
+  .video-mode .video-transport{
+    position:relative;
+    z-index:5;
+    flex:none;
+    width:min(100%,430px);
+    margin:0 auto 8px;
+  }
+  .video-mode .stage-bottom{position:relative;z-index:1;}
+}
+
+
+/* Electric-blue NBC-style accent and properly scaled video preview. */
+:root{--lime:#00AEEF;--lime-dark:#07384A}
+.btn.primary{color:#041923;box-shadow:0 7px 20px rgba(0,174,239,.14)}
+.btn.primary:hover{background:#39C3FF;border-color:#39C3FF}
+.selection-tag{color:#041923}
+.graphic-range{background:linear-gradient(90deg,#008CCB,#00AEEF);box-shadow:0 0 0 1px #00AEEF40}
+.graphic-handle{border-color:#B7EBFF;background:#07384A}
+.graphic-handle::after{background:#B7EBFF;box-shadow:3px 0 #B7EBFF}
+.graphic-handle:hover,.graphic-handle:focus-visible{background:#006F9F;outline-color:#B7EBFF}
+#graphicSetFull[aria-pressed="true"]{color:#00AEEF;border-color:#00AEEF55;background:#00AEEF0D}
+.layer-item.active{background:#102A37;border-color:#00AEEF88}
+.toast{border-color:#14516B;background:#102A37;color:#D9F5FF}
+@media(min-width:761px){
+  .video-mode .stage-body{height:100%;min-height:0;overflow:hidden}
+  .video-mode .artboard-wrap{height:100%;width:100%;min-height:0;justify-content:center}
+  .video-mode .artboard{
+    height:min(100%,calc(100dvh - 350px));
+    width:auto;
+    max-height:100%;
+    max-width:100%;
+    min-width:0;
+    aspect-ratio:9 / 16;
+    flex:none;
+  }
+}
+@media(min-width:1600px){.video-mode .artboard{max-width:100%}}
+
+
+/* Double Box controls and adjustable divider. */
+.doublebox-card{border:1px solid var(--line);border-radius:10px;padding:12px;margin:0 0 16px;background:#12161b}.doublebox-card>#doubleBoxOptions{padding-top:12px}.doublebox-card .field{margin-top:12px}.doublebox-card .help{margin-top:8px;font-size:10px}.doublebox-card .row{gap:7px;flex-wrap:wrap}.doublebox-card .video-file-card{margin-top:10px}.doublebox-card .video-file-card strong{max-width:210px}.doublebox-card .btn{font-size:10px}
+
 </style>
 <!-- Implementation references (no requests are made to these sites):
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
@@ -89,6 +181,36 @@ https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported_s
 https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter
 https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 -->
+<style>
+/* Clean overlay workspace: lightweight controls, no extra preview banner. */
+.stage-panel{padding-top:14px;padding-bottom:12px;background:radial-gradient(ellipse at 50% 28%,#1b1e24 0%,#121419 62%,#0e1013 100%)}
+.stage-toolbar{width:100%;min-height:28px;margin:0 auto 4px;padding:0;background:transparent;border:0;box-shadow:none;justify-content:flex-end}
+.stage-label{display:block;font-size:10px;letter-spacing:1.3px;color:#8993a2;font-weight:800}
+.stage-tools{gap:4px}
+.tool-toggle{min-height:28px;padding:5px 8px;font-size:10px}
+.stage-body{padding:6px 0 8px}
+.artboard-wrap{gap:4px}
+.canvas-caption{display:none}
+.stage-bottom{display:none!important}
+.section .help:not([role="status"]),.palette-hint{display:none!important}
+.video-transport{max-width:560px;margin:6px auto 0;padding:9px 11px;background:#171a20;border:1px solid #343b46;border-radius:10px;box-shadow:0 8px 28px #0003}
+.transport-top{margin-bottom:8px}
+.transport-label{display:none}
+#videoSeek{display:none}
+.graphic-timing{margin:0;padding:0;border:0}
+.graphic-timing-head,.graphic-track-labels,.graphic-track-help{display:none!important}
+.graphic-track{height:34px;border-radius:7px;background:#292e36;border:1px solid #3d444e;overflow:visible}
+.graphic-track::before{top:15px;left:8px;right:8px;height:3px;background:#505866}
+.graphic-range{top:10px;height:13px;background:linear-gradient(90deg,#008CCB,#00AEEF);border-radius:4px;box-shadow:0 0 0 1px #00AEEF40}
+.graphic-playhead{top:1px;bottom:1px;width:2px;background:#fff;z-index:5}
+.graphic-handle{top:1px;height:30px;width:13px;border-radius:5px}
+.graphic-timing-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:7px}
+.graphic-timing-time{font-size:10px;color:#aab3bf;letter-spacing:.02em}
+.timing-buttons{display:flex;align-items:center;gap:5px}
+.timing-buttons .btn{min-height:27px;min-width:45px;padding:4px 10px;font-size:9px;font-weight:800;letter-spacing:.5px;border-radius:7px}
+#graphicSetFull[aria-pressed="true"]{color:var(--lime);border-color:#00AEEF55;background:#00AEEF0D}
+@media(max-width:760px){.stage-panel{padding:12px 14px 14px}.stage-toolbar{max-width:500px}.stage-body{padding:4px 0 8px}.video-transport{width:min(100%,500px);margin-top:6px}.graphic-track{height:36px}.graphic-handle{height:32px;top:1px;width:16px}.timing-buttons .btn{min-width:42px}}
+</style>
 </head>
 <body>
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
@@ -134,18 +256,27 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
 </header>
 <main class="workspace">
  <aside class="panel left-panel" aria-label="Text and style controls">
+  <section class="section show-preset-section">
+   <div class="section-title"><h2>Show preset</h2><span class="section-tag">PROGRAM</span></div>
+   <label class="field-label" for="showPresetSelect">Choose a show</label>
+   <div class="select-wrap"><select id="showPresetSelect" class="team-select" aria-label="Show preset">
+    <option value="news">News</option><option value="breakingNews">Breaking News</option><option value="eagleEye">Eagle Eye</option><option value="philliesTalk">Phillies Talk</option><option value="flyersTalk">Flyers Talk</option><option value="sixersTalk" selected>Sixers Talk</option><option value="takeoff">Takeoff</option><option value="unfiltered">Unfiltered</option><option value="sportsnetCentral">Sportsnet Central</option><option value="birdsHuddle">Birds Huddle</option><option value="sixersPostgame">Sixers Postgame</option><option value="flyersPostgame">Flyers Postgame</option><option value="eaglesPostgame">Eagles Postgame</option><option value="philliesPostgame">Phillies Postgame</option><option value="szn">SZN</option>
+   </select></div>
+   <div class="preset-status" id="showPresetStatus" aria-live="polite"></div>
+
+  </section>
   <section class="section">
-   <div class="section-title"><h2><span class="step-number">01</span>Choose your team</h2><span class="section-tag">COLOR PRESET</span></div>
-   <div class="select-wrap"><span class="team-dot"></span><select id="teamSelect" class="team-select" aria-label="Team colors"><option value="sixers">Philadelphia Sixers</option><option value="flyers">Philadelphia Flyers</option><option value="eagles">Philadelphia Eagles</option><option value="phillies">Philadelphia Phillies</option></select></div>
+   <div class="section-title"><h2><span class="step-number">01</span>Choose a color preset</h2><span class="section-tag">TEAM / BREAKING NEWS</span></div>
+   <div class="select-wrap"><span class="team-dot"></span><select id="teamSelect" class="team-select" aria-label="Team colors"><option value="sixers">Philadelphia Sixers</option><option value="flyers">Philadelphia Flyers</option><option value="eagles">Philadelphia Eagles</option><option value="phillies">Philadelphia Phillies</option><optgroup label="NBC Breaking News"><option value="nbcBlue">NBC Blue Breaking News</option><option value="nbcRed">NBC Red Breaking News</option></optgroup></select></div>
    <div class="palette" id="teamPalette" aria-label="Team palette"></div>
-   <p class="palette-hint">Switch teams to recolor the selected text layer.</p>
+
   </section>
   <section class="section">
    <div class="section-title"><h2><span class="step-number">02</span>Make it yours</h2><span class="section-tag" id="activeLayerLabel">TEXT 01</span></div>
    <label class="field-label" for="headline">Your headline</label>
    <textarea id="headline" rows="3" maxlength="420" spellcheck="true" placeholder="WRITE YOUR HEADLINE&#10;RIGHT HERE"></textarea>
    <div class="text-meta"><label class="check-label"><input type="checkbox" id="uppercase">ALL CAPS</label><span class="char-count"><span id="charCount">0</span> / 420</span></div>
-   <p class="help">Enter creates a new line. Long lines wrap automatically. Use <strong>*asterisks*</strong> around words to highlight them.</p>
+   <p class="help">Enter for a new line · Use *asterisks* to highlight words.</p>
    <div class="layer-time" id="layerTimingSection" hidden><div class="layer-time-label">WHEN THIS TEXT APPEARS</div><label class="check-label"><input type="checkbox" id="layerFullClip" checked>Show for the entire clip</label><div id="layerTimeFields" hidden><div class="two-col field"><div><label class="field-label" for="layerStart">Start (m:ss.s)</label><input type="text" id="layerStart" value="0:00.0" spellcheck="false" inputmode="decimal"></div><div><label class="field-label" for="layerEnd">End (m:ss.s)</label><input type="text" id="layerEnd" placeholder="To end" spellcheck="false" inputmode="decimal"></div></div><p class="help">Times refer to the original video. Scrub the preview to see when this layer appears. PNG exports ignore timing.</p></div></div>
    <div class="field"><span class="field-label">Banner style</span><div class="style-grid" role="group" aria-label="Banner styles"><button class="style-btn active" data-style="team"><span class="style-sample team">Aa</span>Team</button><button class="style-btn" data-style="black"><span class="style-sample black">Aa</span>Black</button><button class="style-btn" data-style="white"><span class="style-sample white">Aa</span>White</button><button class="style-btn" data-style="outline"><span class="style-sample outline">Aa</span>No box</button></div></div>
    <div class="field"><label class="check-label"><input type="checkbox" id="accentLast">Highlight the last line</label><div class="accent-controls" id="accentControls" hidden><div class="color-control"><input type="color" id="accentColor" aria-label="Accent color"><input type="text" id="accentHex" class="hex-input" maxlength="7" aria-label="Accent hex color" spellcheck="false"></div><div class="select-wrap small-select-wrap"><select id="accentMode" class="small-select" aria-label="Accent applies to"><option value="text">Text color</option><option value="background">Box color</option></select></div></div></div>
@@ -172,22 +303,41 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
    <div class="field"><div class="range-heading"><label class="field-label" for="posY">Vertical position</label><output class="range-value muted" id="posYValue">55%</output></div><input type="range" id="posY" min="0" max="100" step=".1"></div>
   </section>
  </aside>
- <section class="stage-panel" aria-label="Live overlay preview">
-  <div class="stage-toolbar"><div class="stage-label"><span class="live-dot"></span>LIVE PREVIEW</div><div class="stage-tools"><button class="btn ghost tool-toggle" id="brandingShortcut" title="NBC and sponsor logo controls" aria-label="Open branding and sponsor logo controls"><svg><use href="#i-image"/></svg><span class="tool-text">Logos</span></button><button class="btn ghost tool-toggle" id="toggleGuides" aria-pressed="false" title="Composition guide (not exported)"><svg><use href="#i-grid"/></svg><span class="tool-text">Guides</span></button><button class="btn ghost tool-toggle active" id="toggleHandles" aria-pressed="true" title="Show selection handles (not exported)"><svg><use href="#i-select"/></svg><span class="tool-text">Handles</span></button></div></div>
+ <section class="stage-panel" aria-label="Overlay preview">
+  <div class="stage-toolbar"><div class="stage-label">OVERLAYS</div><div class="stage-tools"><button class="btn ghost tool-toggle" id="brandingShortcut" title="Logo controls" aria-label="Open logo controls"><svg><use href="#i-image"/></svg><span class="tool-text">Logos</span></button><button class="btn ghost tool-toggle" id="toggleGuides" aria-pressed="false" title="Toggle guides"><svg><use href="#i-grid"/></svg><span class="tool-text">Guides</span></button><button class="btn ghost tool-toggle active" id="toggleHandles" aria-pressed="true" title="Toggle handles"><svg><use href="#i-select"/></svg><span class="tool-text">Handles</span></button></div></div>
   <div class="stage-body"><div class="artboard-wrap"><div class="artboard" id="artboard">
    <canvas id="preview" width="1080" height="1920" tabindex="0" aria-label="1080 by 1920 overlay preview. Drag text to move it, use arrow keys to nudge it, or use position sliders."></canvas>
    <div class="safe-guide" id="safeGuide" hidden><span>COMPOSITION GUIDE</span></div><div class="center-guide" id="centerGuide" hidden></div>
    <div class="selection-box" id="selectionBox"><span class="selection-tag" id="selectionTag">TEXT 01</span><button class="resize-handle" id="resizeHandle" aria-label="Drag to resize text" tabindex="-1"></button></div>
-   <div class="canvas-empty" id="canvasEmpty" hidden><svg><use href="#i-plus"/></svg><div>Your next headline starts here.<br>Type in the editor to begin.</div></div>
+   <div class="canvas-empty" id="canvasEmpty" hidden><svg><use href="#i-plus"/></svg><div>Your next headline starts here.</div></div>
    <div class="loading-overlay" id="loadingOverlay" hidden>Loading reference...</div>
   </div><div class="canvas-caption"><span><b>1080 &times; 1920</b> &nbsp; / &nbsp; 9:16</span><span id="zoomLabel">PREVIEW</span></div></div></div>
-  <div class="video-transport" id="videoTransport" hidden><div class="transport-top"><button class="btn ghost icon-btn" id="playPause" aria-label="Play video"><svg><use href="#i-play"/></svg></button><button class="btn ghost icon-btn" id="previewMute" aria-label="Mute preview"><svg><use href="#i-sound"/></svg></button><span class="transport-label">PREVIEW</span><span class="timecode" id="videoTime">0:00.0 / 0:00.0</span></div><input type="range" id="videoSeek" min="0" max="1" step="0.01" value="0" aria-label="Video playhead"></div>
-  <div class="stage-bottom"><div class="preview-badge" id="previewBadge"><i></i>Checkerboard = transparent. Not exported.</div><div class="drag-hint">Drag to position &nbsp;&middot;&nbsp; Corner handle to resize<br class="desktop-only"><span class="desktop-only"> <kbd>&larr;</kbd> <kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&rarr;</kbd> to nudge &nbsp;&middot;&nbsp; <kbd>Shift</kbd> for 10 px</span></div></div>
+  <div class="video-transport" id="videoTransport" hidden>
+   <div class="transport-top"><button class="btn ghost icon-btn" id="playPause" aria-label="Play video"><svg><use href="#i-play"/></svg></button><button class="btn ghost icon-btn" id="previewMute" aria-label="Mute preview"><svg><use href="#i-sound"/></svg></button><span class="timecode" id="videoTime">0:00.0 / 0:00.0</span></div>
+   <input type="range" id="videoSeek" min="0" max="1" step="0.01" value="0" aria-label="Video playhead" tabindex="-1">
+   <div class="graphic-timing" id="graphicTiming">
+    <div class="graphic-track" id="graphicTrack" role="group" aria-label="Video timeline. Click to move the playhead, drag the handles to set graphic in and out points.">
+     <div class="graphic-range" id="graphicRange"></div><div class="graphic-playhead" id="graphicPlayhead"></div>
+     <button class="graphic-handle" id="graphicInHandle" type="button" aria-label="Drag graphic in point" title="Graphic in"></button><button class="graphic-handle" id="graphicOutHandle" type="button" aria-label="Drag graphic out point" title="Graphic out"></button>
+    </div>
+    <div class="graphic-timing-actions"><span class="graphic-timing-time" id="graphicTimingTime">FULL CLIP</span><div class="timing-buttons"><button class="btn ghost" id="graphicSetIn" type="button">IN</button><button class="btn ghost" id="graphicSetOut" type="button">OUT</button><button class="btn ghost" id="graphicSetFull" type="button" aria-pressed="true">FULL</button></div></div>
+    <input type="checkbox" id="graphicFullClip" checked hidden><span id="graphicInLabel" hidden>IN 0:00.0</span><span id="graphicOutLabel" hidden>OUT / END</span>
+   </div>
+  </div>
+  <div class="stage-bottom" hidden><div class="preview-badge" id="previewBadge"><i></i></div><div class="drag-hint"></div></div>
  </section>
  <aside class="panel right-panel" aria-label="Video, export, layers, and reference image">
     <section class="section branding-section" id="brandingSection">
    <div class="section-title"><h2>Branding &amp; sponsor</h2><span class="section-tag bug-tag">ON AIR</span></div>
    <p class="help bug-intro">Your station bug, plus a separate sponsor directly below it. Included in MP4 and PNG exports.</p>
+   <div class="bug-card" id="showLogoCard">
+    <div class="row between"><label class="check-label"><input type="checkbox" id="bugShowEnabled" disabled><strong>Show logo · upper left</strong></label><button class="btn ghost tiny-btn" id="removeShowLogo" type="button" hidden>Remove</button></div>
+    <button class="reference-drop bug-upload" id="uploadShowLogo" type="button"><svg><use href="#i-image"/></svg><strong>Add show logo</strong><span>Choose a transparent PNG, JPG or WebP</span></button>
+    <div id="showLogoPreviewWrap" hidden><button class="bug-image-well" id="replaceShowLogo" type="button" title="Replace show logo"><img id="bugShowThumb" alt="Show logo"></button><div class="row between"><span class="bug-file" id="bugShowName"></span><span class="section-tag">UPPER LEFT</span></div></div>
+    <div class="field"><div class="range-heading"><label class="field-label" for="bugShowWidth">Show logo width</label><output class="range-value" id="bugShowWidthValue">350 px</output></div><input type="range" id="bugShowWidth" min="80" max="650" step="1" value="350"></div>
+    <p class="help">The show logo is independent and sits in the upper-left corner. The NBC and sponsor logos remain grouped at upper right.</p>
+   </div>
+   <div class="bug-connector" aria-hidden="true"><span></span>NETWORK + SPONSOR · UPPER RIGHT<span></span></div>
    <div class="bug-card">
     <div class="row between"><label class="check-label"><input type="checkbox" id="bugNBCEnabled" checked><strong>NBC Sports Philadelphia</strong></label></div>
     <div class="bug-image-well"><img id="bugNBCThumb" alt="NBC Sports Philadelphia logo"></div>
@@ -211,14 +361,14 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     </details>
    </div>
    <div class="field"><div class="range-heading"><label class="field-label" for="bugGap">Space between logos</label><output class="range-value" id="bugGapValue">16 px</output></div><input type="range" id="bugGap" min="0" max="100" step="1" value="16"></div>
-   <div class="row bug-position-row"><button class="btn" id="bugTopLeft" type="button">Upper left</button><button class="btn" id="bugTopRight" type="button">Upper right</button></div>
+   <div class="row bug-position-row"><button class="btn wide-btn" id="bugTopRight" type="button">Align network + sponsor upper right</button></div>
    <button class="btn subtle-btn wide-btn" id="selectBugStack" type="button"><svg><use href="#i-select"/></svg>Select &amp; move logo stack</button>
    <details class="field" id="bugPositionDetails"><summary class="detail-toggle">Fine-tune position</summary>
     <div class="field"><div class="range-heading"><label class="field-label" for="bugPosX">Horizontal center</label><output class="range-value" id="bugPosXValue">82.4%</output></div><input type="range" id="bugPosX" min="0" max="100" step=".1" value="82.4"></div>
     <div class="field"><div class="range-heading"><label class="field-label" for="bugPosY">Distance from top</label><output class="range-value" id="bugPosYValue">12.8%</output></div><input type="range" id="bugPosY" min="0" max="100" step=".1" value="12.8"></div>
    </details>
    <p class="help" id="bugLoadingStatus" role="status" aria-live="polite" hidden>Loading logo...</p>
-   <p class="help bug-footnote">Drag either logo to move the stack. The corner handle scales both. Logos stay on for the whole clip; toggles hide them independently. Save design keeps your uploaded logos.</p>
+   
   </section>
 
   <section class="section video-section">
@@ -230,6 +380,18 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
    </div>
    <p class="help" id="relinkNote" hidden></p>
    <div id="videoControls" hidden>
+    <div class="doublebox-card">
+     <label class="check-label"><input type="checkbox" id="doubleBoxEnabled"> Double Box</label>
+     <div id="doubleBoxOptions" hidden>
+      <div class="field"><div class="range-heading"><label class="field-label" for="doubleBoxSplit">Top / bottom split</label><output class="range-value" id="doubleBoxSplitValue">50 / 50</output></div><input type="range" id="doubleBoxSplit" min="20" max="80" step="1" value="50"></div>
+      <div class="field"><label class="field-label" for="doubleBottomSource">Bottom panel source</label><div class="select-wrap"><select id="doubleBottomSource"><option value="same">Same video</option><option value="video">B-roll video</option><option value="image">Still image</option></select></div></div>
+      <div class="row" id="doubleBottomUploads" hidden><button class="btn ghost tiny-btn" id="uploadBrollVideo" type="button">Add B-roll video</button><button class="btn ghost tiny-btn" id="uploadBrollImage" type="button">Add still image</button></div>
+      <div class="video-file-card" id="brollAssetStatus" hidden><span class="file-icon"><svg><use href="#i-film"/></svg></span><div><strong id="brollAssetName"></strong><span id="brollAssetMeta"></span></div><button class="btn ghost tiny-btn" id="removeBrollAsset" type="button">Remove</button></div>
+      <div class="field"><label class="field-label" for="doubleTopFit">Top panel framing</label><div class="select-wrap"><select id="doubleTopFit"><option value="blur">Blur fill + full video</option><option value="contain">Fit full video</option><option value="cover">Fill / crop</option></select></div></div>
+      <div class="field"><label class="field-label" for="doubleBottomFit">Bottom panel framing</label><div class="select-wrap"><select id="doubleBottomFit"><option value="cover">Fill / crop</option><option value="contain">Fit full source</option><option value="blur">Blur fill + full source</option></select></div></div>
+      <div class="help">Drag the divider on the preview to adjust the split.</div>
+     </div>
+    </div>
     <div class="field"><label class="field-label" for="videoFit">Video framing</label><div class="select-wrap"><select id="videoFit"><option value="blur">Blur background / full video</option><option value="cover">Fill 9:16 / crop edges</option><option value="contain">Fit full video / black bars</option></select></div></div>
     <div id="videoBlurControls" hidden>
      <p class="help">Your full video stays sharp. A moving, blurred copy fills the vertical background. Automatically selected for new widescreen videos and included in MP4 exports.</p>
@@ -284,14 +446,18 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
  </aside>
 </main>
 <video id="sourceVideo" class="media-source" playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<video id="brollSourceVideo" class="media-source" playsinline muted preload="auto" aria-hidden="true" tabindex="-1"></video>
 <input type="file" id="videoFile" accept="video/*,.mp4,.mov,.m4v,.webm" hidden>
+<input type="file" id="brollVideoFile" accept="video/*,.mp4,.mov,.m4v,.webm" hidden>
+<input type="file" id="brollImageFile" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden>
 <input type="file" id="referenceFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
 <input type="file" id="nbcBugFile" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden>
 <input type="file" id="sponsorBugFile" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden>
+<input type="file" id="showLogoFile" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden>
 <input type="file" id="designFile" accept=".json,application/json" hidden>
 <dialog id="videoExportDialog" aria-labelledby="videoExportTitle"><div class="export-kicker">SIDELINE / MP4 EXPORT</div><h2 id="videoExportTitle">Creating your MP4</h2><p class="export-summary" id="videoExportDetail"></p><div class="export-visual"><canvas id="videoExportCanvas" width="1080" height="1920" aria-label="Rendered video export preview"></canvas><video id="exportResultVideo" playsinline controls preload="metadata" hidden></video></div><progress class="export-progress" id="videoProgress" value="0" max="1" aria-label="Video export progress"></progress><div class="export-status-row" role="status" aria-live="polite"><span id="videoElapsed"></span><span id="videoPercent">0%</span></div><p class="export-warning" id="videoExportWarning"></p><div class="export-actions"><button class="btn" id="cancelVideoExport">Cancel export</button><button class="btn" id="closeVideoExport" hidden>Back to editor</button><a class="btn primary" id="saveVideoAgain" download hidden><svg><use href="#i-download"/></svg>Save MP4</a></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<dialog id="helpDialog"><h2>Your video. Your headline. Your team.</h2><p><strong>For video:</strong> click <strong>Add video</strong>, position your text and press <strong>Export MP4</strong>. New widescreen videos automatically use <strong>Blur background / full video</strong>: the full picture stays sharp over a moving, blurred copy. Adjust blur strength, background darkness and video vertical position in the Video source panel. The blur is included in the exported MP4, not just the preview. Use Fill to crop to 9:16, or Fit to show the full picture with black bars. The default output is 1080 x 1920. Original file audio is included unless you turn it off. Preview mute never changes export audio.</p><p>Exports run in real time using native browser recording. Keep this tab visible and your device awake. Long clips, high-resolution sources and 60 fps can strain slower devices; use 720p / 30 fps as needed. Start and end points are approximate, not frame-accurate. The export panel shows your browser's MP4/audio support. AAC is preferred; a clearly labeled Opus fallback is available when necessary. No WebM is renamed as MP4.</p><p><strong>Branding &amp; sponsor:</strong> your supplied NBC Sports Philadelphia logo is built in. Switch it on or off in the Branding &amp; sponsor panel. Add a separate sponsor PNG, JPG or WebP; it is centered directly beneath the NBC logo. Enable <strong>White background behind sponsor</strong> to add a white card, then adjust its padding and corner roundness. This does not remove an existing background from a logo file. Use a transparent PNG for the cleanest edges. Drag either logo to move the stack; use the corner handle to scale both, or use separate width sliders. Logo proportions are preserved. Branding stays on for the entire clip unless switched off. Both MP4 and PNG exports contain visible logos.</p><p><strong>Text timing:</strong> select a layer and uncheck Show for the entire clip. Times use the original video's clock. PNG exports ignore timing. Video files are not embedded in saved designs; reopen the same file after loading a design to restore its trim.</p><ol><li>Choose Sixers, Flyers, Eagles, or Phillies. The selected layer takes that team's palette.</li><li>Type your headline. Use Enter for line breaks, <strong>*asterisks*</strong> to highlight words, and choose a banner style. Fonts use the typefaces available on your device.</li><li>Drag your banner in the preview. Resize with the corner handle or text-size slider. Add more text layers for separate callouts.</li><li>Keep <strong>Transparent / overlay only</strong> selected and export a full-size <strong>1080 &times; 1920 PNG</strong>. Checkerboards, guides, and selection handles never appear in the file.</li></ol><p>Add a reference photo to line things up. It is only a preview unless you select <strong>Include reference photo</strong>. Local autosave stores the text, logos and settings; <strong>Save design</strong> also keeps your logos and reference image in an editable JSON file.</p><p><code>Ctrl/Cmd + Z</code> undo &nbsp; <code>Ctrl/Cmd + Shift + Z</code> redo<br><code>Arrow keys</code> move 1 px &nbsp; <code>Shift + arrows</code> move 10 px<br><code>Delete</code> remove selected layer &nbsp; <code>Ctrl/Cmd + D</code> duplicate</p><p>Color presets are editable, team-inspired palettes. This editor is not affiliated with Instagram or the teams.</p><div class="dialog-foot"><button class="btn primary" id="closeHelp">Start creating</button></div></dialog>
+<dialog id="helpDialog"><h2>Your video. Your headline. Your team.</h2><p><strong>For video:</strong> click <strong>Add video</strong>, position your text and press <strong>Export MP4</strong>. Enable <strong>Double Box</strong> in Video source for a top/bottom split. The bottom can reuse the main video, use a separate muted B-roll video, or use a still image. Drag the divider on the preview or use the split slider. Only the main video audio is included. New widescreen videos automatically use <strong>Blur background / full video</strong>: the full picture stays sharp over a moving, blurred copy. Adjust blur strength, background darkness and video vertical position in the Video source panel. The blur is included in the exported MP4, not just the preview. Use Fill to crop to 9:16, or Fit to show the full picture with black bars. The default output is 1080 x 1920. Original file audio is included unless you turn it off. Preview mute never changes export audio.</p><p>Exports run in real time using native browser recording. Keep this tab visible and your device awake. Long clips, high-resolution sources and 60 fps can strain slower devices; use 720p / 30 fps as needed. Start and end points are approximate, not frame-accurate. The export panel shows your browser's MP4/audio support. AAC is preferred; a clearly labeled Opus fallback is available when necessary. No WebM is renamed as MP4.</p><p><strong>Show presets:</strong> choose one of the 15 program presets at the top of the left panel. Each preset changes the selected text layer's team color and remembers its own show-logo and sponsor-logo uploads. Upload each show's artwork once; returning to that preset restores it. The NBC Sports Philadelphia network logo remains shared across presets.</p><p><strong>Branding &amp; sponsor:</strong> add a separate show logo at upper left. The NBC Sports Philadelphia network logo and sponsor remain grouped at upper right. Switch each logo on or off in the Branding &amp; sponsor panel. Add a separate sponsor PNG, JPG or WebP; it is centered directly beneath the NBC logo. Enable <strong>White background behind sponsor</strong> to add a white card, then adjust its padding and corner roundness. This does not remove an existing background from a logo file. Use a transparent PNG for the cleanest edges. Drag the show logo independently at upper left; drag the NBC/sponsor stack at upper right. Use the corner handle to resize the selected logo or stack. Logo proportions are preserved. Branding stays on for the entire clip unless switched off. Both MP4 and PNG exports contain visible logos.</p><p><strong>Text timing:</strong> select a text layer and drag its IN and OUT handles on the timeline beneath the video playhead, or use In at playhead / Out at playhead. Each banner has independent timing. Times use the original video's clock. PNG exports ignore timing. Video files are not embedded in saved designs; reopen the main video and any B-roll video after loading a design. Still images used in the bottom panel are saved with the design.</p><ol><li>Choose Sixers, Flyers, Eagles, Phillies, NBC Blue Breaking News, or NBC Red Breaking News. The selected layer takes that preset's palette.</li><li>Type your headline. Use Enter for line breaks, <strong>*asterisks*</strong> to highlight words, and choose a banner style. Fonts use the typefaces available on your device.</li><li>Drag your banner in the preview. Resize with the corner handle or text-size slider. Add more text layers for separate callouts.</li><li>Keep <strong>Transparent / overlay only</strong> selected and export a full-size <strong>1080 &times; 1920 PNG</strong>. Checkerboards, guides, and selection handles never appear in the file.</li></ol><p>Add a reference photo to line things up. It is only a preview unless you select <strong>Include reference photo</strong>. Local autosave stores the text, logos and settings; <strong>Save design</strong> also keeps your logos and reference image in an editable JSON file.</p><p><code>Ctrl/Cmd + Z</code> undo &nbsp; <code>Ctrl/Cmd + Shift + Z</code> redo<br><code>Arrow keys</code> move 1 px &nbsp; <code>Shift + arrows</code> move 10 px<br><code>Delete</code> remove selected layer &nbsp; <code>Ctrl/Cmd + D</code> duplicate</p><p>Color presets are editable, team-inspired palettes, including NBC Breaking News blue and red. This editor is not affiliated with Instagram or the teams.</p><div class="dialog-foot"><button class="btn primary" id="closeHelp">Start creating</button></div></dialog>
 <dialog id="resetDialog"><h2>Start a fresh design?</h2><p>This clears your layers, uploaded logos, reference photo and video selection. The included NBC logo is restored. Save your design first to keep an editable copy.</p><div class="dialog-foot" style="gap:8px"><button class="btn" id="cancelReset">Keep editing</button><button class="btn primary" id="confirmReset">Reset design</button></div></dialog>
 <script>
 'use strict';
@@ -302,8 +468,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   const BUILTIN_NBC = 'nbc-sports-philadelphia';
   const NBC_LOGO_DATA = 'data:image/png;base64,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';
   const bugAssets=new Map();
-  let bugAssetVersion=0,brandSelected=false,bugLoading=0,restoredBugAssets=[];
-  const bugLoadTokens={nbc:0,sponsor:0};
+  let bugAssetVersion=0,brandSelected=false,showLogoSelected=false,bugLoading=0,restoredBugAssets=[];
+  const bugLoadTokens={nbc:0,sponsor:0,show:0};
   const STORE_KEY = 'sideline-philly-overlay-v1';
   const $ = id => document.getElementById(id);
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -312,7 +478,19 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     sixers: {name:'Sixers', primary:'#006BB6', secondary:'#ED174C', dark:'#002B5C'},
     flyers: {name:'Flyers', primary:'#F74902', secondary:'#000000', dark:'#111111'},
     eagles: {name:'Eagles', primary:'#004C54', secondary:'#A5ACAF', dark:'#000000'},
-    phillies: {name:'Phillies', primary:'#E81828', secondary:'#002D72', dark:'#002D72'}
+    phillies: {name:'Phillies', primary:'#E81828', secondary:'#002D72', dark:'#002D72'},
+    nbcBlue: {name:'NBC Blue Breaking News', primary:'#293FAB', secondary:'#FFFFFF', dark:'#1D2C80'},
+    nbcRed: {name:'NBC Red Breaking News', primary:'#E83038', secondary:'#FFFFFF', dark:'#B51D29'}
+  };
+  const showPresets = {
+    news:{name:'News',team:'nbcBlue'}, breakingNews:{name:'Breaking News',team:'nbcRed'},
+    eagleEye:{name:'Eagle Eye',team:'eagles'}, philliesTalk:{name:'Phillies Talk',team:'phillies'},
+    flyersTalk:{name:'Flyers Talk',team:'flyers'}, sixersTalk:{name:'Sixers Talk',team:'sixers'},
+    takeoff:{name:'Takeoff',team:'eagles'}, unfiltered:{name:'Unfiltered',team:'nbcBlue'},
+    sportsnetCentral:{name:'Sportsnet Central',team:'nbcBlue'}, birdsHuddle:{name:'Birds Huddle',team:'eagles'},
+    sixersPostgame:{name:'Sixers Postgame',team:'sixers'}, flyersPostgame:{name:'Flyers Postgame',team:'flyers'},
+    eaglesPostgame:{name:'Eagles Postgame',team:'eagles'}, philliesPostgame:{name:'Phillies Postgame',team:'phillies'},
+    szn:{name:'SZN',team:'eagles'}
   };
   const fonts = {
     heavy: {family:'"Arial Black", "Arial", "Helvetica Neue", sans-serif', weight:900},
@@ -333,7 +511,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   function defaultState() {
     const layer = newLayer();
-    return {team:'sixers', layers:[layer], selectedId:layer.id, guides:false, handles:true, video:videoDefaults(), branding:brandingDefaults(),
+    return {team:'sixers', showPreset:'sixersTalk', showPresetLogos:{}, layers:[layer], selectedId:layer.id, guides:false, handles:true, video:videoDefaults(), branding:brandingDefaults(),
       background:{mode:'transparent', color:'#121418', dim:0, showReference:true}, fileName:'sixers-overlay'};
   }
   function validColor(value, fallback='#FFFFFF') {
@@ -343,6 +521,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     if (!raw || typeof raw !== 'object' || !Array.isArray(raw.layers) || !raw.layers.length) throw new Error('This file does not contain a Sideline design.');
     const base = defaultState();
     base.team = Object.hasOwn(teams,raw.team) ? raw.team : 'sixers';
+    const legacyPreset = ({nbcBlue:'news',nbcRed:'breakingNews',eagles:'eagleEye',phillies:'philliesTalk',flyers:'flyersTalk',sixers:'sixersTalk'})[base.team] || 'sixersTalk';
+    base.showPreset = Object.hasOwn(showPresets,raw.showPreset) ? raw.showPreset : legacyPreset;
     const number = (v, lo, hi, fallback) => typeof v === 'number' && Number.isFinite(v) ? clamp(v,lo,hi) : fallback;
     const choice = (v, options, fallback) => options.includes(v) ? v : fallback;
     const seen = new Set();
@@ -388,8 +568,20 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
       base.video.trimStart=number(v.trimStart,0,86400,0);base.video.trimEnd=v.trimEnd==null?null:number(v.trimEnd,0,86400,null);
       base.video.fileName=typeof v.fileName==='string'?v.fileName.slice(0,250):'';
       base.video.fileSize=number(v.fileSize,0,1e13,0);base.video.fileModified=number(v.fileModified,0,1e15,0);
+      if(v.doubleBox&&typeof v.doubleBox==='object'){
+        const d=v.doubleBox;
+        base.video.doubleBox={enabled:d.enabled===true,split:number(d.split,20,80,50),bottomSource:choice(d.bottomSource,['same','video','image'],'same'),topFit:choice(d.topFit,['blur','contain','cover'],'blur'),bottomFit:choice(d.bottomFit,['blur','contain','cover'],'cover'),brollName:typeof d.brollName==='string'?d.brollName.slice(0,250):'',brollSize:number(d.brollSize,0,1e13,0),brollModified:number(d.brollModified,0,1e15,0)};
+      }
     }
     base.branding=cleanBranding(raw.branding);
+    base.showPresetLogos={};
+    if(raw.showPresetLogos&&typeof raw.showPresetLogos==='object') for(const [key,value] of Object.entries(raw.showPresetLogos)){
+      if(!Object.hasOwn(showPresets,key)||!value||typeof value!=='object')continue;
+      const assetId=v=>typeof v==='string'&&/^[a-zA-Z0-9_-]{1,120}$/.test(v)?v:null;
+      base.showPresetLogos[key]={showAsset:assetId(value.showAsset),sponsorAsset:assetId(value.sponsorAsset),showEnabled:value.showEnabled===true,sponsorEnabled:value.sponsorEnabled===true,sponsorWhite:value.sponsorWhite===true};
+    }
+    // Backward compatibility: associate existing uploaded logos with the active preset.
+    if(!base.showPresetLogos[base.showPreset])base.showPresetLogos[base.showPreset]={showAsset:base.branding.show.asset,sponsorAsset:base.branding.sponsor.asset,showEnabled:base.branding.show.enabled,sponsorEnabled:base.branding.sponsor.enabled,sponsorWhite:base.branding.sponsor.white};
     return base;
   }
   let state = defaultState();
@@ -622,14 +814,14 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   function render() {
     layouts=drawScene(ctx,false);
-    const l=current(),b=brandSelected?brandLayout():layouts.get(l.id),box=$('selectionBox');
-    box.hidden=!state.handles||!b?.height||(!brandSelected&&(!l.visible||(videoFile&&!layerAt(l,sourceVideo.currentTime))));
+    const l=current(),b=brandSelected?brandLayout():showLogoSelected?showLogoLayout():layouts.get(l.id),box=$('selectionBox');
+    box.hidden=!state.handles||!b?.height||(!brandSelected&&!showLogoSelected&&(!l.visible||(videoFile&&!layerAt(l,sourceVideo.currentTime))));
     if(!box.hidden){box.style.left=`${b.left/WIDTH*100}%`;box.style.top=`${b.top/HEIGHT*100}%`;box.style.width=`${b.width/WIDTH*100}%`;box.style.height=`${b.height/HEIGHT*100}%`;}
     $('safeGuide').hidden=!state.guides;
     const index=state.layers.indexOf(l)+1;
-    $('selectionTag').textContent=brandSelected?'LOGO STACK':`TEXT ${String(index).padStart(2,'0')}${b?.autoFit?' / AUTO-FIT':''}`;
-    $('resizeHandle').setAttribute('aria-label',brandSelected?'Drag to resize both logos':'Drag to resize text');
-    $('canvasEmpty').hidden=!!videoFile||!!brandLayout().height||state.layers.some(layer=>layer.visible&&(layer.text.trim()||layer.emoji.trim()));
+    $('selectionTag').textContent=brandSelected?'NETWORK + SPONSOR':showLogoSelected?'SHOW LOGO':`TEXT ${String(index).padStart(2,'0')}${b?.autoFit?' / AUTO-FIT':''}`;
+    $('resizeHandle').setAttribute('aria-label',brandSelected?'Drag to resize logo stack':showLogoSelected?'Drag to resize show logo':'Drag to resize text');
+    $('canvasEmpty').hidden=!!videoFile||!!brandLayout().height||!!showLogoLayout().height||state.layers.some(layer=>layer.visible&&(layer.text.trim()||layer.emoji.trim()));
     $('zoomLabel').textContent=`${Math.round(canvas.getBoundingClientRect().width/WIDTH*100)}% VIEW`;
   }
   function scheduleRender(){if(renderFrame)return;renderFrame=requestAnimationFrame(()=>{renderFrame=0;render();});}
@@ -695,9 +887,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
       swatch.addEventListener('click',()=>change(()=>{current().boxColor=color;current().style='custom';}));palette.append(swatch);
     }
     const label=document.createElement('span');label.className='palette-caption';label.textContent='Click to recolor box';palette.append(label);
-    syncLayers();syncVideoUI();syncBrandUI();
+    syncLayers();syncVideoUI();syncBrandUI();syncShowPresetUI();
   }
-  function selectLayer(id){brandSelected=false;state.selectedId=id;state.handles=true;historyKey='';syncUI();render();autoSave();}
+  function selectLayer(id){brandSelected=false;showLogoSelected=false;state.selectedId=id;state.handles=true;historyKey='';syncUI();render();autoSave();}
   function applyStyle(layer,style) {
     const team=teams[layer.team];layer.style=style;layer.shadow=false;layer.stroke=false;layer.boxShape='lines';layer.boxOpacity=100;
     if(style==='team'){layer.boxColor=team.primary;layer.textColor='#FFFFFF';layer.accentColor=team.secondary;layer.accentLast=false;}
@@ -705,6 +897,31 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     if(style==='white'){layer.boxColor='#FFFFFF';layer.textColor='#111111';layer.accentColor=team.primary;layer.accentLast=false;}
     if(style==='outline'){layer.boxShape='none';layer.textColor='#FFFFFF';layer.stroke=true;layer.shadow=true;layer.accentColor=team.primary;layer.accentLast=false;}
   }
+  function saveActivePresetLogos(){
+    if(!state.showPresetLogos)state.showPresetLogos={};
+    const b=state.branding;state.showPresetLogos[state.showPreset]={showAsset:b.show.asset,sponsorAsset:b.sponsor.asset,showEnabled:b.show.enabled,sponsorEnabled:b.sponsor.enabled,sponsorWhite:b.sponsor.white};
+  }
+  function syncShowPresetUI(){
+    const select=$('showPresetSelect');if(!select)return;setValue('showPresetSelect',state.showPreset);
+    const profile=state.showPresetLogos?.[state.showPreset]||{};
+    const show=!!profile.showAsset,sponsor=!!profile.sponsorAsset;
+    $('showPresetStatus').innerHTML=`<strong>${show?'Show logo saved':'Show logo not set'} &middot; ${sponsor?'Sponsor saved':'Sponsor not set'}</strong><br>${showPresets[state.showPreset].name} &middot; ${teams[showPresets[state.showPreset].team].name} colors`;
+  }
+  $('showPresetSelect').addEventListener('change',e=>{
+    const key=e.target.value;if(!Object.hasOwn(showPresets,key))return;
+    change(()=>{
+      saveActivePresetLogos();state.showPreset=key;
+      const profile=state.showPresetLogos[key]||{showAsset:null,sponsorAsset:null,showEnabled:false,sponsorEnabled:false,sponsorWhite:false};
+      state.branding.show.asset=profile.showAsset||null;state.branding.show.enabled=!!profile.showEnabled&&!!profile.showAsset;
+      state.branding.sponsor.asset=profile.sponsorAsset||null;state.branding.sponsor.enabled=!!profile.sponsorEnabled&&!!profile.sponsorAsset;state.branding.sponsor.white=!!profile.sponsorWhite;
+      const layer=current(),team=showPresets[key].team,previousStyle=layer.style==='custom'?'team':layer.style,keepAccent=layer.accentLast;
+      layer.team=team;state.team=team;applyStyle(layer,previousStyle);layer.accentLast=keepAccent||previousStyle==='black';
+      if(state.fileName.endsWith('-overlay'))state.fileName=team+'-overlay';
+      brandSelected=false;showLogoSelected=false;
+    });
+    toast(showPresets[key].name+' preset applied. Upload its show and sponsor logos in Branding & sponsor to save them for next time.');
+  });
+
   $('teamSelect').addEventListener('change',e=>change(()=>{
     const layer=current(),oldTeam=layer.team;layer.team=e.target.value;state.team=layer.team;
     const previousStyle=layer.style==='custom'?'team':layer.style,keepAccent=layer.accentLast;
@@ -738,7 +955,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   function addLayer(duplicate=false) {
     if(state.layers.length>=MAX_LAYERS){toast('You can add up to 10 text layers.',true);return;}
     change(()=>{
-      brandSelected=false;const original=current();const layer=duplicate?clone(original):newLayer(original.team,'YOUR HEADLINE\nGOES HERE');
+      brandSelected=false;showLogoSelected=false;const original=current();const layer=duplicate?clone(original):newLayer(original.team,'YOUR HEADLINE\nGOES HERE');
       layer.id=uid();layer.visible=true;
       if(duplicate){layer.y+=160;}else{layer.emoji='';layer.y=HEIGHT*.72;}
       state.layers.push(layer);state.selectedId=layer.id;state.handles=true;
@@ -752,8 +969,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   // Native MP4 export. No uploads, CDN, FFmpeg download, screen capture, or microphone.
   // CanvasCaptureMediaStreamTrack provides video; Web Audio supplies the file's audio.
   // MediaRecorder is real-time. Fail explicitly rather than relabeling WebM as MP4.
-  function videoDefaults(){return {fit:'cover',cropX:50,cropY:50,blurAmount:42,blurDim:38,foregroundY:35,keepAudio:true,resolution:'1080',fps:30,trimStart:0,trimEnd:null,previewMuted:false,fileName:'',fileSize:0,fileModified:0};}
+  function videoDefaults(){return {fit:'cover',cropX:50,cropY:50,blurAmount:42,blurDim:38,foregroundY:35,keepAudio:true,resolution:'1080',fps:30,trimStart:0,trimEnd:null,previewMuted:false,fileName:'',fileSize:0,fileModified:0,doubleBox:{enabled:false,split:50,bottomSource:'same',topFit:'blur',bottomFit:'cover',brollName:'',brollSize:0,brollModified:0}};}
   const sourceVideo=$('sourceVideo');
+  const brollSourceVideo=$('brollSourceVideo');let brollVideoFile=null,brollVideoURL='',brollImage=null,brollImageURL='',brollImageName='',brollImageData=null,brollLoading=false;
   let videoFile=null,videoURL='',videoLoadId=0,videoLoading=false,previewRAF=0;
   let audioContext=null,audioSource=null,audioDestination=null,monitorGain=null;
   let videoJob=null,resultURL='',previewLastPaint=0;
@@ -776,15 +994,52 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     return {start:clamp(state.video.trimStart||0,0,Math.max(0,duration-.05)),end:clamp(state.video.trimEnd??duration,0,duration),duration};
   }
   function layerAt(layer,time){return layer.visible&&(!layer.timed||(time>=(layer.startTime||0)&&time<(layer.endTime??Infinity)));}
+  // Five-frame fades are applied to each timed text graphic at both edit points.
+  // The duration follows the export frame rate so the transition is exactly five frames.
+  function layerOpacityAt(layer,time,ignoreTiming=false){
+    if(!layer.visible)return 0;
+    if(ignoreTiming||!layer.timed)return 1;
+    const start=Math.max(0,Number(layer.startTime)||0),end=Math.max(start+.001,Number(layer.endTime)||Infinity);
+    if(time<start||time>=end)return 0;
+    const fps=Math.max(1,Number(state.video?.fps)||30),fadeDuration=5/fps;
+    const fadeIn=clamp((time-start)/fadeDuration,0,1);
+    const fadeOut=clamp((end-time)/fadeDuration,0,1);
+    return Math.min(fadeIn,fadeOut);
+  }
+  function syncGraphicTimeline(){
+    if(!videoFile)return;
+    const duration=Math.max(.1,Number(sourceVideo.duration)||0),layer=current(),bounds=clipBounds();
+    const start=layer.timed?clamp(Number(layer.startTime)||0,0,duration):0;
+    const end=layer.timed?clamp(layer.endTime==null?duration:Number(layer.endTime),start+.05,duration):duration;
+    const left=start/duration*100,right=end/duration*100,play=clamp((sourceVideo.currentTime||0)/duration*100,0,100);
+    $('graphicRange').style.left=left+'%';$('graphicRange').style.width=Math.max(0,right-left)+'%';
+    $('graphicInHandle').style.left=left+'%';$('graphicOutHandle').style.left=right+'%';$('graphicPlayhead').style.left=play+'%';
+    $('graphicInLabel').textContent='IN '+timeText(start);$('graphicOutLabel').textContent='OUT '+timeText(end);
+    $('graphicTimingTime').textContent=layer.timed?timeText(start)+' – '+timeText(end):'FULL CLIP';
+    $('graphicFullClip').checked=!layer.timed;
+    $('graphicSetFull').setAttribute('aria-pressed',String(!layer.timed));
+    $('graphicTiming').hidden=!videoFile;
+  }
+  function applyGraphicTiming(start,end){
+    const duration=Math.max(.1,Number(sourceVideo.duration)||0),layer=current();
+    start=clamp(start,0,duration-.05);end=clamp(end,start+.05,duration);
+    layer.timed=true;layer.startTime=start;layer.endTime=end;
+    $('layerFullClip').checked=false;$('layerTimeFields').hidden=false;
+    setValue('layerStart',timeText(start,2));setValue('layerEnd',timeText(end,2));
+    syncGraphicTimeline();render();
+  }
   function cachedOverlay(time,ignoreTiming=false){
-    const active=state.layers.map(l=>ignoreTiming?l.visible:layerAt(l,time));
-    const key=JSON.stringify(state.layers)+'|'+active.join(',')+'|'+JSON.stringify(state.branding)+'|'+bugAssetVersion;
+    const opacities=state.layers.map(l=>layerOpacityAt(l,time,ignoreTiming));
+    // Include per-layer opacity in the cache key so the five-frame fade updates
+    // on every preview/export frame instead of snapping at the in/out points.
+    const opacityKey=opacities.map(a=>a.toFixed(3)).join(',');
+    const key=JSON.stringify(state.layers)+'|'+opacityKey+'|'+JSON.stringify(state.branding)+'|'+bugAssetVersion;
     if(key!==overlayKey){
       overlayKey=key;overlayCtx.clearRect(0,0,WIDTH,HEIGHT);overlayLayouts=new Map();
       state.layers.forEach((layer,index)=>{
         const b=layoutLayer(layer,overlayCtx);overlayLayouts.set(layer.id,b);
-        if(!active[index]||!b.height)return;
-        layerContext.clearRect(0,0,WIDTH,HEIGHT);drawLayer(layerContext,layer,b);overlayCtx.drawImage(layerCanvas,0,0);
+        if(opacities[index]<=0||!b.height)return;
+        layerContext.clearRect(0,0,WIDTH,HEIGHT);layerContext.save();layerContext.globalAlpha=opacities[index];drawLayer(layerContext,layer,b);layerContext.restore();overlayCtx.drawImage(layerCanvas,0,0);
       });
       drawBranding(overlayCtx);
     }
@@ -877,7 +1132,32 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';
     context.drawImage(blurOutput,0,0,w,h);
   }
+  function drawMediaPanel(context,media,x,y,w,h,fit='cover'){
+    context.save();context.beginPath();context.rect(x,y,w,h);context.clip();context.fillStyle='#05070C';context.fillRect(x,y,w,h);
+    const iw=media?.videoWidth||media?.naturalWidth||media?.width||0,ih=media?.videoHeight||media?.naturalHeight||media?.height||0;
+    if(!media||!iw||!ih||(media instanceof HTMLVideoElement&&media.readyState<2)){context.restore();return;}
+    const coverScale=Math.max(w/iw,h/ih),containScale=Math.min(w/iw,h/ih);
+    const drawCover=()=>{const dw=iw*coverScale,dh=ih*coverScale;context.drawImage(media,x+(w-dw)/2,y+(h-dh)/2,dw,dh);};
+    const drawContain=()=>{const dw=iw*containScale,dh=ih*containScale;context.drawImage(media,x+(w-dw)/2,y+(h-dh)/2,dw,dh);};
+    context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';
+    if(fit==='blur'){
+      context.save();context.filter='blur(26px)';drawCover();context.restore();
+      context.fillStyle='rgba(0,0,0,.22)';context.fillRect(x,y,w,h);drawContain();
+    }else if(fit==='contain')drawContain();else drawCover();
+    context.restore();
+  }
+  function drawDoubleBox(context,w,h,settings=state.video){
+    const db=settings.doubleBox||videoDefaults().doubleBox;
+    const split=clamp(Number(db.split)||50,20,80)/100,topH=Math.round(h*split),line=Math.max(3,Math.round(w*.004));
+    drawMediaPanel(context,sourceVideo,0,0,w,topH,db.topFit||'blur');
+    let bottomMedia=sourceVideo;
+    if(db.bottomSource==='video')bottomMedia=brollVideoFile?brollSourceVideo:null;
+    else if(db.bottomSource==='image')bottomMedia=brollImage;
+    drawMediaPanel(context,bottomMedia,0,topH,w,h-topH,db.bottomFit||'cover');
+    context.save();context.fillStyle='#00AEEF';context.fillRect(0,topH-line/2,w,line);context.fillStyle='#FFFFFF';context.fillRect(0,topH-1,w,2);context.restore();
+  }
   function drawVideoBackground(context,w=WIDTH,h=HEIGHT,settings=state.video){
+    if(settings.doubleBox?.enabled){drawDoubleBox(context,w,h,settings);return;}
     context.save();
     try{
       if('filter' in context)context.filter='none';
@@ -917,6 +1197,14 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     $('videoMeta').textContent=loaded?sourceVideo.videoWidth+' x '+sourceVideo.videoHeight+' / '+timeText(sourceVideo.duration)+' / '+(videoFile.size/1048576).toFixed(1)+' MB':'';
     $('relinkNote').hidden=loaded||!v.fileName;
     $('relinkNote').textContent=v.fileName?'Reopen '+v.fileName+' to restore the video. Design files keep settings, not the video itself.':'';
+    const db=v.doubleBox||videoDefaults().doubleBox;
+    $('doubleBoxEnabled').checked=!!db.enabled;$('doubleBoxOptions').hidden=!db.enabled;
+    setValue('doubleBoxSplit',db.split);$('doubleBoxSplitValue').textContent=db.split+' / '+(100-db.split);
+    setValue('doubleBottomSource',db.bottomSource);setValue('doubleTopFit',db.topFit);setValue('doubleBottomFit',db.bottomFit);
+    $('doubleBottomUploads').hidden=db.bottomSource==='same';
+    $('brollAssetStatus').hidden=db.bottomSource==='same';
+    $('brollAssetName').textContent=db.bottomSource==='video'?(brollVideoFile?.name||db.brollName||'Choose a B-roll video'):(brollImageName||'Choose a still image');
+    $('brollAssetMeta').textContent=db.bottomSource==='video'?(brollVideoFile&&brollSourceVideo.videoWidth?brollSourceVideo.videoWidth+' x '+brollSourceVideo.videoHeight+' / '+timeText(brollSourceVideo.duration):'Select to relink B-roll'):brollImage?'Still image':'Select to relink still image';
     setValue('videoFit',v.fit);$('videoCropControls').hidden=v.fit!=='cover';
     $('videoBlurControls').hidden=v.fit!=='blur';
     setValue('videoBlurAmount',v.blurAmount);$('videoBlurAmountValue').textContent=String(v.blurAmount);
@@ -937,7 +1225,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     const l=current();$('layerFullClip').checked=!l.timed;$('layerTimeFields').hidden=!l.timed;
     if(document.activeElement!==$('layerStart'))setValue('layerStart',timeText(l.startTime||0,2));
     if(document.activeElement!==$('layerEnd'))setValue('layerEnd',l.endTime==null?'':timeText(l.endTime,2));
-    if(loaded)$('previewBadge').textContent=v.fit==='blur'?'Blur background + sharp video + text / included in MP4.':'Video + text preview / PNG still exports separately.';
+    if(loaded)$('previewBadge').textContent=v.doubleBox?.enabled?'Double Box / two-panel video + text / included in MP4.':v.fit==='blur'?'Blur background + sharp video + text / included in MP4.':'Video + text preview / PNG still exports separately.';
     syncTransport();
   }
   function syncTransport(){
@@ -946,6 +1234,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     const currentTime=sourceVideo.currentTime||0,duration=Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0;
     $('videoTime').textContent=timeText(currentTime)+' / '+timeText(duration);
     $('videoSeek').max=String(duration||1);$('videoSeek').value=String(currentTime);
+    syncGraphicTimeline();
     $('previewMute').innerHTML='<svg><use href="#i-'+(state.video.previewMuted?'muted':'sound')+'"/></svg>';
     $('previewMute').setAttribute('aria-label',state.video.previewMuted?'Unmute preview (export audio unchanged)':'Mute preview (export audio unchanged)');
     $('previewMute').setAttribute('aria-pressed',String(state.video.previewMuted));
@@ -956,6 +1245,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   function previewTick(now){
     previewRAF=0;if(!videoFile||sourceVideo.paused||exportBusy)return;
+    if(state.video.doubleBox?.enabled&&state.video.doubleBox.bottomSource==='video'&&brollVideoFile)syncBrollToPrimary(false);
     if(now-previewLastPaint>=1000/30){previewLastPaint=now;render();syncTransport();}
     if(sourceVideo.currentTime>=clipBounds().end){sourceVideo.pause();return;}
     previewRAF=requestAnimationFrame(previewTick);
@@ -1004,11 +1294,62 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     }finally{if(token===videoLoadId){videoLoading=false;$('uploadVideo').disabled=false;$('uploadVideo').querySelector('strong').textContent='Add your video';syncUI();render();}}
   }
   function clearVideo(forget=true){
-    videoLoadId++;sourceVideo.pause();cancelAnimationFrame(previewRAF);previewRAF=0;videoLoading=false;videoFile=null;
+    videoLoadId++;sourceVideo.pause();brollSourceVideo.pause();cancelAnimationFrame(previewRAF);previewRAF=0;videoLoading=false;videoFile=null;
     sourceVideo.removeAttribute('src');sourceVideo.load();if(videoURL)URL.revokeObjectURL(videoURL);videoURL='';
     if(forget)state.video=videoDefaults();
     $('uploadVideo').disabled=false;$('uploadVideo').querySelector('strong').textContent='Add your video';
   }
+  function syncBrollToPrimary(force=false){
+    if(!brollVideoFile||!Number.isFinite(brollSourceVideo.duration)||brollSourceVideo.duration<=0)return;
+    const desired=(sourceVideo.currentTime||0)%brollSourceVideo.duration;
+    if(force||Math.abs((brollSourceVideo.currentTime||0)-desired)>.45){try{brollSourceVideo.currentTime=desired;}catch(_){}}
+  }
+  async function loadBrollVideo(file){
+    if(!file||exportBusy)return;
+    if(!file.type.startsWith('video/')&&!/\.(mp4|mov|m4v|webm|mkv)$/i.test(file.name)){toast('Choose a video file for B-roll.',true);return;}
+    brollLoading=true;syncVideoUI();
+    try{
+      if(brollVideoURL)URL.revokeObjectURL(brollVideoURL);brollVideoFile=null;brollSourceVideo.pause();
+      brollVideoURL=URL.createObjectURL(file);
+      const ready=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('B-roll video loading timed out.')),20000);brollSourceVideo.addEventListener('loadeddata',()=>{clearTimeout(timer);resolve();},{once:true});brollSourceVideo.addEventListener('error',()=>{clearTimeout(timer);reject(new Error('Could not open the B-roll video.'))},{once:true});});
+      brollSourceVideo.src=brollVideoURL;brollSourceVideo.muted=true;brollSourceVideo.loop=true;brollSourceVideo.load();await ready;
+      if(!brollSourceVideo.videoWidth)throw new Error('B-roll video has no readable picture.');
+      brollVideoFile=file;state.video.doubleBox.bottomSource='video';state.video.doubleBox.enabled=true;state.video.doubleBox.brollName=file.name;state.video.doubleBox.brollSize=file.size;state.video.doubleBox.brollModified=file.lastModified;
+      syncBrollToPrimary(true);if(!sourceVideo.paused){try{await brollSourceVideo.play();}catch(_){}}
+      toast('B-roll video added.');
+    }catch(error){if(brollVideoURL)URL.revokeObjectURL(brollVideoURL);brollVideoURL='';brollVideoFile=null;brollSourceVideo.removeAttribute('src');brollSourceVideo.load();toast(error.message,true);}
+    finally{brollLoading=false;syncVideoUI();render();autoSave();}
+  }
+  async function loadBrollImage(file){
+    if(!file||exportBusy)return;
+    if(!file.type.startsWith('image/')){toast('Choose a PNG, JPG or WebP still image.',true);return;}
+    brollLoading=true;syncVideoUI();
+    try{
+      brollSourceVideo.pause();if(brollImageURL)URL.revokeObjectURL(brollImageURL);brollImage=null;brollImageData=null;
+      brollImageURL=URL.createObjectURL(file);const image=new Image();
+      await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=()=>reject(new Error('Could not open the still image.'));image.src=brollImageURL;});
+      brollImage=image;brollImageName=file.name;brollImageData=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result));reader.onerror=()=>reject(new Error('Could not read the still image.'));reader.readAsDataURL(file);});
+      state.video.doubleBox.bottomSource='image';state.video.doubleBox.enabled=true;state.video.doubleBox.brollName=file.name;state.video.doubleBox.brollSize=file.size;state.video.doubleBox.brollModified=file.lastModified;
+      toast('Still image added.');
+    }catch(error){toast(error.message,true);}
+    finally{brollLoading=false;syncVideoUI();render();autoSave();}
+  }
+  function removeBrollAsset(){
+    brollSourceVideo.pause();brollSourceVideo.loop=false;brollSourceVideo.removeAttribute('src');brollSourceVideo.load();if(brollVideoURL)URL.revokeObjectURL(brollVideoURL);if(brollImageURL)URL.revokeObjectURL(brollImageURL);
+    brollVideoURL='';brollImageURL='';brollVideoFile=null;brollImage=null;brollImageData=null;brollImageName='';
+    state.video.doubleBox.bottomSource='same';state.video.doubleBox.brollName='';state.video.doubleBox.brollSize=0;state.video.doubleBox.brollModified=0;
+    syncVideoUI();render();autoSave();
+  }
+  $('doubleBoxEnabled').addEventListener('change',e=>change(()=>{state.video.doubleBox.enabled=e.target.checked;}));
+  $('doubleBoxSplit').addEventListener('pointerdown',()=>remember('double-split'));$('doubleBoxSplit').addEventListener('keydown',()=>remember('double-split'));
+  $('doubleBoxSplit').addEventListener('input',e=>{state.video.doubleBox.split=Number(e.target.value);$('doubleBoxSplitValue').textContent=e.target.value+' / '+(100-Number(e.target.value));scheduleRender();autoSave();});
+  $('doubleBoxSplit').addEventListener('change',()=>{historyKey='';syncUI();render();});
+  $('doubleBottomSource').addEventListener('change',e=>{if(e.target.value!=='video')brollSourceVideo.pause();change(()=>{state.video.doubleBox.bottomSource=e.target.value;state.video.doubleBox.enabled=true;});});
+  $('doubleTopFit').addEventListener('change',e=>change(()=>{state.video.doubleBox.topFit=e.target.value;}));
+  $('doubleBottomFit').addEventListener('change',e=>change(()=>{state.video.doubleBox.bottomFit=e.target.value;}));
+  $('uploadBrollVideo').addEventListener('click',()=>$('brollVideoFile').click());$('uploadBrollImage').addEventListener('click',()=>$('brollImageFile').click());$('removeBrollAsset').addEventListener('click',removeBrollAsset);
+  $('brollVideoFile').addEventListener('change',e=>{loadBrollVideo(e.target.files[0]);e.target.value='';});
+  $('brollImageFile').addEventListener('change',e=>{loadBrollImage(e.target.files[0]);e.target.value='';});
   for(const id of ['uploadVideo','uploadVideoTop','replaceVideo'])$(id).addEventListener('click',()=>$('videoFile').click());
   $('videoFile').addEventListener('change',e=>{loadVideo(e.target.files[0]);e.target.value='';});
   $('removeVideo').addEventListener('click',()=>{clearVideo();syncUI();render();autoSave();toast('Video removed. Your text layers are unchanged.');});
@@ -1019,9 +1360,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   });
   $('previewMute').addEventListener('click',()=>{state.video.previewMuted=!state.video.previewMuted;updateMonitor();syncTransport();autoSave();});
   $('videoSeek').addEventListener('input',e=>{if(exportBusy)return;sourceVideo.pause();sourceVideo.currentTime=Number(e.target.value);syncTransport();});
-  sourceVideo.addEventListener('seeked',()=>{if(!exportBusy){render();syncTransport();}});
-  sourceVideo.addEventListener('play',()=>{syncTransport();startPreviewTick();});
-  sourceVideo.addEventListener('pause',()=>{cancelAnimationFrame(previewRAF);previewRAF=0;syncTransport();if(!exportBusy)render();});
+  sourceVideo.addEventListener('seeked',()=>{syncBrollToPrimary(true);if(!exportBusy){render();syncTransport();}});
+  sourceVideo.addEventListener('play',()=>{syncBrollToPrimary(true);if(state.video.doubleBox?.enabled&&state.video.doubleBox.bottomSource==='video'&&brollVideoFile)brollSourceVideo.play().catch(()=>{});syncTransport();startPreviewTick();});
+  sourceVideo.addEventListener('pause',()=>{brollSourceVideo.pause();cancelAnimationFrame(previewRAF);previewRAF=0;syncTransport();if(!exportBusy)render();});
   sourceVideo.addEventListener('ended',()=>{if(!exportBusy){syncTransport();render();}});
   $('videoFit').addEventListener('change',e=>change(()=>{state.video.fit=e.target.value;}));
   for(const [id,key] of [['videoBlurAmount','blurAmount'],['videoBlurDim','blurDim'],['videoForegroundY','foregroundY']]){
@@ -1046,8 +1387,41 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   for(const id of ['layerStart','layerEnd'])$(id).addEventListener('change',()=>{
     const start=parseTime($('layerStart').value),end=$('layerEnd').value.trim()?parseTime($('layerEnd').value):null;
     if(!Number.isFinite(start)||start<0||(end!==null&&(!Number.isFinite(end)||end<=start))){toast('Set a valid start and a later end time. Leave end blank for the rest of the video.',true);syncVideoUI();return;}
-    change(()=>{current().startTime=start;current().endTime=end;});
+    change(()=>{current().timed=true;current().startTime=start;current().endTime=end;});
   });
+  // A graphic in/out range directly on the preview timeline. Drag handles or
+  // use the playhead buttons; timing is per text layer and is honored by MP4.
+  let graphicDrag=null,graphicDragChanged=false;
+  function graphicTimeFromPointer(event){const r=$('graphicTrack').getBoundingClientRect();return clamp((event.clientX-r.left)/Math.max(1,r.width),0,1)*Math.max(.1,Number(sourceVideo.duration)||0);}
+  function beginGraphicDrag(which,event){
+    if(!videoFile||exportBusy)return;event.preventDefault();
+    const layer=current(),b=clipBounds();
+    remember('graphic-time');
+    if(!layer.timed){layer.timed=true;layer.startTime=b.start;layer.endTime=b.end;}
+    graphicDrag={which,pointerId:event.pointerId,start:layer.startTime||0,end:layer.endTime??(sourceVideo.duration||b.end)};graphicDragChanged=false;
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  }
+  function moveGraphicDrag(event){
+    if(!graphicDrag||event.pointerId!==graphicDrag.pointerId)return;
+    const t=graphicTimeFromPointer(event),minGap=.1;
+    if(graphicDrag.which==='in')graphicDrag.start=clamp(t,0,graphicDrag.end-minGap);
+    else graphicDrag.end=clamp(t,graphicDrag.start+minGap,Number(sourceVideo.duration)||graphicDrag.start+minGap);
+    graphicDragChanged=true;applyGraphicTiming(graphicDrag.start,graphicDrag.end);
+  }
+  function endGraphicDrag(event){
+    if(!graphicDrag||event.pointerId!==graphicDrag.pointerId)return;
+    graphicDrag=null;syncUI();syncLayers();render();autoSave();
+  }
+  for(const [id,which] of [['graphicInHandle','in'],['graphicOutHandle','out']]){
+    const handle=$(id);handle.addEventListener('pointerdown',e=>beginGraphicDrag(which,e));
+    handle.addEventListener('pointermove',moveGraphicDrag);handle.addEventListener('pointerup',endGraphicDrag);handle.addEventListener('pointercancel',endGraphicDrag);
+    handle.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();remember('graphic-time');const l=current(),step=e.shiftKey?1:.1,b=clipBounds();if(!l.timed){l.timed=true;l.startTime=b.start;l.endTime=b.end;}const start=l.startTime||0,end=l.endTime??b.end;applyGraphicTiming(which==='in'?clamp(start+(e.key==='ArrowRight'?step:-step),0,end-.1):start,which==='out'?clamp(end+(e.key==='ArrowRight'?step:-step),start+.1,sourceVideo.duration):end);autoSave();});
+  }
+  $('graphicTrack').addEventListener('pointerdown',e=>{if(e.target.closest('.graphic-handle'))return;if(!videoFile||exportBusy)return;const t=graphicTimeFromPointer(e);sourceVideo.pause();sourceVideo.currentTime=t;syncTransport();});
+  $('graphicFullClip').addEventListener('change',e=>change(()=>{const l=current();l.timed=!e.target.checked;if(l.timed){l.startTime=clipBounds().start;l.endTime=clipBounds().end;}}));
+  $('graphicSetFull').addEventListener('click',()=>{const box=$('graphicFullClip');box.checked=true;box.dispatchEvent(new Event('change',{bubbles:true}));});
+  $('graphicSetIn').addEventListener('click',()=>{const l=current(),b=clipBounds(),start=sourceVideo.currentTime||0,end=l.timed?(l.endTime??b.end):b.end;if(start>=end-.1){toast('Move the playhead before the current OUT point.',true);return;}change(()=>{l.timed=true;l.startTime=start;l.endTime=end;});});
+  $('graphicSetOut').addEventListener('click',()=>{const l=current(),b=clipBounds(),start=l.timed?(l.startTime||0):b.start,end=sourceVideo.currentTime||0;if(end<=start+.1){toast('Move the playhead after the current IN point.',true);return;}change(()=>{l.timed=true;l.startTime=start;l.endTime=end;});});
   async function prepareAudio(){
     const AudioCtx=window.AudioContext||window.webkitAudioContext;
     if(!AudioCtx)throw new Error('This browser cannot preserve the file audio. Use a current desktop browser, or turn off Include original video audio.');
@@ -1072,6 +1446,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   async function exportMP4(){
     if(exportBusy||!videoFile||videoLoading)return;
+    if(state.video.doubleBox?.enabled&&state.video.doubleBox.bottomSource==='image'&&!brollImage){toast('Reopen the still image for the bottom panel before exporting.',true);return;}
+    if(state.video.doubleBox?.enabled&&state.video.doubleBox.bottomSource==='video'&&!brollVideoFile){toast('Reopen the B-roll video for the bottom panel before exporting.',true);return;}
     try{ensureBrandAssets();}catch(error){toast(error.message,true);return;}
     const bounds=clipBounds(),settings=clone(state.video),duration=bounds.end-bounds.start;
     if(duration<.1){toast('Choose a clip at least 0.1 seconds long.',true);return;}
@@ -1092,6 +1468,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     const audioReady=settings.keepAudio?prepareAudio():Promise.resolve();audioReady.catch(()=>{});updateMonitor();
     try{
       await audioReady;if(job.cancelled)throw new Error(job.reason||'Export cancelled.');
+      if(state.video.doubleBox?.enabled&&state.video.doubleBox.bottomSource==='video') {if(!brollVideoFile)throw new Error('Reopen the B-roll video before exporting this Double Box design.');syncBrollToPrimary(true);await brollSourceVideo.play().catch(()=>{});}
       if(navigator.wakeLock){try{job.wakeLock=await navigator.wakeLock.request('screen');}catch(_){}}
       await document.fonts.ready;await seekVideo(bounds.start);
       if(job.cancelled)throw new Error(job.reason||'Export cancelled.');
@@ -1119,7 +1496,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
         recorder.onstop=()=>{if(recordError)reject(recordError);else if(job.cancelled)reject(new Error(job.reason||'Export cancelled.'));else resolve();};
         job.finish=(error=null)=>{
           if(finished)return;finished=true;if(error)recordError=error;
-          clearInterval(job.timer);cancelAnimationFrame(job.raf);sourceVideo.pause();
+          clearInterval(job.timer);cancelAnimationFrame(job.raf);sourceVideo.pause();brollSourceVideo.pause();
           if(recorder.state!=='inactive'){try{recorder.stop();}catch(e){reject(error||e);}}
           else if(error||job.cancelled)reject(error||new Error(job.reason||'Export cancelled.'));
           else reject(new Error('The recorder stopped before producing a video.'));
@@ -1181,7 +1558,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     }finally{
       clearInterval(job.timer);cancelAnimationFrame(job.raf);job.removeListeners?.();
       if(job.recorder&&job.recorder.state!=='inactive'){try{job.recorder.stop();}catch(_){}}
-      sourceVideo.pause();job.stream?.getTracks().forEach(track=>track.stop());try{await job.wakeLock?.release();}catch(_){}
+      sourceVideo.pause();brollSourceVideo.pause();job.stream?.getTracks().forEach(track=>track.stop());try{await job.wakeLock?.release();}catch(_){}
       job.stream=null;videoJob=null;exportBusy=false;updateMonitor();
       document.querySelector('.workspace').inert=false;document.querySelector('.topbar').inert=false;
       $('cancelVideoExport').hidden=true;$('closeVideoExport').hidden=false;
@@ -1204,7 +1581,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   let drag=null;
   canvas.addEventListener('pointerdown',e=>{
     if(e.button!==0||exportBusy)return;
-    const p=pointerPoint(e),bb=brandLayout();let hit=null;
+    const p=pointerPoint(e),sb=showLogoLayout(),bb=brandLayout();let hit=null;
+    if(state.video.doubleBox?.enabled&&videoFile&&Math.abs(p.y-HEIGHT*state.video.doubleBox.split/100)<28){e.preventDefault();remember('double-split');drag={kind:'double-split'};canvas.setPointerCapture(e.pointerId);return;}
+    if(sb.height&&p.x>=sb.left-12&&p.x<=sb.left+sb.width+12&&p.y>=sb.top-12&&p.y<=sb.top+sb.height+12){
+      e.preventDefault();canvas.focus({preventScroll:true});selectShowLogo();remember();drag={kind:'show-move',dx:p.x-sb.x,dy:p.y-sb.y};canvas.setPointerCapture(e.pointerId);return;
+    }
     if(bb.height&&p.x>=bb.left-12&&p.x<=bb.left+bb.width+12&&p.y>=bb.top-12&&p.y<=bb.top+bb.height+12){
       e.preventDefault();canvas.focus({preventScroll:true});selectBranding();remember();drag={kind:'brand-move',dx:p.x-bb.x,dy:p.y-bb.top};canvas.setPointerCapture(e.pointerId);return;
     }
@@ -1216,14 +1597,21 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   $('resizeHandle').addEventListener('pointerdown',e=>{
     if(e.button!==0||exportBusy)return;e.preventDefault();e.stopPropagation();remember();
     if(brandSelected){const p=pointerPoint(e),b=brandLayout();drag={kind:'brand-resize',left:b.left,top:b.top,startDist:Math.max(30,Math.hypot(p.x-b.left,p.y-b.top)),nbcWidth:state.branding.nbc.width,sponsorWidth:state.branding.sponsor.width};$('resizeHandle').setPointerCapture(e.pointerId);return;}
+    if(showLogoSelected){const p=pointerPoint(e),b=showLogoLayout();drag={kind:'show-resize',left:b.left,top:b.top,startDist:Math.max(30,Math.hypot(p.x-b.left,p.y-b.top)),width:state.branding.show.width};$('resizeHandle').setPointerCapture(e.pointerId);return;}
     const l=current(),p=pointerPoint(e);drag={kind:'resize',id:l.id,startDist:Math.max(30,Math.hypot(p.x-l.x,p.y-l.y)),size:l.fontSize,emojiSize:l.emojiSize};
     $('resizeHandle').setPointerCapture(e.pointerId);
   });
   function dragMove(e){
     if(!drag)return;const p=pointerPoint(e);
+    if(drag.kind==='double-split'){const pct=clamp(p.y/HEIGHT*100,20,80);state.video.doubleBox.split=Math.round(pct);setValue('doubleBoxSplit',state.video.doubleBox.split);$('doubleBoxSplitValue').textContent=state.video.doubleBox.split+' / '+(100-state.video.doubleBox.split);scheduleRender();return;}
     if(drag.kind.startsWith('brand-')){
       if(drag.kind==='brand-move'){state.branding.x=p.x-drag.dx;state.branding.y=p.y-drag.dy;}
       else{const ratio=Math.hypot(p.x-drag.left,p.y-drag.top)/drag.startDist;state.branding.nbc.width=Math.round(clamp(drag.nbcWidth*ratio,80,480));state.branding.sponsor.width=Math.round(clamp(drag.sponsorWidth*ratio,80,600));}
+      constrainBranding();syncBrandUI();scheduleRender();return;
+    }
+    if(drag.kind.startsWith('show-')){
+      if(drag.kind==='show-move'){state.branding.show.x=p.x-drag.dx;state.branding.show.y=p.y-drag.dy;}
+      else{const ratio=Math.hypot(p.x-drag.left,p.y-drag.top)/drag.startDist;state.branding.show.width=Math.round(clamp(drag.width*ratio,80,650));}
       constrainBranding();syncBrandUI();scheduleRender();return;
     }
     const l=state.layers.find(x=>x.id===drag.id);if(!l)return;
@@ -1250,20 +1638,21 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     const mod=e.ctrlKey||e.metaKey,key=e.key.toLowerCase();
     if(mod&&key==='z'){e.preventDefault();e.shiftKey?redo():undo();return;}
     if(mod&&key==='y'){e.preventDefault();redo();return;}
-    if(mod&&key==='d'){e.preventDefault();if(!brandSelected)addLayer(true);return;}
-    if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();if(brandSelected){change(()=>{state.branding.nbc.enabled=false;state.branding.sponsor.enabled=false;});}else deleteLayer();return;}
+    if(mod&&key==='d'){e.preventDefault();if(!brandSelected&&!showLogoSelected)addLayer(true);return;}
+    if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();if(brandSelected){change(()=>{state.branding.nbc.enabled=false;state.branding.sponsor.enabled=false;});}else if(showLogoSelected){change(()=>{state.branding.show.enabled=false;});}else deleteLayer();return;}
     const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};
-    if(moves[e.key]){e.preventDefault();const step=e.shiftKey?10:1;change(()=>{const target=brandSelected?state.branding:current();target.x+=moves[e.key][0]*step;target.y+=moves[e.key][1]*step;},brandSelected?'nudge-logos':'nudge');}
+    if(moves[e.key]){e.preventDefault();const step=e.shiftKey?10:1;change(()=>{const target=brandSelected?state.branding:showLogoSelected?state.branding.show:current();target.x+=moves[e.key][0]*step;target.y+=moves[e.key][1]*step;},brandSelected?'nudge-logos':showLogoSelected?'nudge-show-logo':'nudge');}
   });
   // The supplied NBC asset is embedded once; uploaded assets are referenced by ID.
   // Undo snapshots keep IDs, not repeated base64 images. Designs embed used assets.
-  function brandingDefaults(){return {x:890,y:245,gap:16,nbc:{enabled:true,asset:BUILTIN_NBC,width:230},sponsor:{enabled:false,asset:null,width:252,white:false,padding:12,radius:12}};}
+  function brandingDefaults(){return {x:890,y:245,gap:16,show:{enabled:false,asset:null,width:350,x:72,y:245},nbc:{enabled:true,asset:BUILTIN_NBC,width:230},sponsor:{enabled:false,asset:null,width:252,white:false,padding:12,radius:12}};}
   function cleanBranding(raw){
     const b=brandingDefaults();
     // Older designs should not acquire a new watermark without the user's choice.
     if(!raw||typeof raw!=='object'){b.nbc.enabled=false;return b;}
     const num=(v,min,max,fallback)=>typeof v==='number'&&Number.isFinite(v)?clamp(v,min,max):fallback;
     b.x=num(raw.x,0,WIDTH,b.x);b.y=num(raw.y,0,HEIGHT,b.y);b.gap=num(raw.gap,0,100,b.gap);
+    const sh=raw.show||{};b.show.enabled=sh.enabled===true;b.show.asset=typeof sh.asset==='string'&&/^[a-zA-Z0-9_-]{1,100}$/.test(sh.asset)?sh.asset:null;b.show.width=num(sh.width,80,650,b.show.width);b.show.x=num(sh.x,0,WIDTH,b.show.x);b.show.y=num(sh.y,0,HEIGHT,b.show.y);if(!b.show.asset)b.show.enabled=false;
     for(const kind of ['nbc','sponsor']){
       const v=raw[kind];if(!v||typeof v!=='object')continue;
       b[kind].enabled=v.enabled===true;
@@ -1276,13 +1665,15 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     return b;
   }
   function usedBrandAssets(design=state){
-    return [...new Set(['nbc','sponsor'].map(k=>design.branding[k].asset).filter(id=>id&&id!==BUILTIN_NBC))];
+    const ids=['show','nbc','sponsor'].map(k=>design.branding[k].asset);
+    for(const profile of Object.values(design.showPresetLogos||{})){ids.push(profile.showAsset,profile.sponsorAsset);}
+    return [...new Set(ids.filter(id=>id&&id!==BUILTIN_NBC))];
   }
   function packBrandAssets(design=state){
     return usedBrandAssets(design).map(id=>{const a=bugAssets.get(id);if(!a)throw new Error('A logo is missing. Upload it again before saving.');return {id,name:a.name,data:a.data};});
   }
   async function decodeBrandAssets(design,list=[]){
-    if(!Array.isArray(list)||list.length>4)throw new Error('This design contains invalid logo assets.');
+    if(!Array.isArray(list)||list.length>40)throw new Error('This design contains invalid logo assets.');
     for(const id of usedBrandAssets(design)){
       const item=list.find(a=>a&&a.id===id);
       if(!item){if(bugAssets.has(id))continue;throw new Error('A logo is missing from this design.');}
@@ -1309,11 +1700,18 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     for(const item of items){item.left=x-item.width/2;item.top=y;y+=item.height+b.gap;}
     return {left:x-width/2,top,width,height,x,items};
   }
+  function showLogoLayout(){
+    const c=state.branding.show,a=brandAsset('show');if(!c.enabled||!a?.image)return {left:0,top:0,width:0,height:0};
+    const aspect=a.image.naturalWidth/a.image.naturalHeight,w=c.width,h=w/aspect;
+    const x=clamp(c.x,12,WIDTH-w-12),y=clamp(c.y,12,HEIGHT-h-12);
+    return {left:x,top:y,width:w,height:h,x:x+w/2,y:y+h/2,asset:a};
+  }
   function constrainBranding(){
-    if(!state.branding)return;const b=brandLayout();if(!b.height)return;
-    state.branding.x=b.x;state.branding.y=b.top;
+    if(!state.branding)return;const b=brandLayout();if(b.height){state.branding.x=b.x;state.branding.y=b.top;}
+    const sh=showLogoLayout();if(sh.height){state.branding.show.x=sh.left;state.branding.show.y=sh.top;}
   }
   function drawBranding(context){
+    const show=showLogoLayout();if(show.height){context.save();context.globalAlpha=1;context.globalCompositeOperation='source-over';context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';context.drawImage(show.asset.image,show.left,show.top,show.width,show.height);context.restore();}
     const b=brandLayout();context.save();context.globalAlpha=1;context.globalCompositeOperation='source-over';
     context.shadowColor='transparent';context.shadowBlur=0;context.shadowOffsetX=0;context.shadowOffsetY=0;
     context.imageSmoothingEnabled=true;context.imageSmoothingQuality='high';
@@ -1325,10 +1723,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   function ensureBrandAssets(){
     if(bugLoading)throw new Error('A logo is still loading. Export after it appears in the preview.');
-    for(const kind of ['nbc','sponsor']){const b=state.branding[kind];if(b.enabled&&(!b.asset||!bugAssets.has(b.asset)))throw new Error('The '+(kind==='nbc'?'NBC':'sponsor')+' logo is missing. Upload it again or switch it off.');}
+    for(const kind of ['show','nbc','sponsor']){const b=state.branding[kind];if(b.enabled&&(!b.asset||!bugAssets.has(b.asset)))throw new Error('The '+(kind==='show'?'show':kind==='nbc'?'NBC':'sponsor')+' logo is missing. Upload it again or switch it off.');}
   }
   function syncBrandUI(){
-    const b=state.branding,n=brandAsset('nbc'),s=brandAsset('sponsor');
+    const b=state.branding,sh=brandAsset('show'),n=brandAsset('nbc'),s=brandAsset('sponsor');
+    $('bugShowEnabled').checked=b.show.enabled;$('bugShowEnabled').disabled=!sh;
+    const showImg=$('bugShowThumb');if(sh){if(showImg.getAttribute('src')!==sh.data)showImg.src=sh.data;}else showImg.removeAttribute('src');
+    $('bugShowName').textContent=sh?.name||'';$('showLogoPreviewWrap').hidden=!sh;$('uploadShowLogo').hidden=!!sh;$('removeShowLogo').hidden=!sh;
     $('bugNBCEnabled').checked=b.nbc.enabled;$('bugSponsorEnabled').checked=b.sponsor.enabled;$('bugSponsorEnabled').disabled=!s;
     $('bugSponsorWhite').checked=b.sponsor.white;$('sponsorWhiteControls').hidden=!b.sponsor.white;
     for(const [kind,asset] of [['NBC',n],['Sponsor',s]]){
@@ -1337,14 +1738,16 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     $('bugNBCName').textContent=n?.name||'Included logo';$('restoreNBCBug').hidden=b.nbc.asset===BUILTIN_NBC;
     $('bugSponsorName').textContent=s?.name||'';$('sponsorPreviewWrap').hidden=!s;$('uploadSponsorBug').hidden=!!s;$('removeSponsorBug').hidden=!s;
     $('replaceSponsorBug').classList.toggle('white-card',b.sponsor.white);
-    const values={bugNBCWidth:[b.nbc.width,' px'],bugSponsorWidth:[b.sponsor.width,' px'],bugSponsorPadding:[b.sponsor.padding,' px'],bugSponsorRadius:[b.sponsor.radius,' px'],bugGap:[b.gap,' px'],bugPosX:[b.x/WIDTH*100,'%'],bugPosY:[b.y/HEIGHT*100,'%']};
+    const values={bugShowWidth:[b.show.width,' px'],bugNBCWidth:[b.nbc.width,' px'],bugSponsorWidth:[b.sponsor.width,' px'],bugSponsorPadding:[b.sponsor.padding,' px'],bugSponsorRadius:[b.sponsor.radius,' px'],bugGap:[b.gap,' px'],bugPosX:[b.x/WIDTH*100,'%'],bugPosY:[b.y/HEIGHT*100,'%']};
     for(const [id,[v,unit]] of Object.entries(values)){const value=id.startsWith('bugPos')?Math.round(v*10)/10:Math.round(v);setValue(id,value);$(id+'Value').textContent=value+unit;}
-    const hasVisible=brandLayout().height>0;
+    const hasVisible=brandLayout().height>0;const hasShow=showLogoLayout().height>0;
+    $('showLogoCard').classList.toggle('bug-section-active',showLogoSelected&&hasShow);
     $('selectBugStack').disabled=!hasVisible;$('selectBugStack').classList.toggle('active',brandSelected&&hasVisible);
     $('brandingSection').classList.toggle('bug-section-active',brandSelected&&hasVisible);
     $('bugLoadingStatus').hidden=!bugLoading;
   }
-  function selectBranding(){brandSelected=true;state.handles=true;historyKey='';syncUI();render();}
+  function selectBranding(){brandSelected=true;showLogoSelected=false;state.handles=true;historyKey='';syncUI();render();}
+  function selectShowLogo(){brandSelected=false;showLogoSelected=true;state.handles=true;historyKey='';syncUI();render();}
   function readLogoFile(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(new Error('The logo file could not be read.'));r.readAsDataURL(file);});}
   async function addBugLogo(kind,file){
     if(!file||exportBusy)return;
@@ -1366,31 +1769,39 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
       const data=cropped.toDataURL('image/png');if(data.length>3*1024*1024)throw new Error('The logo is too detailed to save efficiently. Use a smaller PNG.');
       const image=await loadImage(data);if(token!==bugLoadTokens[kind])return;
       const id='logo-'+uid();bugAssets.set(id,{data,image,name:(file.name||'Uploaded logo').slice(0,150)});bugAssetVersion++;
-      change(()=>{state.branding[kind].asset=id;state.branding[kind].enabled=true;brandSelected=true;});
-      toast(kind==='nbc'?'NBC bug updated.':'Sponsor added below the NBC bug. White backing is optional.');
+      change(()=>{state.branding[kind].asset=id;state.branding[kind].enabled=true;if(kind==='show'){showLogoSelected=true;brandSelected=false;}else{brandSelected=true;showLogoSelected=false;}saveActivePresetLogos();});
+      toast(kind==='nbc'?'NBC bug updated.':kind==='show'?'Show logo added at upper left.':'Sponsor added below the NBC bug. White backing is optional.');
     }catch(error){if(token===bugLoadTokens[kind])toast(error.message,true);}
     finally{bugLoading=Math.max(0,bugLoading-1);syncBrandUI();}
   }
-  $('bugNBCEnabled').addEventListener('change',e=>change(()=>{state.branding.nbc.enabled=e.target.checked;brandSelected=true;}));
-  $('bugSponsorEnabled').addEventListener('change',e=>change(()=>{state.branding.sponsor.enabled=e.target.checked;brandSelected=true;}));
-  $('bugSponsorWhite').addEventListener('change',e=>change(()=>{state.branding.sponsor.white=e.target.checked;brandSelected=true;}));
+  $('bugShowEnabled').addEventListener('change',e=>change(()=>{state.branding.show.enabled=e.target.checked;showLogoSelected=true;brandSelected=false;saveActivePresetLogos();}));
+  $('bugShowWidth').addEventListener('input',e=>change(()=>{state.branding.show.width=Number(e.target.value);showLogoSelected=true;brandSelected=false;},'bugShowWidth'));
+  for(const id of ['uploadShowLogo','replaceShowLogo'])$(id).addEventListener('click',()=>$('showLogoFile').click());
+  $('showLogoFile').addEventListener('change',e=>{addBugLogo('show',e.target.files[0]);e.target.value='';});
+  $('removeShowLogo').addEventListener('click',()=>{bugLoadTokens.show++;change(()=>{state.branding.show.asset=null;state.branding.show.enabled=false;showLogoSelected=false;saveActivePresetLogos();});toast('Show logo removed.');});
+  $('showLogoCard').addEventListener('dragover',e=>{e.preventDefault();e.stopPropagation();$('uploadShowLogo').classList.add('drag-active');});
+  $('showLogoCard').addEventListener('dragleave',()=>$('uploadShowLogo').classList.remove('drag-active'));
+  $('showLogoCard').addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();$('uploadShowLogo').classList.remove('drag-active');const f=Array.from(e.dataTransfer.files).find(f=>f.type.startsWith('image/'));if(f)addBugLogo('show',f);});
+  $('bugNBCEnabled').addEventListener('change',e=>change(()=>{state.branding.nbc.enabled=e.target.checked;brandSelected=true;showLogoSelected=false;}));
+  $('bugSponsorEnabled').addEventListener('change',e=>change(()=>{state.branding.sponsor.enabled=e.target.checked;brandSelected=true;showLogoSelected=false;saveActivePresetLogos();}));
+  $('bugSponsorWhite').addEventListener('change',e=>change(()=>{state.branding.sponsor.white=e.target.checked;brandSelected=true;showLogoSelected=false;saveActivePresetLogos();}));
   for(const [id,kind,key] of [['bugNBCWidth','nbc','width'],['bugSponsorWidth','sponsor','width'],['bugSponsorPadding','sponsor','padding'],['bugSponsorRadius','sponsor','radius']]){
-    $(id).addEventListener('input',e=>change(()=>{state.branding[kind][key]=Number(e.target.value);brandSelected=true;},id));
+    $(id).addEventListener('input',e=>change(()=>{state.branding[kind][key]=Number(e.target.value);brandSelected=true;showLogoSelected=false;},id));
   }
-  $('bugGap').addEventListener('input',e=>change(()=>{state.branding.gap=Number(e.target.value);brandSelected=true;},'bugGap'));
-  for(const [id,key,size] of [['bugPosX','x',WIDTH],['bugPosY','y',HEIGHT]])$(id).addEventListener('input',e=>change(()=>{state.branding[key]=Number(e.target.value)/100*size;brandSelected=true;},id));
-  for(const [id,right] of [['bugTopLeft',false],['bugTopRight',true]])$(id).addEventListener('click',()=>change(()=>{const w=brandLayout().width||252;state.branding.x=right?WIDTH-64-w/2:64+w/2;state.branding.y=245;brandSelected=true;}));
+  $('bugGap').addEventListener('input',e=>change(()=>{state.branding.gap=Number(e.target.value);brandSelected=true;showLogoSelected=false;},'bugGap'));
+  for(const [id,key,size] of [['bugPosX','x',WIDTH],['bugPosY','y',HEIGHT]])$(id).addEventListener('input',e=>change(()=>{state.branding[key]=Number(e.target.value)/100*size;brandSelected=true;showLogoSelected=false;},id));
+  $('bugTopRight').addEventListener('click',()=>change(()=>{const w=brandLayout().width||252;state.branding.x=WIDTH-64-w/2;state.branding.y=245;brandSelected=true;showLogoSelected=false;}));
   $('selectBugStack').addEventListener('click',()=>{selectBranding();$('artboard').scrollIntoView({behavior:'smooth',block:'center'});canvas.focus({preventScroll:true});});
   $('brandingShortcut').addEventListener('click',()=>{$('brandingSection').scrollIntoView({behavior:'smooth',block:'start'});if(brandLayout().height)selectBranding();});
   $('replaceNBCBug').addEventListener('click',()=>$('nbcBugFile').click());
   for(const id of ['uploadSponsorBug','replaceSponsorBug'])$(id).addEventListener('click',()=>$('sponsorBugFile').click());
   for(const [id,kind] of [['nbcBugFile','nbc'],['sponsorBugFile','sponsor']])$(id).addEventListener('change',e=>{addBugLogo(kind,e.target.files[0]);e.target.value='';});
-  $('restoreNBCBug').addEventListener('click',()=>{bugLoadTokens.nbc++;change(()=>{state.branding.nbc.asset=BUILTIN_NBC;state.branding.nbc.enabled=true;brandSelected=true;});});
-  $('removeSponsorBug').addEventListener('click',()=>{bugLoadTokens.sponsor++;change(()=>{state.branding.sponsor.asset=null;state.branding.sponsor.enabled=false;});toast('Sponsor removed.');});
+  $('restoreNBCBug').addEventListener('click',()=>{bugLoadTokens.nbc++;change(()=>{state.branding.nbc.asset=BUILTIN_NBC;state.branding.nbc.enabled=true;brandSelected=true;showLogoSelected=false;});});
+  $('removeSponsorBug').addEventListener('click',()=>{bugLoadTokens.sponsor++;change(()=>{state.branding.sponsor.asset=null;state.branding.sponsor.enabled=false;saveActivePresetLogos();});toast('Sponsor removed.');});
   $('sponsorCard').addEventListener('dragover',e=>{e.preventDefault();e.stopPropagation();$('uploadSponsorBug').classList.add('drag-active');});
   $('sponsorCard').addEventListener('dragleave',()=>$('uploadSponsorBug').classList.remove('drag-active'));
   $('sponsorCard').addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();$('uploadSponsorBug').classList.remove('drag-active');const f=Array.from(e.dataTransfer.files).find(f=>f.type.startsWith('image/'));if(f)addBugLogo('sponsor',f);});
-  document.querySelector('.left-panel').addEventListener('focusin',()=>{if(brandSelected){brandSelected=false;syncBrandUI();render();}});
+  document.querySelector('.left-panel').addEventListener('focusin',()=>{if(brandSelected||showLogoSelected){brandSelected=false;showLogoSelected=false;syncBrandUI();render();}});
 
   // Use image decoding, not remote URLs, so reference photos cannot taint the canvas.
   function loadImage(src) {return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('That image could not be opened. Try a JPG, PNG, or WebP.'));image.src=src;});}
@@ -1447,7 +1858,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   $('exportButton').addEventListener('click',exportPNG);$('exportTop').addEventListener('click',exportPNG);
   $('saveDesign').addEventListener('click',()=>{
     if(bugLoading){toast('Finish loading your logo before saving.',true);return;}
-    const project={app:'sideline-philly-overlay',version:4,savedAt:new Date().toISOString(),state,brandingAssets:packBrandAssets(),reference:referenceData?{data:referenceData,name:referenceName}:null};
+    const project={app:'sideline-philly-overlay',version:4,savedAt:new Date().toISOString(),state,brandingAssets:packBrandAssets(),reference:referenceData?{data:referenceData,name:referenceName}:null,doubleBoxImage:brollImageData?{data:brollImageData,name:brollImageName}:null};
     downloadBlob(new Blob([JSON.stringify(project,null,2)],{type:'application/json'}),sanitizedName(state.fileName)+'-design.json');toast('Editable design saved.');
   });
   $('openDesign').addEventListener('click',()=>$('designFile').click());
@@ -1457,20 +1868,24 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
     try {
       const project=JSON.parse(await file.text());
       if(project.app!=='sideline-philly-overlay'||![1,2,3,4].includes(project.version))throw new Error('Choose a Sideline design JSON file.');
-      const next=cleanState(project.state);await decodeBrandAssets(next,project.brandingAssets||[]);let image=null;
+      const next=cleanState(project.state);await decodeBrandAssets(next,project.brandingAssets||[]);let image=null,doubleImage=null;
+      if(project.doubleBoxImage?.data){if(typeof project.doubleBoxImage.data!=='string'||!/^data:image\/(png|jpeg|webp);base64,/.test(project.doubleBoxImage.data))throw new Error('This design has an unsupported B-roll image.');doubleImage=await loadImage(project.doubleBoxImage.data);}
       if(project.reference?.data){
         if(typeof project.reference.data!=='string'||!/^data:image\/(png|jpeg|webp);base64,/.test(project.reference.data))throw new Error('This design has an unsupported reference image.');
         image=await loadImage(project.reference.data);
       }
-      remember();bugLoadTokens.nbc++;bugLoadTokens.sponsor++;brandSelected=false;clearReference();sourceVideo.pause();state=next;if(videoFile&&(state.video.fileName!==videoFile.name||state.video.fileSize!==videoFile.size||state.video.fileModified!==videoFile.lastModified))clearVideo(false);
+      remember();bugLoadTokens.nbc++;bugLoadTokens.sponsor++;bugLoadTokens.show++;brandSelected=false;showLogoSelected=false;clearReference();sourceVideo.pause();brollSourceVideo.pause();
+      if(brollVideoURL)URL.revokeObjectURL(brollVideoURL);if(brollImageURL)URL.revokeObjectURL(brollImageURL);brollVideoURL='';brollImageURL='';brollVideoFile=null;brollImage=null;brollImageData=null;brollImageName='';brollSourceVideo.removeAttribute('src');brollSourceVideo.load();
+      state=next;if(videoFile&&(state.video.fileName!==videoFile.name||state.video.fileSize!==videoFile.size||state.video.fileModified!==videoFile.lastModified))clearVideo(false);
       if(image){referenceImage=image;referenceData=project.reference.data;referenceName=String(project.reference.name||'Saved reference').slice(0,150);$('referenceThumb').src=referenceData;}
+      if(doubleImage){brollImage=doubleImage;brollImageData=project.doubleBoxImage.data;brollImageName=String(project.doubleBoxImage.name||'Saved B-roll image').slice(0,150);state.video.doubleBox.bottomSource='image';}
       if(state.background.mode==='photo'&&!referenceImage)state.background.mode='transparent';
       constrainAll();syncUI();render();autoSave();toast('Design opened.');
     }catch(error){toast('Could not open design: '+error.message,true);}
   });
   $('helpButton').addEventListener('click',()=>$('helpDialog').showModal());$('closeHelp').addEventListener('click',()=>$('helpDialog').close());
   $('resetButton').addEventListener('click',()=>$('resetDialog').showModal());$('cancelReset').addEventListener('click',()=>$('resetDialog').close());
-  $('confirmReset').addEventListener('click',()=>{remember();bugLoadTokens.nbc++;bugLoadTokens.sponsor++;brandSelected=false;clearReference();clearVideo();state=defaultState();$('resetDialog').close();syncUI();render();autoSave();toast('Fresh canvas. Make it yours.');});
+  $('confirmReset').addEventListener('click',()=>{remember();bugLoadTokens.nbc++;bugLoadTokens.sponsor++;bugLoadTokens.show++;brandSelected=false;showLogoSelected=false;clearReference();clearVideo();state=defaultState();$('resetDialog').close();syncUI();render();autoSave();toast('Fresh canvas. Make it yours.');});
   for(const dialog of [$('helpDialog'),$('resetDialog')])dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
   new ResizeObserver(scheduleRender).observe($('artboard'));
   document.fonts?.ready.then(()=>{constrainAll();render();});
@@ -1483,7 +1898,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawIm
   }
   constrainAll();syncUI();render();autoSave();
   // Read-only inspection is useful for testing and integration without altering a design.
-  window.SidelineOverlay=Object.freeze({getState:()=>clone(state),dimensions:Object.freeze({width:WIDTH,height:HEIGHT}),version:'3.1-overlay',branding:()=>({layout:clone(brandLayout().items.map(({asset,...item})=>({...item,name:asset.name}))),assets:usedBrandAssets(),loading:bugLoading}),video:()=>({loaded:!!videoFile,duration:Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0,exporting:exportBusy,blurEngine:nativeCanvasBlur?'canvas-filter':'software',mp4:videoCandidates(state.video.keepAudio)})});
+  window.SidelineOverlay=Object.freeze({getState:()=>clone(state),dimensions:Object.freeze({width:WIDTH,height:HEIGHT}),version:'3.4-double-box',branding:()=>({layout:clone(brandLayout().items.map(({asset,...item})=>({...item,name:asset.name}))),assets:usedBrandAssets(),loading:bugLoading}),video:()=>({loaded:!!videoFile,duration:Number.isFinite(sourceVideo.duration)?sourceVideo.duration:0,exporting:exportBusy,blurEngine:nativeCanvasBlur?'canvas-filter':'software',mp4:videoCandidates(state.video.keepAudio)})});
 })();
 </script>
 </body>
